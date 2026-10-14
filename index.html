@@ -8,6 +8,7 @@
     :root {
       --primary-color: #0f172a;
       --accent-color: #059669;
+      --accent-light: #ecfdf5;
       --whatsapp-color: #25d366;
       --whatsapp-hover: #1da851;
       --bg-color: #f8fafc;
@@ -26,7 +27,7 @@
     body {
       background-color: var(--bg-color);
       color: var(--primary-color);
-      padding-bottom: 3rem;
+      padding-bottom: 5rem;
     }
 
     /* Banner Promocional Topo */
@@ -37,7 +38,6 @@
       padding: 0.6rem 1rem;
       font-size: 0.875rem;
       font-weight: 500;
-      letter-spacing: 0.5px;
     }
 
     .promo-banner strong {
@@ -52,7 +52,7 @@
 
     /* Header e Marca */
     header {
-      padding: 2rem 0 1.5rem;
+      padding: 2rem 0 1rem;
       text-align: center;
     }
 
@@ -65,20 +65,19 @@
     }
 
     .logo-icon {
-      width: 42px;
-      height: 42px;
+      width: 46px;
+      height: 46px;
       background-color: var(--primary-color);
       color: #fff;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.25rem;
-      font-weight: bold;
+      font-size: 1.35rem;
     }
 
     h1 {
-      font-size: 1.85rem;
+      font-size: 2rem;
       font-weight: 800;
       letter-spacing: -0.5px;
       color: var(--primary-color);
@@ -87,23 +86,76 @@
     .subtitle {
       color: var(--text-muted);
       font-size: 0.95rem;
+      margin-bottom: 1rem;
     }
 
-    /* Barra de Controles (Busca e Filtro) */
-    .controls-bar {
+    .social-links {
       display: flex;
-      flex-wrap: wrap;
+      justify-content: center;
       gap: 1rem;
-      margin-bottom: 2rem;
-      background-color: var(--card-bg);
+      margin-bottom: 1.5rem;
+    }
+
+    .social-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      transition: color 0.2s;
+    }
+
+    .social-links a:hover {
+      color: var(--accent-color);
+    }
+
+    /* Barra de Confiança */
+    .trust-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
       padding: 1rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+
+    .trust-item span {
+      font-size: 1.2rem;
+    }
+
+    /* Controles (Busca, Filtro, Ordenação) */
+    .controls-bar {
+      background-color: var(--card-bg);
+      padding: 1.25rem;
       border-radius: 12px;
       border: 1px solid var(--border-color);
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      margin-bottom: 1rem;
+    }
+
+    .controls-inputs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
     }
 
     .search-box {
-      flex: 1;
+      flex: 2;
       min-width: 240px;
       position: relative;
     }
@@ -115,7 +167,6 @@
       border-radius: 8px;
       font-size: 0.95rem;
       outline: none;
-      transition: border-color 0.2s;
     }
 
     .search-box input:focus {
@@ -128,14 +179,14 @@
       top: 50%;
       transform: translateY(-50%);
       color: var(--text-muted);
-      font-size: 1rem;
     }
 
-    .filter-box {
-      min-width: 200px;
+    .filter-box, .sort-box {
+      flex: 1;
+      min-width: 180px;
     }
 
-    .filter-box select {
+    .controls-bar select {
       width: 100%;
       padding: 0.75rem 1rem;
       border: 1px solid var(--border-color);
@@ -147,8 +198,11 @@
       cursor: pointer;
     }
 
-    .filter-box select:focus {
-      border-color: var(--accent-color);
+    .results-counter {
+      margin-top: 0.75rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 500;
     }
 
     /* Grid de Produtos */
@@ -166,6 +220,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      position: relative;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
@@ -174,24 +229,60 @@
       box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.08);
     }
 
+    .card-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background-color: #fef3c7;
+      color: #92400e;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+
+    .product-img-container {
+      width: 100%;
+      height: 160px;
+      background-color: #f1f5f9;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      overflow: hidden;
+    }
+
+    .product-img-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .product-img-placeholder {
+      font-size: 3rem;
+      color: #cbd5e1;
+    }
+
     .category {
       display: inline-block;
       font-size: 0.75rem;
       font-weight: 700;
       text-transform: uppercase;
       color: var(--accent-color);
-      background-color: #ecfdf5;
+      background-color: var(--accent-light);
       padding: 0.25rem 0.6rem;
       border-radius: 6px;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.5rem;
       width: fit-content;
     }
 
     .title {
-      font-size: 1rem;
+      font-size: 0.98rem;
       font-weight: 600;
       line-height: 1.4;
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
       min-height: 2.8rem;
     }
 
@@ -202,69 +293,294 @@
     }
 
     .price-main {
-      font-size: 1.5rem;
+      font-size: 1.45rem;
       font-weight: 800;
       color: var(--primary-color);
     }
 
     .price-tag {
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       color: var(--accent-color);
       font-weight: 600;
     }
 
     .price-pix3x {
-      margin-top: 0.4rem;
-      font-size: 0.875rem;
+      margin-top: 0.3rem;
+      font-size: 0.85rem;
       color: var(--text-muted);
-    }
-
-    .price-pix3x strong {
-      color: var(--primary-color);
     }
 
     .price-total-installment {
       display: block;
       font-size: 0.75rem;
       color: var(--text-muted);
-      margin-top: 0.1rem;
     }
 
-    /* Botão WhatsApp */
-    .btn-whatsapp {
+    /* Botões de Ação no Card */
+    .card-actions {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .btn-add-cart {
+      flex: 1;
+      background-color: var(--primary-color);
+      color: #ffffff;
+      border: none;
+      padding: 0.7rem 0.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .btn-add-cart:hover {
+      background-color: #1e293b;
+    }
+
+    .btn-buy-direct {
+      background-color: var(--whatsapp-color);
+      color: #ffffff;
+      border: none;
+      padding: 0.7rem 0.8rem;
+      border-radius: 8px;
+      cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0.5rem;
-      background-color: var(--whatsapp-color);
-      color: #ffffff;
+      transition: background-color 0.2s;
       text-decoration: none;
-      font-weight: 700;
-      font-size: 0.9rem;
-      padding: 0.75rem;
-      border-radius: 8px;
-      transition: background-color 0.2s ease, transform 0.1s ease;
-      text-align: center;
-      border: none;
-      cursor: pointer;
-      width: 100%;
     }
 
-    .btn-whatsapp:hover {
+    .btn-buy-direct:hover {
       background-color: var(--whatsapp-hover);
     }
 
-    .btn-whatsapp:active {
-      transform: scale(0.98);
-    }
-
-    .btn-whatsapp svg {
+    .btn-buy-direct svg {
       width: 18px;
       height: 18px;
       fill: currentColor;
     }
 
-    /* Mensagem quando nenhum produto é encontrado */
+    /* Carrinho Flutuante */
+    .cart-floating-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: var(--accent-color);
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      padding: 0.85rem 1.4rem;
+      font-size: 0.95rem;
+      font-weight: 700;
+      box-shadow: 0 10px 25px rgba(5, 150, 105, 0.4);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      z-index: 99;
+      transition: transform 0.2s;
+    }
+
+    .cart-floating-btn:hover {
+      transform: scale(1.05);
+    }
+
+    .cart-badge {
+      background-color: #ffffff;
+      color: var(--accent-color);
+      border-radius: 50%;
+      width: 22px;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 800;
+    }
+
+    /* Modal do Carrinho */
+    .cart-modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 100;
+      display: none;
+      justify-content: flex-end;
+    }
+
+    .cart-modal-overlay.active {
+      display: flex;
+    }
+
+    .cart-drawer {
+      background: #ffffff;
+      width: 100%;
+      max-width: 420px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .cart-header {
+      padding: 1.25rem;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cart-header h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .close-cart {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--text-muted);
+    }
+
+    .cart-items {
+      flex: 1;
+      overflow-y: auto;
+      padding: 1.25rem;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 1rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .cart-item-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    .cart-item-price {
+      font-size: 0.85rem;
+      color: var(--accent-color);
+      font-weight: 700;
+    }
+
+    .cart-item-qty {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 0.4rem;
+    }
+
+    .qty-btn {
+      width: 24px;
+      height: 24px;
+      border-radius: 4px;
+      border: 1px solid var(--border-color);
+      background: #f1f5f9;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .cart-footer {
+      padding: 1.25rem;
+      border-top: 1px solid var(--border-color);
+      background: #f8fafc;
+    }
+
+    .cart-total-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    .cart-total-row.grand-total {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--primary-color);
+      margin-top: 0.5rem;
+      padding-top: 0.5rem;
+      border-top: 1px dashed var(--border-color);
+    }
+
+    .btn-checkout {
+      width: 100%;
+      background-color: var(--whatsapp-color);
+      color: #fff;
+      border: none;
+      padding: 0.85rem;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      transition: background-color 0.2s;
+    }
+
+    .btn-checkout:hover {
+      background-color: var(--whatsapp-hover);
+    }
+
+    /* Seção de FAQ */
+    .faq-section {
+      margin-top: 4rem;
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 2rem 1.5rem;
+    }
+
+    .faq-section h2 {
+      text-align: center;
+      font-size: 1.4rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .faq-item h3 {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+      color: var(--accent-color);
+    }
+
+    .faq-item p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Rodapé */
+    footer {
+      margin-top: 3rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-color);
+    }
+
     .no-results {
       grid-column: 1 / -1;
       text-align: center;
@@ -278,7 +594,7 @@
 
   <!-- Banner Promocional -->
   <div class="promo-banner">
-    ✨ Parcelamento facilitado em até <strong>3x no Pix</strong> | Envio para todo o Brasil
+    ✨ Parcelamento facilitado em até <strong>3x no Pix</strong> | Envio Seguro para todo o Brasil
   </div>
 
   <div class="container">
@@ -289,43 +605,126 @@
         <h1>Sua Perfumaria</h1>
       </div>
       <p class="subtitle">Catálogo Oficial de Perfumes Importados e Cosméticos</p>
+
+      <div class="social-links">
+        <a href="https://instagram.com" target="_blank" rel="noopener">📸 Instagram</a>
+        <a href="https://tiktok.com" target="_blank" rel="noopener">🎵 TikTok</a>
+        <a href="https://wa.me/5511982818590" target="_blank" rel="noopener">💬 WhatsApp Directo</a>
+      </div>
     </header>
 
-    <!-- Barra de Pesquisa e Filtros -->
-    <div class="controls-bar">
-      <div class="search-box">
-        <span class="search-icon">🔍</span>
-        <input type="text" id="search-input" placeholder="Buscar perfume ou marca...">
+    <!-- Barra de Confiança -->
+    <div class="trust-bar">
+      <div class="trust-item">
+        <span>🏆</span> 100% Originais
       </div>
-      <div class="filter-box">
-        <select id="category-filter">
-          <option value="todas">Todas as Categorias</option>
-          <!-- Categorias serão inseridas dinamicamente via JS -->
-        </select>
+      <div class="trust-item">
+        <span>📦</span> Envio com Rastreio
+      </div>
+      <div class="trust-item">
+        <span>⚡</span> Atendimento Rápido
       </div>
     </div>
 
+    <!-- Barra de Controles -->
+    <div class="controls-bar">
+      <div class="controls-inputs">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="search-input" placeholder="Buscar por perfume, marca ou notas...">
+        </div>
+        <div class="filter-box">
+          <select id="category-filter">
+            <option value="todas">Todas as Categorias</option>
+          </select>
+        </div>
+        <div class="sort-box">
+          <select id="sort-order">
+            <option value="default">Ordenar por: Padrão</option>
+            <option value="price-asc">Preço: Menor para Maior</option>
+            <option value="price-desc">Preço: Maior para Menor</option>
+            <option value="name-asc">Nome: A - Z</option>
+          </select>
+        </div>
+      </div>
+      <div class="results-counter" id="results-count">A carregar produtos...</div>
+    </div>
+
     <!-- Grid de Produtos -->
-    <div class="grid" id="catalog-grid">
-      <!-- Cards serão carregados via JavaScript -->
+    <div class="grid" id="catalog-grid"></div>
+
+    <!-- FAQ -->
+    <div class="faq-section">
+      <h2>Perguntas Frequentes</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3>Os perfumes são originais?</h3>
+          <p>Sim! Todos os nossos produtos são 100% originais, lacrados e adquiridos diretamente com fornecedores oficiais.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Como funciona o parcelamento no Pix?</h3>
+          <p>Facilitamos o seu pagamento em até 3x no Pix direto no atendimento sem complicações.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Qual o prazo de envio?</h3>
+          <p>Enviamos o seu pedido em até 24 horas úteis após a confirmação do pagamento com código de rastreamento.</p>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>© 2026 Sua Perfumaria - Todos os direitos reservados.</p>
+    </footer>
+  </div>
+
+  <!-- Botão Flutuante do Carrinho -->
+  <button class="cart-floating-btn" onclick="toggleCart()">
+    🛒 Ver Carrinho <span class="cart-badge" id="cart-count">0</span>
+  </button>
+
+  <!-- Modal/Drawer do Carrinho -->
+  <div class="cart-modal-overlay" id="cart-modal">
+    <div class="cart-drawer">
+      <div class="cart-header">
+        <h2>Seu Carrinho de Compras</h2>
+        <button class="close-cart" onclick="toggleCart()">&times;</button>
+      </div>
+
+      <div class="cart-items" id="cart-items-container">
+        <!-- Itens do carrinho serão inseridos aqui -->
+      </div>
+
+      <div class="cart-footer">
+        <div class="cart-total-row">
+          <span>À vista no Pix:</span>
+          <strong id="cart-total-pix">R$ 0,00</strong>
+        </div>
+        <div class="cart-total-row">
+          <span>Em 3x no Pix:</span>
+          <span id="cart-total-pix3x">R$ 0,00</span>
+        </div>
+        <div class="cart-total-row grand-total">
+          <span>Total Geral:</span>
+          <span id="cart-total-display">R$ 0,00</span>
+        </div>
+
+        <button class="btn-checkout" onclick="checkoutWhatsAppCart()">
+          Finalizar Pedido no WhatsApp
+        </button>
+      </div>
     </div>
   </div>
 
   <script>
-    // CONFIGURAÇÃO DO WHATSAPP DA LOJA
     const WHATSAPP_NUMBER = "5511982818590";
 
     let allProducts = [];
+    let cart = [];
 
-    // Formatador para Moeda Brasileira (R$)
-    const formatCurrency = (value) => {
-      return new Intl.NumberFormat('pt-BR', {
-        style: 'currency',
-        currency: 'BRL'
-      }).format(value);
+    const formatCurrency = (val) => {
+      return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(val);
     };
 
-    // Preencher as opções de categoria dinamicamente
     function populateCategories(products) {
       const categorySelect = document.getElementById('category-filter');
       const categories = [...new Set(products.map(p => p.categoria))].filter(Boolean).sort();
@@ -338,42 +737,52 @@
       });
     }
 
-    // Criar o link do WhatsApp pré-preenchido
-    function generateWhatsAppLink(product) {
+    function generateSingleWhatsAppLink(product) {
       const parcelValue = formatCurrency(product.precoPix3x / 3);
-      const totalNovo = formatCurrency(product.precoNovo);
-      const totalPix = formatCurrency(product.precoPix3x);
-
       const message = `Olá! Gostaria de encomendar o seguinte perfume:
 
 📌 *${product.nome}*
 🏷️ Categoria: ${product.categoria}
-💵 Preço à vista: ${totalNovo} no Pix
-💳 Ou em 3x de ${parcelValue} no Pix (Total: ${totalPix})
+💵 Preço à vista: ${formatCurrency(product.precoNovo)} no Pix
+💳 Ou 3x de ${parcelValue} no Pix (Total: ${formatCurrency(product.precoPix3x)})
 
 Ainda está disponível?`;
 
       return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
     }
 
-    // Renderizar os produtos no grid
     function renderCatalog(products) {
       const grid = document.getElementById('catalog-grid');
+      const counter = document.getElementById('results-count');
       grid.innerHTML = '';
 
+      counter.textContent = `A apresentar ${products.length} de ${allProducts.length} produtos`;
+
       if (products.length === 0) {
-        grid.innerHTML = '<div class="no-results">Nenhum produto encontrado com os filtros selecionados.</div>';
+        grid.innerHTML = '<div class="no-results">Nenhum produto encontrado.</div>';
         return;
       }
 
-      products.forEach(product => {
+      products.forEach((product, idx) => {
         const parcelValue = product.precoPix3x / 3;
-        const waLink = generateWhatsAppLink(product);
+        const singleWaLink = generateSingleWhatsAppLink(product);
+
+        // Imagem ou Placeholder
+        const imgHtml = product.imagem 
+          ? `<img src="${product.imagem}" alt="${product.nome}" loading="lazy">` 
+          : `<div class="product-img-placeholder">🧴</div>`;
+
+        // Badge de Destaque opcional
+        const badgeHtml = (idx % 7 === 0) ? `<div class="card-badge">Destaque</div>` : '';
 
         const card = document.createElement('div');
         card.className = 'card';
         card.innerHTML = `
+          ${badgeHtml}
           <div>
+            <div class="product-img-container">
+              ${imgHtml}
+            </div>
             <span class="category">${product.categoria}</span>
             <h2 class="title">${product.nome}</h2>
           </div>
@@ -381,54 +790,160 @@ Ainda está disponível?`;
             <div class="price-container">
               <div class="price-main">${formatCurrency(product.precoNovo)}</div>
               <div class="price-tag">à vista no Pix</div>
-              
               <div class="price-pix3x">
                 ou <strong>3x de ${formatCurrency(parcelValue)}</strong> no Pix
               </div>
               <span class="price-total-installment">(Total: ${formatCurrency(product.precoPix3x)})</span>
             </div>
 
-            <a href="${waLink}" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
-              <svg viewBox="0 0 24 24">
-                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-              </svg>
-              Comprar pelo WhatsApp
-            </a>
+            <div class="card-actions">
+              <button class="btn-add-cart" onclick="addToCart(${idx})">+ Carrinho</button>
+              <a href="${singleWaLink}" target="_blank" class="btn-buy-direct" title="Comprar Direto">
+                <svg viewBox="0 0 24 24">
+                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                </svg>
+              </a>
+            </div>
           </div>
         `;
         grid.appendChild(card);
       });
     }
 
-    // Filtrar produtos com base na busca e na categoria
-    function filterProducts() {
+    /* Lógica do Carrinho */
+    function addToCart(index) {
+      const product = allProducts[index];
+      const existingItem = cart.find(item => item.nome === product.nome);
+
+      if (existingItem) {
+        existingItem.qty += 1;
+      } else {
+        cart.push({ ...product, qty: 1 });
+      }
+
+      updateCartUI();
+      toggleCart(true);
+    }
+
+    function updateCartQty(index, delta) {
+      cart[index].qty += delta;
+      if (cart[index].qty <= 0) {
+        cart.splice(index, 1);
+      }
+      updateCartUI();
+    }
+
+    function updateCartUI() {
+      const container = document.getElementById('cart-items-container');
+      const countBadge = document.getElementById('cart-count');
+      container.innerHTML = '';
+
+      let totalCount = 0;
+      let totalPix = 0;
+      let totalPix3x = 0;
+
+      if (cart.length === 0) {
+        container.innerHTML = '<p style="text-align:center; color:#64748b; margin-top:2rem;">O seu carrinho está vazio.</p>';
+      } else {
+        cart.forEach((item, idx) => {
+          totalCount += item.qty;
+          totalPix += item.precoNovo * item.qty;
+          totalPix3x += item.precoPix3x * item.qty;
+
+          const itemEl = document.createElement('div');
+          itemEl.className = 'cart-item';
+          itemEl.innerHTML = `
+            <div>
+              <div class="cart-item-title">${item.nome}</div>
+              <div class="cart-item-price">${formatCurrency(item.precoNovo)} un.</div>
+              <div class="cart-item-qty">
+                <button class="qty-btn" onclick="updateCartQty(${idx}, -1)">-</button>
+                <span>${item.qty}</span>
+                <button class="qty-btn" onclick="updateCartQty(${idx}, 1)">+</button>
+              </div>
+            </div>
+            <strong>${formatCurrency(item.precoNovo * item.qty)}</strong>
+          `;
+          container.appendChild(itemEl);
+        });
+      }
+
+      countBadge.textContent = totalCount;
+      document.getElementById('cart-total-pix').textContent = formatCurrency(totalPix);
+      document.getElementById('cart-total-pix3x').textContent = formatCurrency(totalPix3x);
+      document.getElementById('cart-total-display').textContent = formatCurrency(totalPix);
+    }
+
+    function toggleCart(forceOpen = false) {
+      const modal = document.getElementById('cart-modal');
+      if (forceOpen) {
+        modal.classList.add('active');
+      } else {
+        modal.classList.toggle('active');
+      }
+    }
+
+    function checkoutWhatsAppCart() {
+      if (cart.length === 0) {
+        alert("Adicione pelo menos um produto ao carrinho antes de finalizar!");
+        return;
+      }
+
+      let message = "Olá! Gostaria de finalizar o pedido dos seguintes itens:\n\n🛒 *ITENS DO PEDIDO:*\n";
+      let totalPix = 0;
+      let totalPix3x = 0;
+
+      cart.forEach(item => {
+        const itemTotal = item.precoNovo * item.qty;
+        totalPix += itemTotal;
+        totalPix3x += item.precoPix3x * item.qty;
+        message += `• ${item.qty}x *${item.nome}* (${formatCurrency(itemTotal)})\n`;
+      });
+
+      const parcelValue = formatCurrency(totalPix3x / 3);
+
+      message += `\n💵 *Total à vista no Pix:* ${formatCurrency(totalPix)}`;
+      message += `\n💳 *Ou em 3x no Pix:* 3x de ${parcelValue} (Total: ${formatCurrency(totalPix3x)})\n\nComo posso proceder com o pagamento e o envio?`;
+
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
+    }
+
+    /* Filtragem e Ordenação */
+    function filterAndSortProducts() {
       const searchTerm = document.getElementById('search-input').value.toLowerCase().trim();
       const selectedCategory = document.getElementById('category-filter').value;
+      const sortOrder = document.getElementById('sort-order').value;
 
-      const filtered = allProducts.filter(product => {
-        const matchesSearch = product.nome.toLowerCase().includes(searchTerm) || 
-                              product.categoria.toLowerCase().includes(searchTerm);
-        const matchesCategory = selectedCategory === 'todas' || product.categoria === selectedCategory;
-
+      let filtered = allProducts.filter(p => {
+        const matchesSearch = p.nome.toLowerCase().includes(searchTerm) || p.categoria.toLowerCase().includes(searchTerm);
+        const matchesCategory = selectedCategory === 'todas' || p.categoria === selectedCategory;
         return matchesSearch && matchesCategory;
       });
+
+      if (sortOrder === 'price-asc') {
+        filtered.sort((a, b) => a.precoNovo - b.precoNovo);
+      } else if (sortOrder === 'price-desc') {
+        filtered.sort((a, b) => b.precoNovo - a.precoNovo);
+      } else if (sortOrder === 'name-asc') {
+        filtered.sort((a, b) => a.nome.localeCompare(b.nome));
+      }
 
       renderCatalog(filtered);
     }
 
-    // Event Listeners para Busca e Filtro
-    document.getElementById('search-input').addEventListener('input', filterProducts);
-    document.getElementById('category-filter').addEventListener('change', filterProducts);
+    document.getElementById('search-input').addEventListener('input', filterAndSortProducts);
+    document.getElementById('category-filter').addEventListener('change', filterAndSortProducts);
+    document.getElementById('sort-order').addEventListener('change', filterAndSortProducts);
 
-    // Carregar o arquivo JSON
+    /* Carregamento Inicial */
     fetch('catalogo_arredondado.json')
-      .then(response => response.json())
+      .then(res => res.json())
       .then(data => {
         allProducts = data;
         populateCategories(allProducts);
         renderCatalog(allProducts);
       })
-      .catch(error => console.error('Erro ao carregar o catálogo:', error));
+      .catch(err => console.error("Erro ao carregar o catálogo:", err));
   </script>
 
 </body>
