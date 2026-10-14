@@ -3,15 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vitrine de Produtos</title>
+  <title>Vitrina de Perfumes e Cosméticos</title>
   <style>
     :root {
-      --primary-color: #111827;
+      --primary-color: #0f172a;
       --accent-color: #059669;
-      --bg-color: #f9fafb;
+      --whatsapp-color: #25d366;
+      --whatsapp-hover: #1da851;
+      --bg-color: #f8fafc;
       --card-bg: #ffffff;
-      --text-muted: #6b7280;
-      --border-color: #e5e7eb;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
     }
 
     * {
@@ -24,25 +26,132 @@
     body {
       background-color: var(--bg-color);
       color: var(--primary-color);
-      padding: 2rem 1rem;
+      padding-bottom: 3rem;
+    }
+
+    /* Banner Promocional Topo */
+    .promo-banner {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #ffffff;
+      text-align: center;
+      padding: 0.6rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    .promo-banner strong {
+      color: #34d399;
     }
 
     .container {
       max-width: 1200px;
       margin: 0 auto;
+      padding: 0 1rem;
     }
 
+    /* Header e Marca */
     header {
-      margin-bottom: 2rem;
+      padding: 2rem 0 1.5rem;
       text-align: center;
     }
 
-    h1 {
-      font-size: 2rem;
-      font-weight: 700;
+    .logo-area {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
       margin-bottom: 0.5rem;
     }
 
+    .logo-icon {
+      width: 42px;
+      height: 42px;
+      background-color: var(--primary-color);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      font-weight: bold;
+    }
+
+    h1 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--primary-color);
+    }
+
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Barra de Controles (Busca e Filtro) */
+    .controls-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      background-color: var(--card-bg);
+      padding: 1rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    .search-box {
+      flex: 1;
+      min-width: 240px;
+      position: relative;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 0.75rem 1rem 0.75rem 2.5rem;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .search-box input:focus {
+      border-color: var(--accent-color);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 0.85rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+
+    .filter-box {
+      min-width: 200px;
+    }
+
+    .filter-box select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      background-color: #fff;
+      color: var(--primary-color);
+      outline: none;
+      cursor: pointer;
+    }
+
+    .filter-box select:focus {
+      border-color: var(--accent-color);
+    }
+
+    /* Grid de Produtos */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -62,17 +171,17 @@
 
     .card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.08);
     }
 
     .category {
       display: inline-block;
       font-size: 0.75rem;
-      font-weight: 600;
+      font-weight: 700;
       text-transform: uppercase;
       color: var(--accent-color);
       background-color: #ecfdf5;
-      padding: 0.25rem 0.5rem;
+      padding: 0.25rem 0.6rem;
       border-radius: 6px;
       margin-bottom: 0.75rem;
       width: fit-content;
@@ -89,6 +198,7 @@
     .price-container {
       border-top: 1px solid var(--border-color);
       padding-top: 0.75rem;
+      margin-bottom: 1rem;
     }
 
     .price-main {
@@ -119,21 +229,95 @@
       color: var(--text-muted);
       margin-top: 0.1rem;
     }
+
+    /* Botão WhatsApp */
+    .btn-whatsapp {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background-color: var(--whatsapp-color);
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 0.75rem;
+      border-radius: 8px;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+      text-align: center;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .btn-whatsapp:hover {
+      background-color: var(--whatsapp-hover);
+    }
+
+    .btn-whatsapp:active {
+      transform: scale(0.98);
+    }
+
+    .btn-whatsapp svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    /* Mensagem quando nenhum produto é encontrado */
+    .no-results {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 3rem 1rem;
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
   </style>
 </head>
 <body>
 
+  <!-- Banner Promocional -->
+  <div class="promo-banner">
+    ✨ Parcelamento facilitado em até <strong>3x no Pix</strong> | Envio para todo o Brasil
+  </div>
+
   <div class="container">
+    <!-- Header e Marca -->
     <header>
-      <h1>Catálogo de Produtos</h1>
+      <div class="logo-area">
+        <div class="logo-icon">✨</div>
+        <h1>Sua Perfumaria</h1>
+      </div>
+      <p class="subtitle">Catálogo Oficial de Perfumes Importados e Cosméticos</p>
     </header>
 
+    <!-- Barra de Pesquisa e Filtros -->
+    <div class="controls-bar">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="search-input" placeholder="Buscar perfume ou marca...">
+      </div>
+      <div class="filter-box">
+        <select id="category-filter">
+          <option value="todas">Todas as Categorias</option>
+          <!-- Categorias serão inseridas dinamicamente via JS -->
+        </select>
+      </div>
+    </div>
+
+    <!-- Grid de Produtos -->
     <div class="grid" id="catalog-grid">
-      <!-- Os cards serão inseridos aqui via JS -->
+      <!-- Cards serão carregados via JavaScript -->
     </div>
   </div>
 
   <script>
+    // CONFIGURAÇÃO DO WHATSAPP DA LOJA
+    // Altere este número para o seu WhatsApp (55 + DDD + Número)
+    const WHATSAPP_NUMBER = "5511999999999";
+
+    let allProducts = [];
+
     // Formatador para Moeda Brasileira (R$)
     const formatCurrency = (value) => {
       return new Intl.NumberFormat('pt-BR', {
@@ -142,39 +326,109 @@
       }).format(value);
     };
 
-    // Função para renderizar o catálogo
-    function renderCatalog(items) {
+    // Preencher as opções de categoria dinamicamente
+    function populateCategories(products) {
+      const categorySelect = document.getElementById('category-filter');
+      const categories = [...new Set(products.map(p => p.categoria))].filter(Boolean).sort();
+      
+      categories.forEach(cat => {
+        const option = document.createElement('option');
+        option.value = cat;
+        option.textContent = cat;
+        categorySelect.appendChild(option);
+      });
+    }
+
+    // Criar o link do WhatsApp pré-preenchido
+    function generateWhatsAppLink(product) {
+      const parcelValue = formatCurrency(product.precoPix3x / 3);
+      const totalNovo = formatCurrency(product.precoNovo);
+      const totalPix = formatCurrency(product.precoPix3x);
+
+      const message = `Olá! Gostaria de encomendar o seguinte perfume:
+
+📌 *${product.nome}*
+🏷️ Categoria: ${product.categoria}
+💵 Preço à vista: ${totalNovo} no Pix
+💳 Ou em 3x de ${parcelValue} no Pix (Total: ${totalPix})
+
+Ainda está disponível?`;
+
+      return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    }
+
+    // Renderizar os produtos no grid
+    function renderCatalog(products) {
       const grid = document.getElementById('catalog-grid');
       grid.innerHTML = '';
 
-      items.forEach(item => {
-        const parcelValue = item.precoPix3x / 3;
+      if (products.length === 0) {
+        grid.innerHTML = '<div class="no-results">Nenhum produto encontrado com os filtros selecionados.</div>';
+        return;
+      }
+
+      products.forEach(product => {
+        const parcelValue = product.precoPix3x / 3;
+        const waLink = generateWhatsAppLink(product);
 
         const card = document.createElement('div');
         card.className = 'card';
         card.innerHTML = `
           <div>
-            <span class="category">${item.categoria}</span>
-            <h2 class="title">${item.nome}</h2>
+            <span class="category">${product.categoria}</span>
+            <h2 class="title">${product.nome}</h2>
           </div>
-          <div class="price-container">
-            <div class="price-main">${formatCurrency(item.precoNovo)}</div>
-            <div class="price-tag">à vista no Pix</div>
-            
-            <div class="price-pix3x">
-              ou <strong>3x de ${formatCurrency(parcelValue)}</strong> no Pix
+          <div>
+            <div class="price-container">
+              <div class="price-main">${formatCurrency(product.precoNovo)}</div>
+              <div class="price-tag">à vista no Pix</div>
+              
+              <div class="price-pix3x">
+                ou <strong>3x de ${formatCurrency(parcelValue)}</strong> no Pix
+              </div>
+              <span class="price-total-installment">(Total: ${formatCurrency(product.precoPix3x)})</span>
             </div>
-            <span class="price-total-installment">(Total: ${formatCurrency(item.precoPix3x)})</span>
+
+            <a href="${waLink}" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+              <svg viewBox="0 0 24 24">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+              </svg>
+              Comprar pelo WhatsApp
+            </a>
           </div>
         `;
         grid.appendChild(card);
       });
     }
 
-    // Carregar os dados do arquivo JSON gerado
+    // Filtrar produtos com base na busca e na categoria
+    function filterProducts() {
+      const searchTerm = document.getElementById('search-input').value.toLowerCase().trim();
+      const selectedCategory = document.getElementById('category-filter').value;
+
+      const filtered = allProducts.filter(product => {
+        const matchesSearch = product.nome.toLowerCase().includes(searchTerm) || 
+                              product.categoria.toLowerCase().includes(searchTerm);
+        const matchesCategory = selectedCategory === 'todas' || product.categoria === selectedCategory;
+
+        return matchesSearch && matchesCategory;
+      });
+
+      renderCatalog(filtered);
+    }
+
+    // Event Listeners para Busca e Filtro
+    document.getElementById('search-input').addEventListener('input', filterProducts);
+    document.getElementById('category-filter').addEventListener('change', filterProducts);
+
+    // Carregar o arquivo JSON
     fetch('catalogo_arredondado.json')
       .then(response => response.json())
-      .then(data => renderCatalog(data))
+      .then(data => {
+        allProducts = data;
+        populateCategories(allProducts);
+        renderCatalog(allProducts);
+      })
       .catch(error => console.error('Erro ao carregar o catálogo:', error));
   </script>
 
