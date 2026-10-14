@@ -240,6 +240,11 @@
       padding: 0.2rem 0.5rem;
       border-radius: 4px;
       text-transform: uppercase;
+      z-index: 10;
+    }
+
+    .clickable-area {
+      cursor: pointer;
     }
 
     .product-img-container {
@@ -252,6 +257,11 @@
       justify-content: center;
       margin-bottom: 1rem;
       overflow: hidden;
+      transition: opacity 0.2s;
+    }
+
+    .clickable-area:hover .product-img-container {
+      opacity: 0.9;
     }
 
     .product-img-container img {
@@ -284,6 +294,11 @@
       line-height: 1.4;
       margin-bottom: 0.75rem;
       min-height: 2.8rem;
+      transition: color 0.2s;
+    }
+    
+    .clickable-area:hover .title {
+      color: var(--accent-color);
     }
 
     .price-container {
@@ -401,8 +416,8 @@
       font-weight: 800;
     }
 
-    /* Modal do Carrinho */
-    .cart-modal-overlay {
+    /* Modal do Carrinho & Modal de Detalhes */
+    .modal-overlay {
       position: fixed;
       top: 0;
       left: 0;
@@ -410,12 +425,15 @@
       height: 100%;
       background: rgba(15, 23, 42, 0.6);
       backdrop-filter: blur(4px);
-      z-index: 100;
+      z-index: 1000;
       display: none;
-      justify-content: flex-end;
     }
 
-    .cart-modal-overlay.active {
+    /* Especificidade para o Carrinho */
+    #cart-modal {
+      justify-content: flex-end;
+    }
+    #cart-modal.active {
       display: flex;
     }
 
@@ -427,6 +445,12 @@
       display: flex;
       flex-direction: column;
       box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
+      animation: slideIn 0.3s forwards;
+    }
+
+    @keyframes slideIn {
+      from { transform: translateX(100%); }
+      to { transform: translateX(0); }
     }
 
     .cart-header {
@@ -442,12 +466,13 @@
       font-weight: 700;
     }
 
-    .close-cart {
+    .close-btn-modal {
       background: none;
       border: none;
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       cursor: pointer;
       color: var(--text-muted);
+      line-height: 1;
     }
 
     .cart-items {
@@ -536,6 +561,111 @@
 
     .btn-checkout:hover {
       background-color: var(--whatsapp-hover);
+    }
+
+    /* Modal de Detalhes do Produto */
+    #details-modal {
+      justify-content: center;
+      align-items: center;
+    }
+
+    .details-modal-content {
+      background-color: #fff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 450px;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      animation: popIn 0.3s ease;
+    }
+
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .details-modal-content .close-btn-modal {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      z-index: 2;
+    }
+
+    .modal-img-wrapper {
+      width: 100%;
+      height: 220px;
+      background-color: #f1f5f9;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      overflow: hidden;
+    }
+
+    .modal-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .details-modal-content h3 {
+      font-size: 1.3rem;
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+      padding-right: 2rem; /* espaço pro botão de fechar */
+    }
+
+    .modal-price-area {
+      margin-bottom: 1rem;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 1rem;
+    }
+
+    .modal-price-main {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--primary-color);
+    }
+
+    .composicao-box {
+      background: var(--accent-light);
+      padding: 1rem;
+      border-radius: 8px;
+      margin: 1rem 0;
+      font-size: 0.95rem;
+      color: #334155;
+      text-align: left;
+      line-height: 1.5;
+    }
+
+    .composicao-box strong {
+      color: var(--accent-color);
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .btn-modal-add {
+      width: 100%;
+      background-color: var(--primary-color);
+      color: white;
+      text-align: center;
+      padding: 0.85rem;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 1rem;
+      transition: background-color 0.2s;
+    }
+
+    .btn-modal-add:hover {
+      background-color: #1e293b;
     }
 
     /* Seção de FAQ */
@@ -683,11 +813,11 @@
   </button>
 
   <!-- Modal/Drawer do Carrinho -->
-  <div class="cart-modal-overlay" id="cart-modal">
+  <div class="modal-overlay" id="cart-modal">
     <div class="cart-drawer">
       <div class="cart-header">
         <h2>Seu Carrinho de Compras</h2>
-        <button class="close-cart" onclick="toggleCart()">&times;</button>
+        <button class="close-btn-modal" onclick="toggleCart()">&times;</button>
       </div>
 
       <div class="cart-items" id="cart-items-container">
@@ -715,11 +845,36 @@
     </div>
   </div>
 
+  <!-- Modal de Detalhes / Composição do Produto -->
+  <div class="modal-overlay" id="details-modal">
+    <div class="details-modal-content">
+      <button class="close-btn-modal" onclick="fecharModalDetalhes()">&times;</button>
+      
+      <div class="modal-img-wrapper" id="modal-details-img">
+        <!-- Imagem injetada via JS -->
+      </div>
+      
+      <h3 id="modal-details-nome">Nome do Produto</h3>
+      
+      <div class="modal-price-area">
+        <div class="modal-price-main" id="modal-details-preco">R$ 0,00</div>
+        <div class="price-pix3x" id="modal-details-parcela">ou 3x no Pix</div>
+      </div>
+
+      <div class="composicao-box">
+        <strong>Composição / Notas:</strong>
+        <p id="modal-details-composicao" style="white-space: pre-line; margin: 0;"></p>
+      </div>
+
+      <button class="btn-modal-add" id="modal-btn-add-cart">Adicionar ao Carrinho</button>
+    </div>
+  </div>
+
   <script>
   const WHATSAPP_NUMBER = "5511982818590";
 
   let allProducts = [];
-  let currentDisplayedProducts = []; // Guarda os produtos na ordem que aparecem na tela
+  let currentDisplayedProducts = []; 
   let cart = [];
 
   const formatCurrency = (val) => {
@@ -753,7 +908,7 @@ Ainda está disponível?`;
   }
 
   function renderCatalog(products) {
-    currentDisplayedProducts = products; // Atualiza a lista exibida atualmente
+    currentDisplayedProducts = products; 
     const grid = document.getElementById('catalog-grid');
     const counter = document.getElementById('results-count');
     grid.innerHTML = '';
@@ -777,9 +932,11 @@ Ainda está disponível?`;
 
       const card = document.createElement('div');
       card.className = 'card';
+      
+      // Adicionamos a classe 'clickable-area' e o evento onclick na parte superior do card
       card.innerHTML = `
         ${badgeHtml}
-        <div>
+        <div class="clickable-area" onclick="abrirModalDetalhes(${idx})" title="Ver Detalhes e Composição">
           <div class="product-img-container">
             ${imgHtml}
           </div>
@@ -810,9 +967,59 @@ Ainda está disponível?`;
     });
   }
 
+  /* Lógica do Novo Modal de Detalhes */
+  function abrirModalDetalhes(index) {
+    const product = currentDisplayedProducts[index];
+    const parcelValue = product.precoPix3x / 3;
+
+    // Preenchendo os dados do modal
+    document.getElementById('modal-details-nome').innerText = product.nome;
+    document.getElementById('modal-details-preco').innerText = formatCurrency(product.precoNovo);
+    document.getElementById('modal-details-parcela').innerHTML = `ou <strong>3x de ${formatCurrency(parcelValue)}</strong> no Pix`;
+
+    // Lógica para as notas/composição do perfume
+    // Ele tenta ler product.composicao ou product.descricao. Se não tiver no JSON, mostra um texto padrão.
+    const textoComposicao = product.composicao || product.descricao || "A composição detalhada desta fragrância não foi informada, mas garantimos uma experiência olfativa incrível!";
+    document.getElementById('modal-details-composicao').innerText = textoComposicao;
+
+    // Imagem
+    const imgWrapper = document.getElementById('modal-details-img');
+    if(product.imagem) {
+      imgWrapper.innerHTML = `<img src="${product.imagem}" alt="${product.nome}">`;
+    } else {
+      imgWrapper.innerHTML = `<div class="product-img-placeholder">🧴</div>`;
+    }
+
+    // Configura o botão "Adicionar ao Carrinho" do Modal
+    const btnAdd = document.getElementById('modal-btn-add-cart');
+    btnAdd.onclick = function() {
+      addToCart(index);
+      fecharModalDetalhes();
+    };
+
+    // Abre a janela flutuante
+    document.getElementById('details-modal').style.display = 'flex';
+  }
+
+  function fecharModalDetalhes() {
+    document.getElementById('details-modal').style.display = 'none';
+  }
+
+  // Fechar os modais se clicar fora da caixa branca
+  window.onclick = function(event) {
+    const detailsModal = document.getElementById('details-modal');
+    const cartModal = document.getElementById('cart-modal');
+    if (event.target == detailsModal) {
+      detailsModal.style.display = 'none';
+    }
+    // Para o carrinho fechar clicando fora da gaveta
+    if (event.target == cartModal) {
+      toggleCart(false);
+    }
+  }
+
   /* Lógica do Carrinho */
   function addToCart(index) {
-    // Pega o produto da lista que está visível no momento (ordenada/filtrada)
     const product = currentDisplayedProducts[index];
     const existingItem = cart.find(item => item.nome === product.nome);
 
@@ -823,7 +1030,7 @@ Ainda está disponível?`;
     }
 
     updateCartUI();
-    toggleCart(true);
+    toggleCart(true); // Abre a gaveta lateral do carrinho
   }
 
   function updateCartQty(index, delta) {
@@ -875,10 +1082,12 @@ Ainda está disponível?`;
     document.getElementById('cart-total-display').textContent = formatCurrency(totalPix);
   }
 
-  function toggleCart(forceOpen = false) {
+  function toggleCart(forceOpen = null) {
     const modal = document.getElementById('cart-modal');
-    if (forceOpen) {
+    if (forceOpen === true) {
       modal.classList.add('active');
+    } else if (forceOpen === false) {
+      modal.classList.remove('active');
     } else {
       modal.classList.toggle('active');
     }
@@ -945,4 +1154,6 @@ Ainda está disponível?`;
       renderCatalog(allProducts);
     })
     .catch(err => console.error("Erro ao carregar o catálogo:", err));
-</script>
+  </script>
+</body>
+</html>
