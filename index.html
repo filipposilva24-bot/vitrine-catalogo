@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vitrina de Perfumes e Cosméticos</title>
+  <title>Sillage Perfumes | Catálogo Oficial</title>
   <style>
     :root {
       --primary-color: #0f172a;
@@ -65,19 +65,19 @@
     }
 
     .logo-icon {
-      width: 46px;
-      height: 46px;
+      width: 48px;
+      height: 48px;
       background-color: var(--primary-color);
-      color: #fff;
+      color: #34d399;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.35rem;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
     }
 
     h1 {
-      font-size: 2rem;
+      font-size: 2.1rem;
       font-weight: 800;
       letter-spacing: -0.5px;
       color: var(--primary-color);
@@ -99,7 +99,7 @@
     .social-links a {
       color: var(--accent-color);
       background-color: var(--accent-light);
-      padding: 0.4rem 1rem;
+      padding: 0.45rem 1.2rem;
       border-radius: 20px;
       text-decoration: none;
       font-size: 0.875rem;
@@ -441,7 +441,6 @@
       display: none;
     }
 
-    /* Especificidade para o Carrinho */
     #cart-modal {
       justify-content: flex-end;
     }
@@ -742,10 +741,19 @@
     <!-- Header e Marca -->
     <header>
       <div class="logo-area">
-        <div class="logo-icon">✨</div>
+        <div class="logo-icon" title="Sillage Perfumes">
+          <!-- Ícone SVG de Frasco de Perfume Minimalista -->
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 3h6v3H9z"/>
+            <path d="M10 6v2"/>
+            <path d="M14 6v2"/>
+            <rect x="5" y="8" width="14" height="13" rx="3"/>
+            <path d="M12 12l.8 1.6 1.7.2-1.2 1.2.3 1.7-1.6-.8-1.6.8.3-1.7-1.2-1.2 1.7-.2z" fill="currentColor"/>
+          </svg>
+        </div>
         <h1>Sillage Perfumes</h1>
       </div>
-      <p class="subtitle">Catálogo Oficial de Perfumes Importados e Cosméticos</p>
+      <p class="subtitle">Catálogo Oficial de Perfumes Importados e Fragrâncias Exclusivas</p>
 
       <div class="social-links">
         <a href="https://wa.me/5511982818590" target="_blank" rel="noopener">💬 Atendimento via WhatsApp</a>
@@ -939,7 +947,7 @@ Ainda está disponível?`;
     if (products.length === 0) {
       const searchTerm = document.getElementById('search-input').value.trim();
       const queryText = searchTerm ? `o item "${searchTerm}"` : "este produto";
-      const messageAvailability = `Olá! Estava a pesquisar no catálogo por ${queryText} e não encontrei. Gostaria de verificar a disponibilidade ou encomenda!`;
+      const messageAvailability = `Olá! Estava a pesquisar no catálogo da Sillage Perfumes por ${queryText} e não encontrei. Gostaria de verificar a disponibilidade ou encomenda!`;
       const waAvailabilityUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(messageAvailability)}`;
 
       grid.innerHTML = `
@@ -1218,7 +1226,7 @@ Ainda está disponível?`;
       return;
     }
 
-    let message = "Olá! Gostaria de finalizar o pedido dos seguintes itens:\n\n🛒 *ITENS DO PEDIDO:*\n";
+    let message = "Olá! Gostaria de finalizar o pedido dos seguintes itens na Sillage Perfumes:\n\n🛒 *ITENS DO PEDIDO:*\n";
     let totalPix = 0;
 
     cart.forEach(item => {
