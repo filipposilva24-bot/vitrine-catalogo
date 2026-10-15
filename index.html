@@ -836,9 +836,20 @@
           <span>Total à vista (Pix):</span>
           <span id="cart-total-display">R$ 0,00</span>
         </div>
-        <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.35rem; text-align: center;">
-          💳 Opção de parcelamento em até 12x no Cartão disponível.
-        </p>
+
+        <!-- Botão para ver simulação do parcelamento do total -->
+        <button id="btn-cart-installments" class="btn-view-installments" onclick="toggleCartInstallments()" style="margin: 0.5rem auto; display: flex; justify-content: center; width: 100%;">
+          💳 Ver parcelamento em até 12x no cartão
+        </button>
+
+        <!-- Caixa de Simulação expansível do Total do Carrinho -->
+        <div id="cart-installments-box" style="display: none; margin-top: 0.5rem; border: 1px solid var(--border-color); border-radius: 8px; padding: 0.75rem; background: #fff;">
+          <strong style="font-size: 0.85rem; color: var(--primary-color); display: block; margin-bottom: 0.5rem; text-align: center;">
+            Simulação de Parcelamento do Total (InfinitePay)
+          </strong>
+          <div id="cart-installments-table" style="max-height: 150px; overflow-y: auto; font-size: 0.8rem;"></div>
+        </div>
+
         <button class="btn-checkout" onclick="checkoutWhatsAppCart()">
           Finalizar Pedido no WhatsApp
         </button>
@@ -997,18 +1008,18 @@ Ainda está disponível?`;
     // Taxas da InfinitePay
     const taxasInfinitePay = {
       1: 3.15,
-      2: 5.39,
-      3: 6.12,
-      4: 6.85,
-      5: 7.57,
-      6: 8.28,
-      7: 8.99,
-      8: 9.69,
-      9: 10.38,
-      10: 11.06,
-      11: 11.74,
-      12: 12.40
-    };
+      2: 5.39,
+      3: 6.12,
+      4: 6.85,
+      5: 7.57,
+      6: 8.28,
+      7: 8.99,
+      8: 9.69,
+      9: 10.38,
+      10: 11.06,
+      11: 11.74,
+      12: 12.40
+    };
 
     let htmlTabela = `<table style="width:100%; border-collapse:collapse; text-align:left;">`;
     
@@ -1091,6 +1102,8 @@ Ainda está disponível?`;
   function updateCartUI() {
     const container = document.getElementById('cart-items-container');
     const countBadge = document.getElementById('cart-count');
+    const installmentsBtn = document.getElementById('btn-cart-installments');
+    const installmentsBox = document.getElementById('cart-installments-box');
     container.innerHTML = '';
 
     let totalCount = 0;
@@ -1098,7 +1111,10 @@ Ainda está disponível?`;
 
     if (cart.length === 0) {
       container.innerHTML = '<p style="text-align:center; color:#64748b; margin-top:2rem;">O seu carrinho está vazio.</p>';
+      if (installmentsBtn) installmentsBtn.style.display = 'none';
+      if (installmentsBox) installmentsBox.style.display = 'none';
     } else {
+      if (installmentsBtn) installmentsBtn.style.display = 'flex';
       cart.forEach((item, idx) => {
         totalCount += item.qty;
         totalPix += item.precoNovo * item.qty;
@@ -1119,10 +1135,51 @@ Ainda está disponível?`;
         `;
         container.appendChild(itemEl);
       });
+
+      // Calcula a simulação de parcelamento para o Total do Carrinho com as taxas atualizadas
+      const taxasInfinitePay = {
+        1: 3.15,
+        2: 5.39,
+        3: 6.12,
+        4: 6.85,
+        5: 7.57,
+        6: 8.28,
+        7: 8.99,
+        8: 9.69,
+        9: 10.38,
+        10: 11.06,
+        11: 11.74,
+        12: 12.40
+      };
+
+      let htmlTabela = `<table style="width:100%; border-collapse:collapse; text-align:left;">`;
+      for (let i = 1; i <= 12; i++) {
+        const taxa = taxasInfinitePay[i] || 0;
+        const valorTotalComJuros = totalPix / (1 - (taxa / 100));
+        const valorParcela = valorTotalComJuros / i;
+
+        htmlTabela += `
+          <tr style="border-bottom: 1px solid #f1f5f9; height: 26px;">
+            <td style="color: #475569;"><strong>${i}x</strong> de ${formatCurrency(valorParcela)}</td>
+            <td style="text-align: right; color: #64748b;">(Total: ${formatCurrency(valorTotalComJuros)})</td>
+          </tr>
+        `;
+      }
+      htmlTabela += `</table>`;
+      document.getElementById('cart-installments-table').innerHTML = htmlTabela;
     }
 
     countBadge.textContent = totalCount;
     document.getElementById('cart-total-display').textContent = formatCurrency(totalPix);
+  }
+
+  function toggleCartInstallments() {
+    const box = document.getElementById('cart-installments-box');
+    if (box.style.display === 'none' || box.style.display === '') {
+      box.style.display = 'block';
+    } else {
+      box.style.display = 'none';
+    }
   }
 
   function toggleCart(forceOpen = null) {
