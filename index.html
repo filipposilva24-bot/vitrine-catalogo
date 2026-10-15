@@ -978,8 +978,18 @@ Ainda está disponível?`;
     document.getElementById('modal-details-parcela').innerHTML = `ou <strong>3x de ${formatCurrency(parcelValue)}</strong> no Pix`;
 
     // Lógica para as notas/composição do perfume
-    // Ele tenta ler product.composicao ou product.descricao. Se não tiver no JSON, mostra um texto padrão.
-    const textoComposicao = product.composicao || product.descricao || "A composição detalhada desta fragrância não foi informada, mas garantimos uma experiência olfativa incrível!";
+    let textoComposicao = "";
+
+    // Verifica se existem notas olfativas no JSON e adiciona ao texto
+    if (product.notas_olfativas) {
+      textoComposicao += `Topo: ${product.notas_olfativas.topo || '-'}\n`;
+      textoComposicao += `Coração: ${product.notas_olfativas.coracao || '-'}\n`;
+      textoComposicao += `Fundo: ${product.notas_olfativas.fundo || '-'}\n\n`;
+    }
+
+    // Adiciona a descrição ou composição geral abaixo das notas
+    textoComposicao += product.descricao || product.composicao || "A composição detalhada desta fragrância não foi informada, mas garantimos uma experiência olfativa incrível!";
+    
     document.getElementById('modal-details-composicao').innerText = textoComposicao;
 
     // Imagem
