@@ -12,7 +12,7 @@
       --whatsapp-color: #25d366;
       --whatsapp-hover: #1da851;
       --bg-color: #f8fafc;
-      --card-bg: #ffffff;
+      --card-bg: rgba(255, 255, 255, 0.92); /* Leve transparência para destacar o fundo */
       --text-muted: #64748b;
       --border-color: #e2e8f0;
     }
@@ -28,17 +28,39 @@
       background-color: var(--bg-color);
       color: var(--primary-color);
       padding-bottom: 5rem;
+      position: relative;
+    }
+
+    /* LOGO FIXO NO FUNDO (Marca d'água estática ao rolar) */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 450px;
+      max-width: 85vw;
+      height: 450px;
+      max-height: 85vh;
+      background-image: url('logo.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      opacity: 0.12; /* Ajuste a opacidade para ficar mais suave ou visível */
+      pointer-events: none;
+      z-index: 0;
     }
 
     /* Banner Promocional Topo */
     .promo-banner {
-      background: #080d18;
+      background: var(--primary-color);
       color: #ffffff;
       text-align: center;
       padding: 0.6rem 1rem;
       font-size: 0.875rem;
       font-weight: 500;
-      border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+      position: relative;
+      z-index: 2;
     }
 
     .promo-banner strong {
@@ -49,44 +71,36 @@
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 1rem;
+      position: relative;
+      z-index: 1;
     }
 
-    /* Header e Marca - Estilo Escuro Premium */
+    /* Header Limpo e Compacto */
     header {
-      background: linear-gradient(180deg, #0d1527 0%, #152038 100%);
-      padding: 2.5rem 1rem 2rem;
+      padding: 2rem 1rem 1rem;
       text-align: center;
-      border-bottom: 1px solid #1e293b;
-      margin-bottom: 2rem;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      background: transparent;
     }
 
-    .logo-area {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-    }
-
-    .logo-img {
-      max-width: 200px;
+    .logo-header-compact {
+      max-width: 130px;
       height: auto;
-      border-radius: 16px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-      border: 1px solid rgba(197, 160, 89, 0.3);
-      transition: transform 0.3s ease;
+      margin-bottom: 0.5rem;
+      filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.15));
     }
 
-    .logo-img:hover {
-      transform: scale(1.02);
+    h1 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: var(--primary-color);
     }
 
     .subtitle {
-      color: #94a3b8;
+      color: var(--text-muted);
       font-size: 0.95rem;
-      margin-top: 0.75rem;
-      margin-bottom: 1.25rem;
+      margin-top: 0.25rem;
+      margin-bottom: 1rem;
     }
 
     .social-links {
@@ -96,8 +110,8 @@
     }
 
     .social-links a {
-      color: #c5a059;
-      background-color: rgba(197, 160, 89, 0.1);
+      color: #b48a3c;
+      background-color: #ffffff;
       padding: 0.5rem 1.25rem;
       border-radius: 20px;
       text-decoration: none;
@@ -107,12 +121,14 @@
       align-items: center;
       gap: 0.4rem;
       transition: all 0.2s;
-      border: 1px solid rgba(197, 160, 89, 0.3);
+      border: 1px solid var(--border-color);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
     }
 
     .social-links a:hover {
-      background-color: #c5a059;
-      color: #0d1527;
+      background-color: var(--whatsapp-color);
+      color: #ffffff;
+      border-color: var(--whatsapp-color);
     }
 
     /* Barra de Confiança */
@@ -120,7 +136,8 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 1rem;
-      background: #ffffff;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(8px);
       border: 1px solid var(--border-color);
       border-radius: 12px;
       padding: 1rem;
@@ -144,7 +161,8 @@
 
     /* Controles (Busca, Filtro, Ordenação) */
     .controls-bar {
-      background-color: var(--card-bg);
+      background-color: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(8px);
       padding: 1.25rem;
       border-radius: 12px;
       border: 1px solid var(--border-color);
@@ -171,6 +189,7 @@
       border-radius: 8px;
       font-size: 0.95rem;
       outline: none;
+      background: #ffffff;
     }
 
     .search-box input:focus {
@@ -218,6 +237,7 @@
 
     .card {
       background-color: var(--card-bg);
+      backdrop-filter: blur(8px);
       border: 1px solid var(--border-color);
       border-radius: 12px;
       padding: 1.25rem;
@@ -681,7 +701,8 @@
     /* Seção de FAQ */
     .faq-section {
       margin-top: 4rem;
-      background: #ffffff;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(8px);
       border: 1px solid var(--border-color);
       border-radius: 12px;
       padding: 2rem 1.5rem;
@@ -731,27 +752,23 @@
 </head>
 <body>
 
-  <!-- Banner Promocional -->
+  <!-- Banner Promocional Topo -->
   <div class="promo-banner">
     ✨ Pagamento Facilitado no <strong>Pix à vista</strong> ou <strong>Cartão em até 12x</strong> | Envio Seguro para todo o Brasil
   </div>
 
-  <!-- Header Escuro Premium com a Imagem do Logo Integrada -->
-  <header>
-    <div class="container">
-      <div class="logo-area">
-        <!-- Guarde a imagem gerada na mesma pasta com o nome logo.png ou logo.jpg -->
-        <img src="logo.png" alt="Sillage Perfumes" class="logo-img">
-      </div>
+  <div class="container">
+    <!-- Header Limpo e Elegante -->
+    <header>
+      <img src="logo.png" alt="Sillage Perfumes" class="logo-header-compact">
+      <h1>Sillage Perfumes</h1>
       <p class="subtitle">Catálogo Oficial de Perfumes Importados e Fragrâncias Exclusivas</p>
 
       <div class="social-links">
         <a href="https://wa.me/5511982818590" target="_blank" rel="noopener">💬 Atendimento via WhatsApp</a>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <div class="container">
     <!-- Barra de Confiança -->
     <div class="trust-bar">
       <div class="trust-item">
