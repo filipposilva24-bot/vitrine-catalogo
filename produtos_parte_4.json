@@ -5,7 +5,13 @@
     "precoOriginal": 390.0,
     "precoNovo": 430,
     "precoPix3x": 474,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_4deea7ea-47c4-493f-bb8b-b0f6ec4db005.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_4deea7ea-47c4-493f-bb8b-b0f6ec4db005.jpg?alt=media",
+    "descricao": "Fresco, limpo e revigorante. Inspirado na cumplicidade entre pai e filho, transmite uma sensação metálica e aquática super elegante.",
+    "notas_olfativas": {
+      "topo": "Limão, Alecrim, Bergamota, Neroli, Abacaxi",
+      "coracao": "Jasmim, Coentro, Ciclamen, Musgo de Carvalho",
+      "fundo": "Almíscar, Cedro, Musgo de Carvalho, Sândalo, Fava Tonka"
+    }
   },
   {
     "nome": "Azzaro The Most Wanted - Parfum -100ml",
@@ -13,7 +19,13 @@
     "precoOriginal": 765.0,
     "precoNovo": 842,
     "precoPix3x": 927,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_128ED3A9-171F-42B8-9878-ABBF51D0C573.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_128ED3A9-171F-42B8-9878-ABBF51D0C573.jpg?alt=media",
+    "descricao": "Intenso, fougère especiado e magnético. Uma verdadeira arma de conquista noturna com notas quentes de gengibre e uma base licorosa viciante.",
+    "notas_olfativas": {
+      "topo": "Gengibre",
+      "coracao": "Acorde de Notas Especiadas e Amadeiradas",
+      "fundo": "Baunilha Bourbon"
+    }
   },
   {
     "nome": "Azzaro Wanted - EDT - 100ml",
@@ -21,7 +33,13 @@
     "precoOriginal": 450.0,
     "precoNovo": 496,
     "precoPix3x": 546,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_d43f70eb-bd79-4a85-9ad1-79a154331427.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_d43f70eb-bd79-4a85-9ad1-79a154331427.jpg?alt=media",
+    "descricao": "Para o homem que quer tudo e ousa consegui-lo. Um amadeirado especiado vibrante com notas cítricas e um fundo quente de fava tonka e vetiver.",
+    "notas_olfativas": {
+      "topo": "Limão, Gengibre, Lavanda, Hortelã",
+      "coracao": "Maçã, Junípero, Cardamomo da Guatemala, Gerânio",
+      "fundo": "Fava Tonka, Madeira de Âmbar, Vetiver do Haiti"
+    }
   },
   {
     "nome": "Bad Boy - EDP - 100ml",
@@ -29,7 +47,13 @@
     "precoOriginal": 600.0,
     "precoNovo": 660,
     "precoPix3x": 727,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_a9e09799-3edb-4f1a-9262-5466a5d79fb4.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_a9e09799-3edb-4f1a-9262-5466a5d79fb4.jpg?alt=media",
+    "descricao": "Uma reinterpretação mais rica e intensa do raio Bad Boy. Notas de cânhamo e couro conferem um perfil arrojado, misterioso e altamente magnético.",
+    "notas_olfativas": {
+      "topo": "Toranja, Cânhamo",
+      "coracao": "Pimenta Preta, Gerânio",
+      "fundo": "Couro, Vetiver"
+    }
   },
   {
     "nome": "Bad Boy - EDT - 100ml",
@@ -37,7 +61,13 @@
     "precoOriginal": 570.0,
     "precoNovo": 627,
     "precoPix3x": 690,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_407bbc07-52b0-48be-af8a-f93cee9bb291.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_407bbc07-52b0-48be-af8a-f93cee9bb291.jpg?alt=media",
+    "descricao": "Complexo e sofisticado, inspirado no homem rebelde e multifacetado. O contraste ousado da pimenta preta com a fava cacao cria uma assinatura marcante.",
+    "notas_olfativas": {
+      "topo": "Pimenta Branca, Pimenta Preta, Bergamota",
+      "coracao": "Sálvia, Cedro",
+      "fundo": "Fava Tonka, Cacau, Madeira de Âmbar"
+    }
   },
   {
     "nome": "Black XS - EDT - 100ml",
@@ -45,7 +75,13 @@
     "precoOriginal": 510.0,
     "precoNovo": 561,
     "precoPix3x": 618,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_6d3ab08c-fd33-419e-8c5f-964361f3e1f3.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_6d3ab08c-fd33-419e-8c5f-964361f3e1f3.jpg?alt=media",
+    "descricao": "Rock and roll engarrafado. Um amadeirado especiado doce, sensual e irreverente, perfeito para noites agitadas e baladas.",
+    "notas_olfativas": {
+      "topo": "Limão Siciliano, Sálvia",
+      "coracao": "Palinha, Canela, Bálsamo de Tolu, Cardamomo Preto",
+      "fundo": "Árvore de Pera, Patchouli, Madeira preta, Âmbar"
+    }
   },
   {
     "nome": "Bleu Chanel - EDP - 100ml",
@@ -53,7 +89,13 @@
     "precoOriginal": 1060.0,
     "precoNovo": 1166,
     "precoPix3x": 1283,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_37f0f032-ecfc-4be7-946c-508d359473d7.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_37f0f032-ecfc-4be7-946c-508d359473d7.jpg?alt=media",
+    "descricao": "O epítome da elegância masculina moderna. Um aromático amadeirado profundo e luxuoso, com uma fixação extraordinária e presença inconfundível.",
+    "notas_olfativas": {
+      "topo": "Toranja, Limão, Hortelã, Pimenta Rosa, Bergamota, Aldeídos, Coentro",
+      "coracao": "Gengibre, Noz-moscada, Jasmim, Melão",
+      "fundo": "Incensos, Âmbar, Cedro, Sândalo, Patchouli, Ládano, Madeira de Âmbar"
+    }
   },
   {
     "nome": "Bleu Chanel - EDT - 100ml",
@@ -61,7 +103,13 @@
     "precoOriginal": 870.0,
     "precoNovo": 958,
     "precoPix3x": 1054,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_e8418639-6e5d-49a6-a63d-1d7a69e102d4.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_e8418639-6e5d-49a6-a63d-1d7a69e102d4.jpg?alt=media",
+    "descricao": "A versão original icónica, limpa, vibrante e revigorante. O perfume azul definitivo para o homem determinado e livre.",
+    "notas_olfativas": {
+      "topo": "Limão, Bergamota, Hortelã, Pimenta Rosa",
+      "coracao": "Gengibre, Noz-moscada, Jasmim, Iso E Super",
+      "fundo": "Incensos, Vetiver, Cedro, Sândalo, Patchouli, Ládano, Almíscar Branco"
+    }
   },
   {
     "nome": "Boss Bottled Hugo Boss Parfum - 100ml",
@@ -69,7 +117,13 @@
     "precoOriginal": 489.0,
     "precoNovo": 538,
     "precoPix3x": 592,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_37D9AE07-F918-40D9-AEEE-A90E11A924A1.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_37D9AE07-F918-40D9-AEEE-A90E11A924A1.jpg?alt=media",
+    "descricao": "Elevado ao patamar de Parfum, oferece uma concentração rica de notas nobres amadeiradas e irisadas, que exalam sucesso e autoconfiança.",
+    "notas_olfativas": {
+      "topo": "Mandarina, Incenso",
+      "coracao": "Raiz de Orris, Figo",
+      "fundo": "Madeira de Cedro, Couro Vegetal"
+    }
   },
   {
     "nome": "Boss Bottled Tonic Hugo Boss Eau de Toilette - 100ml",
@@ -77,7 +131,13 @@
     "precoOriginal": 447.0,
     "precoNovo": 492,
     "precoPix3x": 542,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_A6D37A0E-CA7A-4E44-9BA4-9A869E99D2A8.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_A6D37A0E-CA7A-4E44-9BA4-9A869E99D2A8.jpg?alt=media",
+    "descricao": "Uma interpretação fresca e leve do icônico Boss Bottled. Traz um toque cítrico revigorante ideal para o homem que busca clareza e foco no quotidiano.",
+    "notas_olfativas": {
+      "topo": "Toranja, Pomelo, Limão, Maçã",
+      "coracao": "Gengibre, Canela, Cravo-da-Índia, Gerânio",
+      "fundo": "Vetiver"
+    }
   },
   {
     "nome": "Boss Bottled Triumph Elixir Parfum Intense - 100ml",
@@ -85,7 +145,13 @@
     "precoOriginal": 588.0,
     "precoNovo": 647,
     "precoPix3x": 712,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_11D283FF-CA25-4FB7-8AF8-E6A2C4A0BCAE.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_11D283FF-CA25-4FB7-8AF8-E6A2C4A0BCAE.jpg?alt=media",
+    "descricao": "Criado para celebrar a vitória. Um elixir poderoso e denso que combina madeiras escuras com um coração magnético e inesquecível.",
+    "notas_olfativas": {
+      "topo": "Folha de Violeta",
+      "coracao": "Essência de Patchouli",
+      "fundo": "Vetiver, Âmbar"
+    }
   },
   {
     "nome": "Bvlgari Man in Black - EDP - 100ml",
@@ -93,7 +159,13 @@
     "precoOriginal": 795.0,
     "precoNovo": 875,
     "precoPix3x": 963,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_c43777f5-1a87-4a31-bcd9-98bbea0aed67.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_c43777f5-1a87-4a31-bcd9-98bbea0aed67.jpg?alt=media",
+    "descricao": "Uma fragrância carismática e neo-oriental inspirada no deus romano do fogo. Notas intensas de tabaco, especiarias e couro escuro.",
+    "notas_olfativas": {
+      "topo": "Tabaco, Especiarias, Rum",
+      "coracao": "Couro, Tuberosa, Íris",
+      "fundo": "Fava Tonka, Madeira de Guaiac, Benjoim"
+    }
   },
   {
     "nome": "CH Men - EDT - 100ml",
@@ -101,7 +173,13 @@
     "precoOriginal": 558.0,
     "precoNovo": 614,
     "precoPix3x": 676,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_040ab674-ef18-43c6-b34f-1b988e80721d.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_040ab674-ef18-43c6-b34f-1b988e80721d.jpg?alt=media",
+    "descricao": "A elegância casual em sua forma mais pura. Couro, madeira e um toque doce de açúcar queimado criam uma aura acolhedoramente sofisticada.",
+    "notas_olfativas": {
+      "topo": "Grama, Bergamota, Toranja",
+      "coracao": "Madeiras, Noz-moscada, Violeta, Açafrão, Jasmim",
+      "fundo": "Açúcar, Couro, Camurça, Baunilha, Cashmeran, Sândalo, Musgo de Carvalho, Âmbar"
+    }
   },
   {
     "nome": "CK Be - EDT - 200ml",
@@ -109,7 +187,13 @@
     "precoOriginal": 258.0,
     "precoNovo": 284,
     "precoPix3x": 313,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_e0e57c0e-2f3c-4759-b3f1-e5e6b35a8a09.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_e0e57c0e-2f3c-4759-b3f1-e5e6b35a8a09.jpg?alt=media",
+    "descricao": "O icônico unissexo musk fresco, intimista e limpo. Convida a fechar os olhos, abrir a mente e ser único.",
+    "notas_olfativas": {
+      "topo": "Lavanda, Notas Verdes, Hortelã, Mandarina, Zimbro, Bergamota",
+      "coracao": "Pêssego, Magnólia, Orquídea, Frésia, Jasmim, Grama",
+      "fundo": "Almíscar, Sândalo, Cedro, Baunilha, Opoponax, Âmbar"
+    }
   },
   {
     "nome": "CK One - EDT - 200ml",
@@ -117,7 +201,13 @@
     "precoOriginal": 318.0,
     "precoNovo": 350,
     "precoPix3x": 386,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_ce40eafd-3cc5-4621-bb45-d458d7242247.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_ce40eafd-3cc5-4621-bb45-d458d7242247.jpg?alt=media",
+    "descricao": "O perfume revolucionário que quebrou barreiras. Cítrico, limpo e universal, combina chá verde com notas cristalinas.",
+    "notas_olfativas": {
+      "topo": "Limão, Notas Verdes, Bergamota, Abacaxi, Mandarina, Cardamomo, Papai",
+      "coracao": "Lírio-do-Vale, Jasmim, Violeta, Noz-moscada, Rosa, Raiz de Orris, Frésia",
+      "fundo": "Almíscar, Cedro, Sândalo, Musgo de Carvalho, Chá Verde, Âmbar"
+    }
   },
   {
     "nome": "Dolce & Gabbana K - EDT - 100ml",
@@ -125,7 +215,13 @@
     "precoOriginal": 561.0,
     "precoNovo": 618,
     "precoPix3x": 680,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_fc827ab3-e493-4539-b0f9-e55246aa834d.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_fc827ab3-e493-4539-b0f9-e55246aa834d.jpg?alt=media",
+    "descricao": "Para o rei do seu próprio quotidiano. Um amadeirado aromático carismático que une citrinos italianos vibrantes com pimentão ardente e madeiras nobres.",
+    "notas_olfativas": {
+      "topo": "Zimbro, Cítricos, Laranja Sanguínea, Limão Siciliano",
+      "coracao": "Pimentão, Lavanda, Sálvia, Gerânio",
+      "fundo": "Vetiver, Cedro, Patchouli"
+    }
   },
   {
     "nome": "Dolce & Gabbana Pour Homme - EDT - 125ml",
@@ -133,7 +229,13 @@
     "precoOriginal": 459.0,
     "precoNovo": 505,
     "precoPix3x": 556,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_459a1be0-6fb4-4fac-9d1c-ab34dde54a1b.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_459a1be0-6fb4-4fac-9d1c-ab34dde54a1b.jpg?alt=media",
+    "descricao": "Um clássico absoluto da perfumaria italiana que define a elegância e o instinto masculino. Fougère aromático com notas de lavanda fresca e tabaco quente.",
+    "notas_olfativas": {
+      "topo": "Citrinos, Laranja, Lavanda, Mandarina, Bergamota, Limão",
+      "coracao": "Sálvia, Pimenta, Lavanda, Estragão, Coentro",
+      "fundo": "Tabaco, Cedro, Almíscar, Fava Tonka, Sândalo"
+    }
   },
   {
     "nome": "Dolce & Gabbana Pour Homme - EDT - 200ml",
@@ -141,7 +243,13 @@
     "precoOriginal": 531.0,
     "precoNovo": 585,
     "precoPix3x": 644,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_459a1be0-6fb4-4fac-9d1c-ab34dde54a1b.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_459a1be0-6fb4-4fac-9d1c-ab34dde54a1b.jpg?alt=media",
+    "descricao": "Um clássico absoluto da perfumaria italiana que define a elegância e o instinto masculino. Fougère aromático com notas de lavanda fresca e tabaco quente.",
+    "notas_olfativas": {
+      "topo": "Citrinos, Laranja, Lavanda, Mandarina, Bergamota, Limão",
+      "coracao": "Sálvia, Pimenta, Lavanda, Estragão, Coentro",
+      "fundo": "Tabaco, Cedro, Almíscar, Fava Tonka, Sândalo"
+    }
   },
   {
     "nome": "Ferrari Black - EDT - 100ml",
@@ -149,7 +257,13 @@
     "precoOriginal": 198.0,
     "precoNovo": 218,
     "precoPix3x": 240,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_f17e6be0-c39b-4fe9-b87c-5f12b4eacd00.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_f17e6be0-c39b-4fe9-b87c-5f12b4eacd00.jpg?alt=media",
+    "descricao": "Marcante, enigmático e altamente popular. Um fougère aromático versátil com toques frutados e fundo de baunilha e almíscar, excelente para qualquer ocasião.",
+    "notas_olfativas": {
+      "topo": "Lima, Bergamota, Maçã Vermelha, Ameixa",
+      "coracao": "Canela, Jasmim, Cardamomo, Rosa",
+      "fundo": "Âmbar, Baunilha, Almíscar, Cedro"
+    }
   },
   {
     "nome": "Hugo Boss Bottled - EDP - 100ml",
@@ -157,7 +271,13 @@
     "precoOriginal": 480.0,
     "precoNovo": 528,
     "precoPix3x": 581,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_30260605-2af5-41cf-9a0b-6fc9b3846969.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_30260605-2af5-41cf-9a0b-6fc9b3846969.jpg?alt=media",
+    "descricao": "A versão Eau de Parfum do icónico Boss Bottled traz uma sofisticação amadeirada especiada refinada, desenhada para homens ambiciosos e determinados.",
+    "notas_olfativas": {
+      "topo": "Maçã, Bergamota, Pimenta Preta",
+      "coracao": "Castanha, Canela, Cardamomo",
+      "fundo": "Almíscar, Vetiver"
+    }
   },
   {
     "nome": "Hugo Boss Bottled - EDT - 100ml",
@@ -165,7 +285,13 @@
     "precoOriginal": 450.0,
     "precoNovo": 496,
     "precoPix3x": 546,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_a409e103-1710-45c5-9bdc-70fd70bd60fe.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_a409e103-1710-45c5-9bdc-70fd70bd60fe.jpg?alt=media",
+    "descricao": "O perfume da elegância contemporânea. Conhecido mundialmente pela sua frescura frutada inicial que assenta numa base amadeirada e quente inconfundível.",
+    "notas_olfativas": {
+      "topo": "Ameixa, Maçã, Musgo de Carvalho, Limão, Bergamota, Gerânio",
+      "coracao": "Mogno, Cravo-da-Índia, Canela",
+      "fundo": "Sândalo, Baunilha, Cedro, Vetiver, Oliveira"
+    }
   },
   {
     "nome": "Hugo Boss Bottled Night - EDT - 100ml",
@@ -173,7 +299,13 @@
     "precoOriginal": 399.0,
     "precoNovo": 439,
     "precoPix3x": 483,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_e3ae70fa-fd9c-4239-bb0c-c57a99dc7830.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_e3ae70fa-fd9c-4239-bb0c-c57a99dc7830.jpg?alt=media",
+    "descricao": "A arma secreta de sedução para a noite. Uma fragrância aromática amadeirada intensa que exala magnetismo, mistério e masculinidade moderna.",
+    "notas_olfativas": {
+      "topo": "Lavanda, Bétula",
+      "coracao": "Violeta Africana",
+      "fundo": "Madeiras Preciosas, Almíscar"
+    }
   },
   {
     "nome": "Invictus - EDT - 100ml",
@@ -181,7 +313,13 @@
     "precoOriginal": 468.0,
     "precoNovo": 515,
     "precoPix3x": 567,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_C146CBC4-9AF8-42DD-80AC-3127EC163E57.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_C146CBC4-9AF8-42DD-80AC-3127EC163E57.jpg?alt=media",
+    "descricao": "O perfume dos campeões. Uma frescura marinha vibrante fundida com uma sensualidade amadeirada intensa, criando o aroma definitivo de vitória.",
+    "notas_olfativas": {
+      "topo": "Notas Marinhas, Toranja, Mandarina",
+      "coracao": "Folha de Louro, Jasmim",
+      "fundo": "Âmbar Cinzento, Guaiac, Patchouli, Musgo de Carvalho"
+    }
   },
   {
     "nome": "Invictus Parfum – 100ml",
@@ -189,7 +327,13 @@
     "precoOriginal": 615.0,
     "precoNovo": 677,
     "precoPix3x": 745,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_F28B4578-CDEF-483B-A52B-DC1FC31C62D6.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_F28B4578-CDEF-483B-A52B-DC1FC31C62D6.jpg?alt=media",
+    "descricao": "Poder heroico amplificado ao extremo. Uma composição rica em lavanda aromática e saboneteira misturada com uma base profundamente masculina e amadeirada.",
+    "notas_olfativas": {
+      "topo": "Notas Marinhas, Lavanda",
+      "coracao": "Saboneteira, Folha de Louro",
+      "fundo": "Cashmeran, Âmbar"
+    }
   },
   {
     "nome": "Invictus Victory - EDP - 100ml",
@@ -197,7 +341,13 @@
     "precoOriginal": 585.0,
     "precoNovo": 644,
     "precoPix3x": 709,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_C24B309B-B347-4432-AF20-4B3E4A9B524D.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_C24B309B-B347-4432-AF20-4B3E4A9B524D.jpg?alt=media",
+    "descricao": "Um duelo de frescura e intensidade oriental. A pimenta rosa choca contra a fava tonka e a baunilha, resultando num perfume eletrizante e magnético.",
+    "notas_olfativas": {
+      "topo": "Pimenta Rosa, Limão",
+      "coracao": "Olibano, Lavanda",
+      "fundo": "Baunilha, Fava Tonka, Âmbar"
+    }
   },
   {
     "nome": "Invictus Victory Elixir - EDP - 100ml",
@@ -205,7 +355,13 @@
     "precoOriginal": 630.0,
     "precoNovo": 693,
     "precoPix3x": 763,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_F7764C0A-025B-47C5-84E3-764B690C76FC.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_F7764C0A-025B-47C5-84E3-764B690C76FC.jpg?alt=media",
+    "descricao": "A busca definitiva pela glória. Rico em âmbar, madeiras e notas licorosas de fava tonka, é uma bomba de fixação projetada para o homem vitorioso.",
+    "notas_olfativas": {
+      "topo": "Lavanda, Pimenta Preta, Cardamomo",
+      "coracao": "Incenso, Patchouli",
+      "fundo": "Baunilha de Madagascar, Fava Tonka"
+    }
   },
   {
     "nome": "Jean Paul Le Beau - EDT - 125ml",
@@ -213,7 +369,13 @@
     "precoOriginal": 570.0,
     "precoNovo": 627,
     "precoPix3x": 690,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_747D68B7-12CD-4C70-80A1-9815A88077AF.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_747D68B7-12CD-4C70-80A1-9815A88077AF.jpg?alt=media",
+    "descricao": "Inspirado no jardim do Éden. Um perfume amadeirado fresco e sedutor, dominado pela nota frutada de coco unida ao frescor verde e à fava tonka.",
+    "notas_olfativas": {
+      "topo": "Bergamota",
+      "coracao": "Notas de Coco",
+      "fundo": "Fava Tonka"
+    }
   },
   {
     "nome": "Jean Paul Le Male - EDT - 125ml",
@@ -221,7 +383,13 @@
     "precoOriginal": 540.0,
     "precoNovo": 594,
     "precoPix3x": 654,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_074bcae0-6c34-4367-9574-658e6071ebce.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_074bcae0-6c34-4367-9574-658e6071ebce.jpg?alt=media",
+    "descricao": "O lendário marinheiro de Jean Paul Gaultier. Uma fragrância inconfundível, fresca e sexy, que combina a mentba com a baunilha e a lavanda reconfortante.",
+    "notas_olfativas": {
+      "topo": "Artemísia, Lavanda, Menta, Bergamota, Cardamomo",
+      "coracao": "Alcaravia, Flor de Laranjeira, Canela",
+      "fundo": "Sândalo, Tonka, Âmbar, Baunilha, Cedro"
+    }
   },
   {
     "nome": "Jean Paul Le Male ELIXIR Parfum - 125ml",
@@ -229,7 +397,13 @@
     "precoOriginal": 639.0,
     "precoNovo": 703,
     "precoPix3x": 774,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_7A4A0C1B-8EB1-415A-8773-BBA26208B07D.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_7A4A0C1B-8EB1-415A-8773-BBA26208B07D.jpg?alt=media",
+    "descricao": "Um elixir escaldante e magnético que queima de sensualidade. Notas densas de tabaco e mel se misturam com a frescura da lavanda, gerando um rastro viciante.",
+    "notas_olfativas": {
+      "topo": "Lavanda, Hortelã",
+      "coracao": "Benjoim, Acorde de Mel",
+      "fundo": "Tabaco, Fava Tonka, Fructus"
+    }
   },
   {
     "nome": "Jean Paul Le Male Le Parfum - EDP - 125ml",
@@ -237,7 +411,13 @@
     "precoOriginal": 570.0,
     "precoNovo": 627,
     "precoPix3x": 690,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_40c940a4-ed4a-4f73-93c3-7a235c5e14b0.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_40c940a4-ed4a-4f73-93c3-7a235c5e14b0.jpg?alt=media",
+    "descricao": "O comandante elegante e assertivo. Um oriental amadeirado requintado que aposta no cardamomo e na íris para um resultado de extremo bom gosto.",
+    "notas_olfativas": {
+      "topo": "Cardamomo",
+      "coracao": "Lavanda, Íris",
+      "fundo": "Baunilha, Notas Orientais, Madeiras"
+    }
   },
   {
     "nome": "L'eau D' Issey Miyake - EDT - 125ml",
@@ -245,7 +425,13 @@
     "precoOriginal": 420.0,
     "precoNovo": 463,
     "precoPix3x": 510,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_6617e35d-447b-4946-a9bd-46d541c76a31.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_6617e35d-447b-4946-a9bd-46d541c76a31.jpg?alt=media",
+    "descricao": "Uma força da natureza em forma de perfume. O clássico amadeirado aquático que combina notas cítricas raras de yuzu com especiarias e madeiras profundas.",
+    "notas_olfativas": {
+      "topo": "Yuzu, Limão, Bergamota, Látua, Cipreste, Coentro",
+      "coracao": "Noz-moscada, Lírio Azul, Canela, Açafrão, Gerânio",
+      "fundo": "Sândalo, Vetiver, Cedro, Tabaco, Almíscar, Âmbar"
+    }
   },
   {
     "nome": "Million Gold Elixir Rabanne Parfum Intense – 100ml",
@@ -253,7 +439,13 @@
     "precoOriginal": 660.0,
     "precoNovo": 727,
     "precoPix3x": 800,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_BA8E50A7-2793-4977-96EE-94B7FA68D8A5.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_BA8E50A7-2793-4977-96EE-94B7FA68D8A5.jpg?alt=media",
+    "descricao": "O ouro em estado puro e intenso. Um perfume de luxo absoluto que combina madeiras nobres e especiarias refinadas para o homem que brilha sem esforço.",
+    "notas_olfativas": {
+      "topo": "Especiarias Finas",
+      "coracao": "Madeiras Raras",
+      "fundo": "Âmbar Dourado, Couro Suave"
+    }
   },
   {
     "nome": "Million Gold Rabanne EDP -100ml",
@@ -261,7 +453,13 @@
     "precoOriginal": 630.0,
     "precoNovo": 693,
     "precoPix3x": 763,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_37C7FD36-9698-4EF8-B978-FE817A875F56.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_37C7FD36-9698-4EF8-B978-FE817A875F56.jpg?alt=media",
+    "descricao": "Uma fragrância opulenta, fresca e amadeirada. Celebra o sucesso absoluto com uma assinatura reluzente e marcante na pele.",
+    "notas_olfativas": {
+      "topo": "Citrinos Brilhantes, Cardamomo",
+      "coracao": "Cedro, Notas Amadeiradas",
+      "fundo": "Couro, Sândalo"
+    }
   },
   {
     "nome": "Montblanc Explorer - EDP - 100ml",
@@ -269,7 +467,13 @@
     "precoOriginal": 450.0,
     "precoNovo": 496,
     "precoPix3x": 546,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_4d0b559d-cca3-4fc2-a45e-4c394e030383.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_4d0b559d-cca3-4fc2-a45e-4c394e030383.jpg?alt=media",
+    "descricao": "Um convite à aventura e à descoberta pelos quatro cantos do mundo. Amadeirado aromático com bergamota italiana e vetiver refinado.",
+    "notas_olfativas": {
+      "topo": "Bergamota, Pimenta Rosa, Sálvia Esclareia",
+      "coracao": "Vetiver do Haiti, Couro",
+      "fundo": "Ambroxan, Folha de Patchouli da Indonésia, Cacau, Akigalawood"
+    }
   },
   {
     "nome": "Montblanc Individuel - EDT - 75ml",
@@ -277,7 +481,13 @@
     "precoOriginal": 270.0,
     "precoNovo": 297,
     "precoPix3x": 327,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_cc097edf-4251-4ba7-bb0a-5396408a06d8.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_cc097edf-4251-4ba7-bb0a-5396408a06d8.jpg?alt=media",
+    "descricao": "Elegante, limpo e misterioso. Um oriental amadeirado repleto de notas frutadas e florais subtis com um fundo adocicado e confortável.",
+    "notas_olfativas": {
+      "topo": "Lavanda, Canela, Abacaxi, Bagas de Zimbro, Hortelã, Bergamota",
+      "coracao": "Flor de Laranjeira, Violeta, Jasmim, Gerânio",
+      "fundo": "Framboesa, Baunilha, Sândalo, Almíscar, Chocolate Amargo"
+    }
   },
   {
     "nome": "Montblanc Legend - EDP - 100ml",
@@ -285,7 +495,13 @@
     "precoOriginal": 480.0,
     "precoNovo": 528,
     "precoPix3x": 581,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_8b0115e0-79c5-43bd-8a53-45fb9e179dbe.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_8b0115e0-79c5-43bd-8a53-45fb9e179dbe.jpg?alt=media",
+    "descricao": "A intensidade magnética da versão Eau de Parfum. Mais profunda e amadeirada, feita para o homem carismático, autêntico e apaixonado.",
+    "notas_olfativas": {
+      "topo": "Bergamota, Folhas de Violeta",
+      "coracao": "Jasmim, Notas Amadeiradas, Magnólia",
+      "fundo": "Couro, Musgo de Carvalho"
+    }
   },
   {
     "nome": "Montblanc Legend - EDT - 100ml",
@@ -293,7 +509,13 @@
     "precoOriginal": 429.0,
     "precoNovo": 472,
     "precoPix3x": 520,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_8a6e092e-b512-42fc-ae5f-d4c642238370.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_8a6e092e-b512-42fc-ae5f-d4c642238370.jpg?alt=media",
+    "descricao": "Um clássico moderno inconfundível. Aromático fougère que exala subtileza, frescura e masculinidade intemporal, perfeito para qualquer ambiente.",
+    "notas_olfativas": {
+      "topo": "Lavanda, Abacaxi, Bergamota, Láciosa",
+      "coracao": "Maçã Vermelha, Frutos Secos, Musgo de Carvalho, Gerânio",
+      "fundo": "Fava Tonka, Sândalo"
+    }
   },
   {
     "nome": "Montblanc Legend Spirit - EDT - 100ml",
@@ -301,7 +523,13 @@
     "precoOriginal": 405.0,
     "precoNovo": 446,
     "precoPix3x": 491,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_b52d5ca8-33a2-4f1d-93b5-5f74f8a34bc3.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_b52d5ca8-33a2-4f1d-93b5-5f74f8a34bc3.jpg?alt=media",
+    "descricao": "Uma versão fresca, casual e magnética. Notas cítricas arejadas encontram uma base amadeirada limpa, evocando liberdade e elegância descontraída.",
+    "notas_olfativas": {
+      "topo": "Toranja, Bergamota, Pimenta Rosa",
+      "coracao": "Notas Aquáticas, Lavanda, Cardamomo",
+      "fundo": "Almíscar Branco, Madeira de Caxemira, Cedro, Musgo de Carvalho"
+    }
   },
   {
     "nome": "Montblanc Presence - EDT - 75ml",
@@ -309,7 +537,13 @@
     "precoOriginal": 270.0,
     "precoNovo": 297,
     "precoPix3x": 327,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_854510db-24fc-4f15-a14e-e91bdabc12ec.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_854510db-24fc-4f15-a14e-e91bdabc12ec.jpg?alt=media",
+    "descricao": "Oriental especiado marcante e acolhedor. Deixa uma presença magnética e sofisticada na pele graças ao seu coração quente de gengibre e canela.",
+    "notas_olfativas": {
+      "topo": "Canela, Cardamomo, Bergamota, Gengibre",
+      "coracao": "Maçã, Sálvia, Heliotrópio",
+      "fundo": "Teca, Sândalo, Âmbar, Almíscar, Fava Tonka"
+    }
   },
   {
     "nome": "One Million - EDT - 100ml",
@@ -317,7 +551,13 @@
     "precoOriginal": 498.0,
     "precoNovo": 548,
     "precoPix3x": 603,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_0B786C56-DB41-4199-8ADC-AF955DE17F94.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_0B786C56-DB41-4199-8ADC-AF955DE17F94.jpg?alt=media",
+    "descricao": "O famoso lingote de ouro da perfumaria. Um amadeirado especiado provocante e opulento que mistura notas cítricas frescas com couro e âmbar quente.",
+    "notas_olfativas": {
+      "topo": "Hortelã Pimenta, Mandarina Sanguínea, Toranja",
+      "coracao": "Absoluto de Rosa, Canela, Especiarias",
+      "fundo": "Couro Absoluto, Patchouli da Indonésia, Âmbar, Madeira Branca"
+    }
   },
   {
     "nome": "One Million Elixir Parfum Intense - 100ml",
@@ -325,7 +565,13 @@
     "precoOriginal": 609.0,
     "precoNovo": 670,
     "precoPix3x": 738,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_691FECB9-0C2F-4FD0-ADD7-DDB3158A29A5.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_691FECB9-0C2F-4FD0-ADD7-DDB3158A29A5.jpg?alt=media",
+    "descricao": "A intensidade máxima do One Million. Enriquecido com davana, rosa damascena e uma baunilha licorosa escandalosamente duradoura.",
+    "notas_olfativas": {
+      "topo": "Artemísia, Maçã",
+      "coracao": "Rosa Damascena, Osmanthus, Cedro",
+      "fundo": "Baunilha Absoluta, Fava Tonka, Patchouli"
+    }
   },
   {
     "nome": "One Million PARFUM - 100ml",
@@ -333,7 +579,13 @@
     "precoOriginal": 618.0,
     "precoNovo": 680,
     "precoPix3x": 749,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_AE3EF6A7-B286-4477-BBEE-3754C4F6F60A.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_AE3EF6A7-B286-4477-BBEE-3754C4F6F60A.jpg?alt=media",
+    "descricao": "Luxuoso, solar e poderoso. Um aroma de couro com nuances salgadas e florais quentes que exala uma aura de riqueza e distinção.",
+    "notas_olfativas": {
+      "topo": "Tuberosa, Notas Salgadas",
+      "coracao": "Couro, Cashmeran, Ládano, Óleo de Monoi",
+      "fundo": "Spinifex, Âmbar Cinzento, Pinho"
+    }
   },
   {
     "nome": "One Million Royal Parfum - 100ml",
@@ -341,7 +593,13 @@
     "precoOriginal": 579.0,
     "precoNovo": 637,
     "precoPix3x": 701,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_5DDAA23D-87CE-43C8-A2BD-2DDB997BB4B6.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_5DDAA23D-87CE-43C8-A2BD-2DDB997BB4B6.jpg?alt=media",
+    "descricao": "Reinado absoluto. Uma mistura fresca e audaciosa de lavanda com um fundo quente e amadeirado de cedro e benjoim para verdadeiros reis.",
+    "notas_olfativas": {
+      "topo": "Mandarina, Bergamota, Cardamomo",
+      "coracao": "Lavanda, Sálvia, Folha de Violeta",
+      "fundo": "Benjoim, Cedro, Patchouli"
+    }
   },
   {
     "nome": "Phantom - EDT - 100ml",
@@ -349,7 +607,13 @@
     "precoOriginal": 534.0,
     "precoNovo": 588,
     "precoPix3x": 647,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_648BE489-EB78-4618-9E50-8E1DCA65CA05.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_648BE489-EB78-4618-9E50-8E1DCA65CA05.jpg?alt=media",
+    "descricao": "O perfume futurista conectado. Um aromático amadeirado cremoso com notas de lavanda cremosa, limão enérgico e baunilha viciante.",
+    "notas_olfativas": {
+      "topo": "Lavanda, Zest de Limão, Limão de Amalfi",
+      "coracao": "Lavanda, Acorde Metálico, Patchouli, Maçã, Flor de Laranjeira",
+      "fundo": "Baunilha Cremosa, Vetiver, Almíscar"
+    }
   },
   {
     "nome": "Phantom - Parfum - 100ml",
@@ -357,7 +621,13 @@
     "precoOriginal": 594.0,
     "precoNovo": 654,
     "precoPix3x": 720,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_D0359959-E38A-4AE8-9928-D805B5A50BB5.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_D0359959-E38A-4AE8-9928-D805B5A50BB5.jpg?alt=media",
+    "descricao": "A versão Parfum eleva o mistério e a ousadia com uma fusão intensa de lavanda escura, baunilha sensual e vetiver magnético.",
+    "notas_olfativas": {
+      "topo": "Rhubarb, Limão",
+      "coracao": "Lavanda, Óleo de Patchouli",
+      "fundo": "Baunilha do Madagascar, Vetiver, Cedro"
+    }
   },
   {
     "nome": "Polo Black - EDT - 125ml",
@@ -365,7 +635,13 @@
     "precoOriginal": 618.0,
     "precoNovo": 680,
     "precoPix3x": 749,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_8fb7a498-0378-44cc-86b1-db6107b97544.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_8fb7a498-0378-44cc-86b1-db6107b97544.jpg?alt=media",
+    "descricao": "Moderno, arrojado e misterioso. Uma fragrância amadeirada aromática que combina a doçura tropical da manga com o toque escuro do patchouli.",
+    "notas_olfativas": {
+      "topo": "Manga, Mandarina, Limão",
+      "coracao": "Artemísia, Sálvia, Tangor",
+      "fundo": "Sândalo, Tonka, Patchouli, Madeira de Âmbar"
+    }
   },
   {
     "nome": "Polo Blue - EDT - 125ml",
@@ -373,7 +649,13 @@
     "precoOriginal": 618.0,
     "precoNovo": 680,
     "precoPix3x": 749,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_e364423e-0716-49a3-b84c-8b41293790dd.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_e364423e-0716-49a3-b84c-8b41293790dd.jpg?alt=media",
+    "descricao": "A liberdade de um céu azul grande e a energia das águas abertas. Um fougère aquático fresco e enérgico para homens dinâmicos.",
+    "notas_olfativas": {
+      "topo": "Melão, Mandarina, Pepino",
+      "coracao": "Manjericão, Sálvia, Gerânio",
+      "fundo": "Almíscar, Notas Amadeiradas, Camurça"
+    }
   },
   {
     "nome": "Polo Verde - EDT - 125ml",
@@ -381,7 +663,13 @@
     "precoOriginal": 618.0,
     "precoNovo": 680,
     "precoPix3x": 749,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_fb033f58-3d74-4a13-84b5-52a138e7d162.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_fb033f58-3d74-4a13-84b5-52a138e7d162.jpg?alt=media",
+    "descricao": "O clássico tradicional e imponente de Ralph Lauren. Um chipre amadeirado verde, vigoroso e terroso, símbolo de prestígio e masculinidade.",
+    "notas_olfativas": {
+      "topo": "Artemísia, Manjericão, Tomilho, Coentro, Cravinho, Bergamota",
+      "coracao": "Agulhas de Pinho, Couro, Camomila, Pimenta, Jasmim, Rosa, Gerânio",
+      "fundo": "Musgo de Carvalho, Vetiver, Patchouli, Cedro, Tabaco, Âmbar, Almíscar"
+    }
   },
   {
     "nome": "Pure XS - EDT - 100ml",
@@ -389,7 +677,13 @@
     "precoOriginal": 480.0,
     "precoNovo": 528,
     "precoPix3x": 581,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_f62caca2-d415-4bc3-9289-a95cc6d700e5.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_f62caca2-d415-4bc3-9289-a95cc6d700e5.jpg?alt=media",
+    "descricao": "Excesso em estado puro. Um oriental fresco que contrasta a gélida energia do gengibre com a sensualidade escaldante da baunilha e da mirra.",
+    "notas_olfativas": {
+      "topo": "Gengibre, Acorde Verde, Tomilho, Bergamota, Toranja",
+      "coracao": "Baunilha, Canela, Couro, Licor, Maçã",
+      "fundo": "Cedro, Mirra, Açúcar, Cashmeran, Patchouli, Notas Amadeiradas"
+    }
   },
   {
     "nome": "Sauvage Dior - EDP - 100ml",
@@ -397,6 +691,12 @@
     "precoOriginal": 870.0,
     "precoNovo": 958,
     "precoPix3x": 1054,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_9510d037-74bc-4c1b-b302-202a58626e0f.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_9510d037-74bc-4c1b-b302-202a58626e0f.jpg?alt=media",
+    "descricao": "Uma interpretação rica, suculenta e misteriosa do Sauvage. A bergamota da Calábria junta-se à baunilha de Papua-Nova Guiné para um rastro inconfundível.",
+    "notas_olfativas": {
+      "topo": "Bergamota da Calábria",
+      "coracao": "Pimenta de Sichuan, Lavanda, Anis Estrelado, Nozk-moscada",
+      "fundo": "Ambroxan, Baunilha de Papua"
+    }
   }
 ]

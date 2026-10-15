@@ -5,7 +5,13 @@
     "precoOriginal": 300.0,
     "precoNovo": 330,
     "precoPix3x": 364,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_3524416c-8eaf-4cfd-934d-0c1616ed5a2b.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_3524416c-8eaf-4cfd-934d-0c1616ed5a2b.jpg?alt=media",
+    "descricao": "Máscara capilar premium para cabelos grossos e severamente danificados. Restaura a umidade e a vitalidade, devolvendo brilho e maleabilidade com um aroma sofisticado de salão.",
+    "notas_olfativas": {
+      "topo": "Notas Cítricas Leves",
+      "coracao": "Flores Brancas",
+      "fundo": "Notas Amadeiradas Suaves"
+    }
   },
   {
     "nome": "Silicon Mix - Máscara hidratante - 1020gr",
@@ -13,7 +19,13 @@
     "precoOriginal": 150.0,
     "precoNovo": 165,
     "precoPix3x": 182,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_51af89c5-8136-4fe7-b3bd-9d4cc7928687.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_51af89c5-8136-4fe7-b3bd-9d4cc7928687.jpg?alt=media",
+    "descricao": "Tratamento de choque para cabelos secos e quebradiços. Formulado com silicones, queratina e ceramidas para restaurar o brilho e a força.",
+    "notas_olfativas": {
+      "topo": "Notas Frescas",
+      "coracao": "Acorde Floral Limpo",
+      "fundo": "Talcado Suave"
+    }
   },
   {
     "nome": "212 NYC EDT - 100ml",
@@ -21,7 +33,13 @@
     "precoOriginal": 570.0,
     "precoNovo": 627,
     "precoPix3x": 690,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_b078f6aa-489c-427b-aa58-9808f8500229.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_b078f6aa-489c-427b-aa58-9808f8500229.jpg?alt=media",
+    "descricao": "Um floral transparente, urbano e inovador, inspirado no estilo de vida de Nova York. Perfeito para a mulher moderna, cosmopolita e cheia de energia.",
+    "notas_olfativas": {
+      "topo": "Flor de Laranjeira, Mandarina",
+      "coracao": "Camélia, Gardênia, Lírio",
+      "fundo": "Sândalo, Almíscar Transparente"
+    }
   },
   {
     "nome": "212 VIP Rosé - 80ml",
@@ -29,7 +47,13 @@
     "precoOriginal": 579.0,
     "precoNovo": 637,
     "precoPix3x": 701,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_ab8acc50-12a9-4c98-ac63-690c53e193c8.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_ab8acc50-12a9-4c98-ac63-690c53e193c8.jpg?alt=media",
+    "descricao": "Autêntico, glamoroso e vibrante. Com notas efervescentes de champagne rosé, é a alma da festa, ideal para mulheres sofisticadas e divertidas.",
+    "notas_olfativas": {
+      "topo": "Champagne Rosé, Pimenta Rosa",
+      "coracao": "Flor de Pessegueiro, Rosa",
+      "fundo": "Madeira Rainha, Almíscar Branco"
+    }
   },
   {
     "nome": "Acqua di Gioia - EDP- 100ml",
@@ -37,7 +61,13 @@
     "precoOriginal": 699.0,
     "precoNovo": 769,
     "precoPix3x": 846,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_dc43cc32-494c-40da-9553-196b7cb648cb.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_dc43cc32-494c-40da-9553-196b7cb648cb.jpg?alt=media",
+    "descricao": "Uma essência fresca, aquática e otimista. Inspirado na união entre a natureza e o mar, traz uma sensação revigorante de pureza e serenidade.",
+    "notas_olfativas": {
+      "topo": "Limão de Amalfi, Hortelã",
+      "coracao": "Jasmim Aquático",
+      "fundo": "Cedro, Açúcar Mascavo, Ládano"
+    }
   },
   {
     "nome": "Alien - EDP - 60ml",
@@ -45,7 +75,13 @@
     "precoOriginal": 678.0,
     "precoNovo": 746,
     "precoPix3x": 821,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_163dc965-aac2-41c9-acac-04d307723f82.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_163dc965-aac2-41c9-acac-04d307723f82.jpg?alt=media",
+    "descricao": "Uma fragrância misteriosa, luminosa e extraordinária. Alien é um amadeirado floral ambarado de altíssima fixação, revelando um magnetismo quase sobrenatural.",
+    "notas_olfativas": {
+      "topo": "Jasmim Sambac",
+      "coracao": "Notas Amadeiradas (Caxemira)",
+      "fundo": "Âmbar Branco"
+    }
   },
   {
     "nome": "Alien - EDP - 90ml",
@@ -53,7 +89,13 @@
     "precoOriginal": 888.0,
     "precoNovo": 977,
     "precoPix3x": 1075,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_7ac9bfb2-9603-49c9-85c8-e410bed2cdc4.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_7ac9bfb2-9603-49c9-85c8-e410bed2cdc4.jpg?alt=media",
+    "descricao": "Uma fragrância misteriosa, luminosa e extraordinária. Alien é um amadeirado floral ambarado de altíssima fixação, revelando um magnetismo quase sobrenatural.",
+    "notas_olfativas": {
+      "topo": "Jasmim Sambac",
+      "coracao": "Notas Amadeiradas (Caxemira)",
+      "fundo": "Âmbar Branco"
+    }
   },
   {
     "nome": "Amor Amor - EDT - 100ml",
@@ -61,7 +103,13 @@
     "precoOriginal": 360.0,
     "precoNovo": 397,
     "precoPix3x": 437,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_c443ca34-79c4-468d-8c7d-b238648393cf.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_c443ca34-79c4-468d-8c7d-b238648393cf.jpg?alt=media",
+    "descricao": "A poção do amor em um frasco. É um floral frutado vibrante, doce e apaixonante, marcando a pele com a energia jovial do primeiro amor.",
+    "notas_olfativas": {
+      "topo": "Groselha Preta, Laranja, Mandarina",
+      "coracao": "Rosa, Damasco, Jasmim",
+      "fundo": "Baunilha, Fava Tonka, Cedro"
+    }
   },
   {
     "nome": "Angel - EDP - 100ml",
@@ -69,7 +117,13 @@
     "precoOriginal": 690.0,
     "precoNovo": 760,
     "precoPix3x": 837,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_387757fd-ada9-4a30-8647-a13f0663def4.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_387757fd-ada9-4a30-8647-a13f0663def4.jpg?alt=media",
+    "descricao": "O primeiro perfume gourmand da história. Uma criação voluptuosa e intensa que mistura patchouli com notas doces e achocolatadas, marcando presença de forma inesquecível.",
+    "notas_olfativas": {
+      "topo": "Algodão Doce, Coco, Melão",
+      "coracao": "Mel, Amora, Ameixa",
+      "fundo": "Patchouli, Chocolate, Caramelo, Baunilha"
+    }
   },
   {
     "nome": "Black XS Feminino - EDP - 80ml",
@@ -77,7 +131,13 @@
     "precoOriginal": 540.0,
     "precoNovo": 594,
     "precoPix3x": 654,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_ea59de9f-99d2-4e84-879f-f066fbe26830.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_ea59de9f-99d2-4e84-879f-f066fbe26830.jpg?alt=media",
+    "descricao": "Ousado, rebelde e sedutor. É uma fragrância com forte apelo noturno, onde madeiras escuras se misturam com rosas picantes, revelando uma atitude rock and roll.",
+    "notas_olfativas": {
+      "topo": "Oxicoco (Cranberry), Pimenta Rosa",
+      "coracao": "Cacau, Rosa, Violeta Negra",
+      "fundo": "Baunilha, Patchouli, Madeira de Massóia"
+    }
   },
   {
     "nome": "Burberry Brit Her - EDP - 100ml",
@@ -85,7 +145,13 @@
     "precoOriginal": 399.0,
     "precoNovo": 439,
     "precoPix3x": 483,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_11e8b1f9-a66a-4298-b6fe-4a3f2a2a083d.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_11e8b1f9-a66a-4298-b6fe-4a3f2a2a083d.jpg?alt=media",
+    "descricao": "Um oriental verde clássico e elegante. Captura a essência da mulher britânica moderna com um toque aconchegante de amêndoas e baunilha.",
+    "notas_olfativas": {
+      "topo": "Amêndoa Verde, Pera Congelada",
+      "coracao": "Peônia Branca, Amêndoa Açucarada",
+      "fundo": "Madeira de Mogno, Âmbar, Baunilha"
+    }
   },
   {
     "nome": "Burberry Her Elixir 100ml - EDP",
@@ -93,7 +159,13 @@
     "precoOriginal": 669.0,
     "precoNovo": 736,
     "precoPix3x": 810,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_FD45B76F-2B23-4318-A410-FAAED10379D4.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_FD45B76F-2B23-4318-A410-FAAED10379D4.jpg?alt=media",
+    "descricao": "Uma versão ainda mais intensa e cremosa, que evoca um autêntico milkshake de morango. Um perfume audacioso, doce e viciante.",
+    "notas_olfativas": {
+      "topo": "Morango, Amora",
+      "coracao": "Jasmim",
+      "fundo": "Baunilha, Âmbar, Sândalo"
+    }
   },
   {
     "nome": "Bvlgari Omnia Crystalline - EDT - 100ml",
@@ -101,7 +173,13 @@
     "precoOriginal": 720.0,
     "precoNovo": 793,
     "precoPix3x": 873,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_309ab299-befc-48fe-8050-2a757f8903bd.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_309ab299-befc-48fe-8050-2a757f8903bd.jpg?alt=media",
+    "descricao": "Luminoso e puro como um cristal. É uma fragrância floral aquática delicada, feminina e sofisticada, que traz a leveza do bambu e da flor de lótus.",
+    "notas_olfativas": {
+      "topo": "Bambu, Pera",
+      "coracao": "Flor de Lótus, Cássia",
+      "fundo": "Almíscar, Musgo de Carvalho, Madeira de Guaiac"
+    }
   },
   {
     "nome": "Calvin Klein Eternity - 100ml",
@@ -109,7 +187,13 @@
     "precoOriginal": 360.0,
     "precoNovo": 397,
     "precoPix3x": 437,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_ebaa8db2-853a-4492-b917-f151c333f0ff.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_ebaa8db2-853a-4492-b917-f151c333f0ff.jpg?alt=media",
+    "descricao": "Um floral romântico que celebra o amor eterno e a intimidade. A sua assinatura olfativa é limpa, floral e levemente verde, exalando sofisticação e paz.",
+    "notas_olfativas": {
+      "topo": "Notas Verdes, Cítricos, Frésia",
+      "coracao": "Cravo, Lírio, Lírio-do-Vale",
+      "fundo": "Sândalo, Âmbar, Almíscar"
+    }
   },
   {
     "nome": "CH Feminino - EDT - 100ml",
@@ -117,7 +201,13 @@
     "precoOriginal": 660.0,
     "precoNovo": 727,
     "precoPix3x": 800,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_7cfba1b8-3c5c-450f-8154-d6949cdfbb47.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_7cfba1b8-3c5c-450f-8154-d6949cdfbb47.jpg?alt=media",
+    "descricao": "Um perfume clássico que une o frescor cítrico com notas doces e amadeiradas. Traz a essência do luxo casual e o charme inconfundível de Carolina Herrera.",
+    "notas_olfativas": {
+      "topo": "Toranja, Bergamota, Limão",
+      "coracao": "Rosa, Jasmim, Pralinê",
+      "fundo": "Sândalo, Cedro, Camurça, Patchouli"
+    }
   },
   {
     "nome": "Chloé - EDP - 100ml",
@@ -125,7 +215,13 @@
     "precoOriginal": 720.0,
     "precoNovo": 793,
     "precoPix3x": 873,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_b9b07bd3-510e-4149-9097-bcdeb66d2927.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_b9b07bd3-510e-4149-9097-bcdeb66d2927.jpg?alt=media",
+    "descricao": "Ícone absoluto da elegância parisiense. Uma fragrância floral envolvente, fresca e romântica, com a rosa no coração, exalando uma feminilidade natural.",
+    "notas_olfativas": {
+      "topo": "Peônia, Frésia, Lichia",
+      "coracao": "Rosa, Lírio-do-Vale, Magnólia",
+      "fundo": "Âmbar, Cedro da Virgínia"
+    }
   },
   {
     "nome": "Chloé - EDP - 75ml",
@@ -133,7 +229,13 @@
     "precoOriginal": 597.0,
     "precoNovo": 657,
     "precoPix3x": 723,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_b9b07bd3-510e-4149-9097-bcdeb66d2927.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_b9b07bd3-510e-4149-9097-bcdeb66d2927.jpg?alt=media",
+    "descricao": "Ícone absoluto da elegância parisiense. Uma fragrância floral envolvente, fresca e romântica, com a rosa no coração, exalando uma feminilidade natural.",
+    "notas_olfativas": {
+      "topo": "Peônia, Frésia, Lichia",
+      "coracao": "Rosa, Lírio-do-Vale, Magnólia",
+      "fundo": "Âmbar, Cedro da Virgínia"
+    }
   },
   {
     "nome": "Chloé L'Eau de Parfum Intense - 100ml",
@@ -141,7 +243,13 @@
     "precoOriginal": 720.0,
     "precoNovo": 793,
     "precoPix3x": 873,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_AB637B94-2421-45D1-AA32-9D71679B779C.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_AB637B94-2421-45D1-AA32-9D71679B779C.jpg?alt=media",
+    "descricao": "Uma interpretação mais densa, quente e aveludada do clássico Chloé. A presença marcante da rosa intensificada por madeiras nobres garante uma fixação extraordinária.",
+    "notas_olfativas": {
+      "topo": "Pimenta Rosa",
+      "coracao": "Rosa Damascena Intensa",
+      "fundo": "Sândalo, Cedro, Fava Tonka"
+    }
   },
   {
     "nome": "Chloé Nômade 75ml - EDP",
@@ -149,7 +257,13 @@
     "precoOriginal": 609.0,
     "precoNovo": 670,
     "precoPix3x": 738,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_C2E070DA-D2D6-4D3E-8508-BCA0B6F643F8.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_C2E070DA-D2D6-4D3E-8508-BCA0B6F643F8.jpg?alt=media",
+    "descricao": "Para a mulher aventureira e de espírito livre. É um floral chipre luminoso, que equilibra a doçura frutada com uma base musgosa intensa e marcante.",
+    "notas_olfativas": {
+      "topo": "Ameixa Mirabelle, Bergamota, Limão",
+      "coracao": "Frésia, Jasmim, Pêssego",
+      "fundo": "Musgo de Carvalho, Patchouli, Sândalo"
+    }
   },
   {
     "nome": "CK in 2U - EDT - 100ml",
@@ -157,7 +271,13 @@
     "precoOriginal": 225.0,
     "precoNovo": 248,
     "precoPix3x": 273,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_b547591f-140d-4afd-90b9-30a8063baf3f.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_b547591f-140d-4afd-90b9-30a8063baf3f.jpg?alt=media",
+    "descricao": "Jovem, fresco e descomplicado. Uma fragrância cítrica e energética que combina toranja rosa vibrante com um fundo acolhedor de baunilha, perfeito para os dias quentes.",
+    "notas_olfativas": {
+      "topo": "Toranja Rosa, Bergamota da Sicília",
+      "coracao": "Orquídea de Baunilha, Cacto",
+      "fundo": "Âmbar, Cedro Vermelho, Baunilha"
+    }
   },
   {
     "nome": "Divine Elixir Jean Paul Gaultier Parfum - 100ml",
@@ -165,7 +285,13 @@
     "precoOriginal": 798.0,
     "precoNovo": 878,
     "precoPix3x": 966,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_15488586-730E-4749-8F1E-5A03BB1C4112.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_15488586-730E-4749-8F1E-5A03BB1C4112.jpg?alt=media",
+    "descricao": "Uma versão divina que eleva o poder da sedução. Um bouquet floral exuberante com toques gourmands salgados, que cria uma aura de deusa dourada.",
+    "notas_olfativas": {
+      "topo": "Lírio de Fogo",
+      "coracao": "Tuberosa Sensual",
+      "fundo": "Baunilha Intensa, Merengue Salgado"
+    }
   },
   {
     "nome": "Divine Elixir Jean Paul Gaultier Parfum - 30ml",
@@ -173,7 +299,13 @@
     "precoOriginal": 470.0,
     "precoNovo": 517,
     "precoPix3x": 569,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_15488586-730E-4749-8F1E-5A03BB1C4112.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_15488586-730E-4749-8F1E-5A03BB1C4112.jpg?alt=media",
+    "descricao": "Uma versão divina que eleva o poder da sedução. Um bouquet floral exuberante com toques gourmands salgados, que cria uma aura de deusa dourada.",
+    "notas_olfativas": {
+      "topo": "Lírio de Fogo",
+      "coracao": "Tuberosa Sensual",
+      "fundo": "Baunilha Intensa, Merengue Salgado"
+    }
   },
   {
     "nome": "Divine Elixir Jean Paul Gaultier Parfum - 50ml",
@@ -181,7 +313,13 @@
     "precoOriginal": 640.0,
     "precoNovo": 704,
     "precoPix3x": 775,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_15488586-730E-4749-8F1E-5A03BB1C4112.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_15488586-730E-4749-8F1E-5A03BB1C4112.jpg?alt=media",
+    "descricao": "Uma versão divina que eleva o poder da sedução. Um bouquet floral exuberante com toques gourmands salgados, que cria uma aura de deusa dourada.",
+    "notas_olfativas": {
+      "topo": "Lírio de Fogo",
+      "coracao": "Tuberosa Sensual",
+      "fundo": "Baunilha Intensa, Merengue Salgado"
+    }
   },
   {
     "nome": "Divine Gaultier Jean Paul Gaultier Eau de Parfum – 100ml",
@@ -189,7 +327,13 @@
     "precoOriginal": 708.0,
     "precoNovo": 779,
     "precoPix3x": 857,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_A7795FC8-0360-4C9C-A2E0-50E0844B89CF.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_A7795FC8-0360-4C9C-A2E0-50E0844B89CF.jpg?alt=media",
+    "descricao": "Radiante e audacioso, traz uma combinação espetacular de flores brancas solares com a doçura inovadora do merengue deliciosamente salgado.",
+    "notas_olfativas": {
+      "topo": "Notas Salgadas, Bergamota",
+      "coracao": "Lírio, Jasmim, Ylang-Ylang",
+      "fundo": "Merengue, Almíscar, Patchouli"
+    }
   },
   {
     "nome": "Divine Gaultier Jean Paul Gaultier Eau de Parfum – 50ml",
@@ -197,7 +341,13 @@
     "precoOriginal": 570.0,
     "precoNovo": 627,
     "precoPix3x": 690,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_F49A89E6-0096-4E27-9DF3-A884D9BD7BDC.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_F49A89E6-0096-4E27-9DF3-A884D9BD7BDC.jpg?alt=media",
+    "descricao": "Radiante e audacioso, traz uma combinação espetacular de flores brancas solares com a doçura inovadora do merengue deliciosamente salgado.",
+    "notas_olfativas": {
+      "topo": "Notas Salgadas, Bergamota",
+      "coracao": "Lírio, Jasmim, Ylang-Ylang",
+      "fundo": "Merengue, Almíscar, Patchouli"
+    }
   },
   {
     "nome": "Dolce & Gabbana Pour Femme - EDT - 100ml",
@@ -205,7 +355,13 @@
     "precoOriginal": 600.0,
     "precoNovo": 660,
     "precoPix3x": 727,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_d3b96ceb-05c9-47e3-99e2-a53121961a83.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_d3b96ceb-05c9-47e3-99e2-a53121961a83.jpg?alt=media",
+    "descricao": "A essência da mulher italiana. Sensual, apaixonante e aveludada, combina a suavidade do marshmallow com flores opulentas.",
+    "notas_olfativas": {
+      "topo": "Néroli, Framboesa, Mandarina",
+      "coracao": "Jasmim, Flor de Laranjeira",
+      "fundo": "Marshmallow, Baunilha, Sândalo"
+    }
   },
   {
     "nome": "Dolce & Gabanna Devotion – EDP - 100ml",
@@ -213,7 +369,13 @@
     "precoOriginal": 540.0,
     "precoNovo": 594,
     "precoPix3x": 654,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_47EEB940-77C3-49BD-837B-226FD248E08B.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_47EEB940-77C3-49BD-837B-226FD248E08B.jpg?alt=media",
+    "descricao": "Uma viagem sensorial à Itália. Uma fragrância gourmand brilhante que exala cheiro de sobremesa de limão cristalizado com baunilha envolvente.",
+    "notas_olfativas": {
+      "topo": "Limão Cristalizado",
+      "coracao": "Flor de Laranjeira",
+      "fundo": "Baunilha de Madagascar"
+    }
   },
   {
     "nome": "FAME FEMININO EDP – 80ML",
@@ -221,7 +383,13 @@
     "precoOriginal": 639.0,
     "precoNovo": 703,
     "precoPix3x": 774,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_B44E5436-8E49-4D74-9F03-5B2CE5AC0493.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_B44E5436-8E49-4D74-9F03-5B2CE5AC0493.jpg?alt=media",
+    "descricao": "O perfume da nova era da feminilidade em um frasco espetacular. Uma manga suculenta unida a um jasmim puro e incenso viciante que captura os holofotes.",
+    "notas_olfativas": {
+      "topo": "Manga, Bergamota",
+      "coracao": "Jasmim, Olíbano",
+      "fundo": "Baunilha, Sândalo"
+    }
   },
   {
     "nome": "Fantasy - EDP - 100ml",
@@ -229,7 +397,13 @@
     "precoOriginal": 198.0,
     "precoNovo": 218,
     "precoPix3x": 240,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_c2939c98-bbf3-4da6-b360-7531a9fe5d12.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_c2939c98-bbf3-4da6-b360-7531a9fe5d12.jpg?alt=media",
+    "descricao": "A magia do pop engarrafada. Um clássico moderno, doce, frutal e provocante, que atrai e seduz através da inconfundível nota de chocolate branco.",
+    "notas_olfativas": {
+      "topo": "Kiwi, Lichia Vermelha, Marmelo",
+      "coracao": "Chocolate Branco, Cupcake, Orquídea, Jasmim",
+      "fundo": "Almíscar, Raiz de Íris, Notas Amadeiradas"
+    }
   },
   {
     "nome": "Fantasy Midnight - EDP - 100ml",
@@ -237,7 +411,13 @@
     "precoOriginal": 198.0,
     "precoNovo": 218,
     "precoPix3x": 240,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_11dc0426-5772-488d-a8c3-befe05d9e367.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_11dc0426-5772-488d-a8c3-befe05d9e367.jpg?alt=media",
+    "descricao": "O elixir da meia-noite. Traz um perfil escuro e frutado, carregado em cereja ácida e ameixa, tornando-se uma poção misteriosa para as noites mais quentes.",
+    "notas_olfativas": {
+      "topo": "Ameixa, Cereja Ácida, Framboesa",
+      "coracao": "Orquídea, Íris, Frésia",
+      "fundo": "Baunilha, Âmbar, Almíscar"
+    }
   },
   {
     "nome": "Flower by Kenzo - EDP - 100ml",
@@ -245,7 +425,13 @@
     "precoOriginal": 528.0,
     "precoNovo": 581,
     "precoPix3x": 640,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_e248109e-5ea4-4147-9db9-71cf87400458.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_e248109e-5ea4-4147-9db9-71cf87400458.jpg?alt=media",
+    "descricao": "A icónica flor urbana. Uma fragrância atalcada, delicada e marcante, que inventa o perfume da papoila, uma flor por natureza sem cheiro.",
+    "notas_olfativas": {
+      "topo": "Rosa Búlgara, Espinheiro branco, Groselha Preta",
+      "coracao": "Violeta de Parma, Rosa, Jasmim",
+      "fundo": "Baunilha, Almíscar Branco, Incenso"
+    }
   },
   {
     "nome": "Givenchy - Irresistible - EDP - 80ml",
@@ -253,7 +439,13 @@
     "precoOriginal": 624.0,
     "precoNovo": 687,
     "precoPix3x": 756,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_c41dfe76-0eab-47e8-9df5-18cef8e47c0a.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_c41dfe76-0eab-47e8-9df5-18cef8e47c0a.jpg?alt=media",
+    "descricao": "Um convite à liberdade. Joga com o contraste entre uma rosa vibrante e a madeira clara envolvente, resultando em um aroma incrivelmente magnético.",
+    "notas_olfativas": {
+      "topo": "Pera, Ambreta",
+      "coracao": "Rosa, Íris",
+      "fundo": "Almíscar, Cedro da Virgínia"
+    }
   },
   {
     "nome": "Good Girl - EDP - 80ml",
@@ -261,7 +453,13 @@
     "precoOriginal": 765.0,
     "precoNovo": 842,
     "precoPix3x": 927,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_6ed7df91-636b-44dd-9dbb-d74deb8f1745.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_6ed7df91-636b-44dd-9dbb-d74deb8f1745.jpg?alt=media",
+    "descricao": "O famoso sapatinho de salto agulha. Uma fragrância poderosa e sensual que revela a dualidade da mulher moderna através da luz do jasmim e a sombra do cacau.",
+    "notas_olfativas": {
+      "topo": "Amêndoa, Café, Bergamota",
+      "coracao": "Tuberosa, Jasmim Sambac, Flor de Laranjeira",
+      "fundo": "Fava Tonka, Cacau, Baunilha, Pralinê"
+    }
   },
   {
     "nome": "Good Girl Blush Carolina Herrera -  EDP - 80ml",
@@ -269,7 +467,13 @@
     "precoOriginal": 783.0,
     "precoNovo": 862,
     "precoPix3x": 949,
-    "imagem": "https://bringatrailer.com/wp-content/uploads/2022/12/1989_chevrolet_camaro-z28-iroc-z_1989_chevrolet_camaro-z28-iroc-z_667aa8d9-6e00-49d7-94c3-f2793494a51b-caszm7-89575-48119.jpg"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2FF7C85A57-2A17-4522-896A-878ACE13A778.jpg?alt=media",
+    "descricao": "A versão mais suave, romântica e atalcada do Good Girl. Explora o contraste da baunilha com o romantismo de uma dupla flor de peônia.",
+    "notas_olfativas": {
+      "topo": "Bergamota, Mandarina",
+      "coracao": "Peônia, Água de Rosas, Ylang-Ylang",
+      "fundo": "Baunilha, Fava Tonka"
+    }
   },
   {
     "nome": "Good Girl Blush Elixir Eau de Parfum  - 80ml",
@@ -277,7 +481,13 @@
     "precoOriginal": 798.0,
     "precoNovo": 878,
     "precoPix3x": 966,
-    "imagem": "https://i.imgflip.com/9qdctl.jpg"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2FFA5FE08B-4743-4C5B-9CE9-1A41B86EC95B.jpg?alt=media",
+    "descricao": "Um elixir denso e misterioso da linha Blush. Acrescenta profundidade ambarada e facetas terrosas e intensas, sem perder a feminilidade da rosa.",
+    "notas_olfativas": {
+      "topo": "Bergamota, Amêndoa Amarga",
+      "coracao": "Rosa, Ylang-Ylang",
+      "fundo": "Patchouli, Baunilha"
+    }
   },
   {
     "nome": "Good Girl Very - EDP - 80ml",
@@ -285,7 +495,13 @@
     "precoOriginal": 708.0,
     "precoNovo": 779,
     "precoPix3x": 857,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_7681038b-8c8c-4c96-9a29-a894cb24b0ed.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_7681038b-8c8c-4c96-9a29-a894cb24b0ed.jpg?alt=media",
+    "descricao": "Um floral frutado extravagante com uma explosão de frutas vermelhas. Evoca paixão, audácia e deixa um rastro hipnótico pelo ar.",
+    "notas_olfativas": {
+      "topo": "Lichia, Groselha Vermelha",
+      "coracao": "Rosa, Lírio, Vetiver",
+      "fundo": "Baunilha Bourbon, Vetiver"
+    }
   },
   {
     "nome": "Gucci - Flora Gorgeous Gardenia EDP - 100ml",
@@ -293,7 +509,13 @@
     "precoOriginal": 675.0,
     "precoNovo": 743,
     "precoPix3x": 818,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_8AEF901C-7DB7-49DB-9FCD-AF94039F62B6.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_8AEF901C-7DB7-49DB-9FCD-AF94039F62B6.jpg?alt=media",
+    "descricao": "Uma homenagem radiante à flor de gardênia. É uma fragrância alegre, doce e floral, que exala positividade, energia e uma delicadeza viciante.",
+    "notas_olfativas": {
+      "topo": "Flor de Pera, Mandarina Italiana",
+      "coracao": "Gardênia Branca, Jasmim Absoluto",
+      "fundo": "Açúcar Mascavo, Patchouli"
+    }
   },
   {
     "nome": "Gucci - Flora Gorgeous Orchid  EDP - 100ml",
@@ -301,7 +523,13 @@
     "precoOriginal": 675.0,
     "precoNovo": 743,
     "precoPix3x": 818,
-    "imagem": "https://drikaartesanato.com/wp-content/uploads/2023/01/desenho-infantil-para-colorir-e-imprimir-6-768x1087.jpg"
+    "imagem": "https://drikaartesanato.com/wp-content/uploads/2023/01/desenho-infantil-para-colorir-e-imprimir-6-768x1087.jpg",
+    "descricao": "Uma fragrância inovadora que mistura a doçura quente da baunilha com um frescor aquático surpreendente. Captura a essência de um sonho floral luminoso.",
+    "notas_olfativas": {
+      "topo": "Dupla de Baunilha",
+      "coracao": "Orquídea de Baunilha",
+      "fundo": "Acorde Ozónico"
+    }
   },
   {
     "nome": "Gucci Flora Gorgeous Jasmine   EDP - 100ml",
@@ -309,7 +537,13 @@
     "precoOriginal": 675.0,
     "precoNovo": 743,
     "precoPix3x": 818,
-    "imagem": "https://i.pinimg.com/originals/65/5c/10/655c100e4d02c7597b6401c9799426e7.jpg"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2F9647E1A0-E15C-4765-AEFD-4BF968DD8FD2.jpg?alt=media",
+    "descricao": "Uma explosão radiante e luminosa focada na nobreza do jasmim grandiflorum. Transmite uma sensação de alegria pura, serenidade e elegância fresca.",
+    "notas_olfativas": {
+      "topo": "Mandarina Italiana, Bergamota, Pimenta Preta",
+      "coracao": "Jasmim Grandiflorum, Jasmim Sambac, Magnólia",
+      "fundo": "Sândalo Australiano, Benjoim, Patchouli"
+    }
   },
   {
     "nome": "Gucci Flora Gorgeous Magnolia EDP - 100ml",
@@ -317,7 +551,13 @@
     "precoOriginal": 675.0,
     "precoNovo": 743,
     "precoPix3x": 818,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_5844DA4C-EB39-448D-A55D-85DDE88C4904.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_5844DA4C-EB39-448D-A55D-85DDE88C4904.jpg?alt=media",
+    "descricao": "Um floral frutado hipnotizante que destaca a suavidade da magnólia envolta numa aura de amora doce e patchouli, criando uma assinatura confiante.",
+    "notas_olfativas": {
+      "topo": "Amora, Laranja Doce, Coco",
+      "coracao": "Magnólia, Jasmim Sambac, Lírio-do-vale",
+      "fundo": "Patchouli, Almíscar, Madeiras Loiras"
+    }
   },
   {
     "nome": "Hypnotic Poison - EDT - 100ml",
@@ -325,7 +565,13 @@
     "precoOriginal": 729.0,
     "precoNovo": 802,
     "precoPix3x": 883,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_51f784b2-e9e3-4443-bf43-df6ac70281f8.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_51f784b2-e9e3-4443-bf43-df6ac70281f8.jpg?alt=media",
+    "descricao": "Uma poção mágica e inebriante. É uma fragrância oriental baunilha densa, misteriosa e intensamente sedutora, marcada pela amêndoa amarga e coco.",
+    "notas_olfativas": {
+      "topo": "Coco, Ameixa, Alperce",
+      "coracao": "Pau-brasil, Jasmim, Alcaravia, Tuberosa",
+      "fundo": "Baunilha, Amêndoa, Sândalo, Almíscar"
+    }
   },
   {
     "nome": "I Love love Moschino - EDT - 100ml",
@@ -333,7 +579,13 @@
     "precoOriginal": 309.0,
     "precoNovo": 340,
     "precoPix3x": 375,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_a4865b39-1ebe-4169-9e70-f3ced4f710d9.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_a4865b39-1ebe-4169-9e70-f3ced4f710d9.jpg?alt=media",
+    "descricao": "Uma explosão cítrica e alegre que convida ao otimismo. Traz o frescor da toranja e do limão combinados com flores delicadas, perfeito para o verão.",
+    "notas_olfativas": {
+      "topo": "Toranja, Laranja, Limão, Groselha Vermelha",
+      "coracao": "Cana-de-açúcar, Tábua, Lírio-do-vale, Rosa de Chá",
+      "fundo": "Almíscar, Cedro, Notas Amadeiradas"
+    }
   },
   {
     "nome": "Idôle Power Lancôme Eau de Parfum Intense - 100ml",
@@ -341,7 +593,13 @@
     "precoOriginal": 759.0,
     "precoNovo": 835,
     "precoPix3x": 919,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_8BF4F40B-5627-4F12-86F3-BE7D4F4C9E2E.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_8BF4F40B-5627-4F12-86F3-BE7D4F4C9E2E.jpg?alt=media",
+    "descricao": "Para a mulher empoderada e destemida. Uma rosa vibrante com toques de baunilha de Bourbon e madeiras vibrantes, criando um rastro luminoso e forte.",
+    "notas_olfativas": {
+      "topo": "Laranja Amarga, Mandarina",
+      "coracao": "Rosa Turca, Jasmim Egípcio, Rosa de Grasse",
+      "fundo": "Baunilha de Madagascar, Patchouli, Madeira de Caxemira, Acácia"
+    }
   },
   {
     "nome": "J'Adore - EDP - 100ml",
@@ -349,7 +607,13 @@
     "precoOriginal": 780.0,
     "precoNovo": 859,
     "precoPix3x": 945,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_c351b59f-bca3-41e6-8f69-cfd8c80b5bff.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_c351b59f-bca3-41e6-8f69-cfd8c80b5bff.jpg?alt=media",
+    "descricao": "O luxo absoluto e a feminilidade intemporal. Um bouquet floral deslumbrante e requintado, moldado como uma flor feita à medida.",
+    "notas_olfativas": {
+      "topo": "Pera, Melão, Magnólia, Pêssego",
+      "coracao": "Jasmim, Lírio-do-vale, Tuberosa, Frésia",
+      "fundo": "Almíscar, Baunilha, Amora, Cedro"
+    }
   },
   {
     "nome": "Jean Paul La Belle - EDP - 100ml",
@@ -357,7 +621,13 @@
     "precoOriginal": 699.0,
     "precoNovo": 769,
     "precoPix3x": 846,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_26102bd4-c329-4d30-b5d0-f8699181b4dc.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_26102bd4-c329-4d30-b5d0-f8699181b4dc.jpg?alt=media",
+    "descricao": "Um vício tentador nascido de uma pera suculenta misturada com baunilha envolvente. Um perfume oriental gourmand extremamente sedutor e radiante.",
+    "notas_olfativas": {
+      "topo": "Pera, Bergamota",
+      "coracao": "Notas Florais, Couro",
+      "fundo": "Baunilha, Vetiver, Âmbar, Almíscar"
+    }
   },
   {
     "nome": "Jean Paul La Belle Le Parfum - 100ml",
@@ -365,7 +635,13 @@
     "precoOriginal": 717.0,
     "precoNovo": 789,
     "precoPix3x": 868,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_7A6912DE-74CC-43B8-B9A9-6171049445FD.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_7A6912DE-74CC-43B8-B9A9-6171049445FD.jpg?alt=media",
+    "descricao": "A intensidade proibida elevada ao máximo. Mais escuro, quente e amendoado que o original, é uma arma de sedução noturna implacável.",
+    "notas_olfativas": {
+      "topo": "Pera",
+      "coracao": "Fava Tonka, Jasmim",
+      "fundo": "Baunilha"
+    }
   },
   {
     "nome": "Jimmy I Want Choo Eau de Parfum - 100ml",
@@ -373,7 +649,13 @@
     "precoOriginal": 549.0,
     "precoNovo": 604,
     "precoPix3x": 665,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_E4ECEE6D-AD02-4760-BD8E-FF2C9A512CEC.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_E4ECEE6D-AD02-4760-BD8E-FF2C9A512CEC.jpg?alt=media",
+    "descricao": "Uma fragrância floral oriental vibrante e cintilante que traz uma aura de glamour. A mistura de pêssego e baunilha cria um encanto irresistível.",
+    "notas_olfativas": {
+      "topo": "Pêssego, Mandarina",
+      "coracao": "Jasmim, Lírio Vermelho",
+      "fundo": "Baunilha"
+    }
   },
   {
     "nome": "Joli Mademoiselle Joli Parfums Eau de Parfum - 100ml",
@@ -381,7 +663,13 @@
     "precoOriginal": 185.0,
     "precoNovo": 204,
     "precoPix3x": 225,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_1B5A7B89-16F4-4A26-93A2-349954804AF6.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_1B5A7B89-16F4-4A26-93A2-349954804AF6.jpg?alt=media",
+    "descricao": "Elegante e primaveril, remete ao romance jovem e à sofisticação. Uma escolha excelente para quem procura um aroma limpo e marcante para o quotidiano.",
+    "notas_olfativas": {
+      "topo": "Laranja, Mandarina, Flor de Laranjeira",
+      "coracao": "Rosa Turca, Jasmim, Ylang-Ylang",
+      "fundo": "Patchouli, Almíscar Branco, Baunilha, Vetiver"
+    }
   },
   {
     "nome": "L'eau D'Issey - EDT - 100ml",
@@ -389,7 +677,13 @@
     "precoOriginal": 348.0,
     "precoNovo": 383,
     "precoPix3x": 422,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_f512456b-a4c6-411f-9fba-f3d78a8157db.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_f512456b-a4c6-411f-9fba-f3d78a8157db.jpg?alt=media",
+    "descricao": "Pioneiro dos perfumes aquáticos. Evoca o frescor de uma cascata purificadora combinando flores brancas luminosas e madeiras cristalinas.",
+    "notas_olfativas": {
+      "topo": "Lótus, Melão, Frésia, Água de Rosas",
+      "coracao": "Lírio-do-vale, Lírio, Peônia Aquática",
+      "fundo": "Almíscar, Tuberosa, Madeiras Exóticas"
+    }
   },
   {
     "nome": "La Bomba Carolina Herrera Eau de Parfum - 30ml",
@@ -397,6 +691,12 @@
     "precoOriginal": 420.0,
     "precoNovo": 463,
     "precoPix3x": 510,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_62DFDA3A-A78C-4A40-8A4F-C48E8E7BE1E6.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_62DFDA3A-A78C-4A40-8A4F-C48E8E7BE1E6.jpg?alt=media",
+    "descricao": "Uma explosão intensa e doce, perfeitamente construída para noites de festa. Exala um poder inegável e um carácter absolutamente divertido e jovial.",
+    "notas_olfativas": {
+      "topo": "Framboesa, Mandarina",
+      "coracao": "Jasmim Sambac, Flor de Laranjeira",
+      "fundo": "Baunilha, Caramelo, Sândalo"
+    }
   }
 ]

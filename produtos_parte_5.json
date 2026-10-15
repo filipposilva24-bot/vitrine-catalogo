@@ -5,7 +5,13 @@
     "precoOriginal": 720.0,
     "precoNovo": 793,
     "precoPix3x": 873,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_80118e00-675f-497d-bd4b-ddfd1832698e.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_80118e00-675f-497d-bd4b-ddfd1832698e.jpg?alt=media",
+    "descricao": "Um dos maiores sucessos mundiais. Extremamente fresco, cru e nobre ao mesmo tempo, dominado por uma explosão cítrica e ambroxan magnético.",
+    "notas_olfativas": {
+      "topo": "Pimenta da Calábria, Bergamota",
+      "coracao": "Pimenta de Sichuan, Lavanda, Pimenta Rosa, Vetiver, Patchouli, Gerânio, Elemi",
+      "fundo": "Ambroxan, Cedro, Ládano"
+    }
   },
   {
     "nome": "Sauvage Dior - Parfum - 100ml",
@@ -13,7 +19,13 @@
     "precoOriginal": 1050.0,
     "precoNovo": 1155,
     "precoPix3x": 1271,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_a9cbaaea-bb99-4933-946c-4fe4d708b72e.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_a9cbaaea-bb99-4933-946c-4fe4d708b72e.jpg?alt=media",
+    "descricao": "A excelência em alta concentração. Notas amadeiradas altamente puras combinadas com o frescor noturno de tangerinas e sândalo cremoso.",
+    "notas_olfativas": {
+      "topo": "Mandarina, Bergamota",
+      "coracao": "Sândalo da Virgínia",
+      "fundo": "Fava Tonka, Olíbano, Baunilha"
+    }
   },
   {
     "nome": "Scandal Le Parfum - EDP - 100ml",
@@ -21,7 +33,13 @@
     "precoOriginal": 600.0,
     "precoNovo": 660,
     "precoPix3x": 727,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_87F9CEC4-ABCF-488F-93D8-7FEADDD3AB8B.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_87F9CEC4-ABCF-488F-93D8-7FEADDD3AB8B.jpg?alt=media",
+    "descricao": "Coroado de glória, este perfume amadeirado ambarado é escandalosamente atraente, combinando gerânio, fava tonka e sândalo num estilo inigualável.",
+    "notas_olfativas": {
+      "topo": "Gerânio",
+      "coracao": "Fava Tonka",
+      "fundo": "Sândalo"
+    }
   },
   {
     "nome": "Scandal Pour Homme - EDT - 100ml",
@@ -29,7 +47,13 @@
     "precoOriginal": 555.0,
     "precoNovo": 611,
     "precoPix3x": 673,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_b7e6a531-4c01-4c11-9267-d0675245ef24.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_b7e6a531-4c01-4c11-9267-d0675245ef24.jpg?alt=media",
+    "descricao": "Um espetáculo de sensualidade e energia. Oriental amadeirado com notas surpreendentes de caramelo salgado combinadas com sálvia e vetiver.",
+    "notas_olfativas": {
+      "topo": "Sálvia, Mandarina",
+      "coracao": "Caramelo, Fava Tonka",
+      "fundo": "Vetiver"
+    }
   },
   {
     "nome": "Scandal Pour Homme Absolu - EDP - 100ml",
@@ -37,7 +61,13 @@
     "precoOriginal": 678.0,
     "precoNovo": 746,
     "precoPix3x": 821,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_3A751C35-B5CD-4D14-BE80-2D1A05EEEDB2.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_3A751C35-B5CD-4D14-BE80-2D1A05EEEDB2.jpg?alt=media",
+    "descricao": "A versão Absolu eleva o caráter gourmand e opulento do Scandal com uma fixação incomparável e um rastro escuro e marcante.",
+    "notas_olfativas": {
+      "topo": "Mandarina, Castanha",
+      "coracao": "Sálvia, Notas Amadeiradas",
+      "fundo": "Caramelo Escuro"
+    }
   },
   {
     "nome": "Silver Scent - EDT - 100ml",
@@ -45,7 +75,13 @@
     "precoOriginal": 210.0,
     "precoNovo": 232,
     "precoPix3x": 256,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_486a697c-878b-4d9a-9ead-9f98a2317688.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_486a697c-878b-4d9a-9ead-9f98a2317688.jpg?alt=media",
+    "descricao": "Uma bomba de projeção e fixação. Um oriental amadeirado poderoso inspirado nos filmes de ação dos anos 80, ideal para baladas e noites frias.",
+    "notas_olfativas": {
+      "topo": "Flor de Laranjeira, Limão",
+      "coracao": "Alecrim, Noz-moscada, Coentro, Lavanda, Gerânio, Cardamomo",
+      "fundo": "Lichia, Oud, Fava Tonka, Teca, Vetiver"
+    }
   },
   {
     "nome": "Silver Scent Intense - EDT - 100ml",
@@ -53,7 +89,13 @@
     "precoOriginal": 210.0,
     "precoNovo": 232,
     "precoPix3x": 256,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_0ED8C4EF-927F-4C75-B72D-1F6908B5F0E6.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_0ED8C4EF-927F-4C75-B72D-1F6908B5F0E6.jpg?alt=media",
+    "descricao": "Uma versão ainda mais densa, escura e marcante do clássico Silver Scent. Famoso pela sua potência e fixação estrondosa.",
+    "notas_olfativas": {
+      "topo": "Flor de Laranjeira, Laranja Amarga, Limão",
+      "coracao": "Alecrim, Noz-moscada, Coentro, Lavanda, Gerânio, Cardamomo",
+      "fundo": "Oud, Fava Tonka, Teca, Vetiver, Madeira de Teca"
+    }
   },
   {
     "nome": "Tommy Masc. - EDT - 100ml",
@@ -61,7 +103,13 @@
     "precoOriginal": 315.0,
     "precoNovo": 347,
     "precoPix3x": 382,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_e1b20a9b-f8f6-48ae-bf29-89e5cb9954f7.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_e1b20a9b-f8f6-48ae-bf29-89e5cb9954f7.jpg?alt=media",
+    "descricao": "O autêntico aroma cítrico e refrescante americano. Perfeito para o uso diário, transmitindo uma sensação de juventude, limpeza e liberdade.",
+    "notas_olfativas": {
+      "topo": "MHC, Hortelã, Toranja, Bergamota",
+      "coracao": "Crandberry, Rosa, Maçã Granny Smith",
+      "fundo": "Almíscar, Algodão Doce, Cacto, Âmbar"
+    }
   },
   {
     "nome": "Toy Boy Moschino - EDP - 100ml",
@@ -69,7 +117,13 @@
     "precoOriginal": 468.0,
     "precoNovo": 515,
     "precoPix3x": 567,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_9e6d2dd5-97ff-4434-a6b7-19e1ee9b1b33.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_9e6d2dd5-97ff-4434-a6b7-19e1ee9b1b33.jpg?alt=media",
+    "descricao": "Inovador e irreverente. Um amadeirado especiado que reinventa a rosa masculina de forma moderna, provocante e sofisticada.",
+    "notas_olfativas": {
+      "topo": "Pimenta Pimenta Rosa, Pêra, Indonésia noz-moscada, Elemi, Bergamota",
+      "coracao": "Rosa, Cravo-da-Índia, Magnólia, Linho",
+      "fundo": "Cashmeran, Vetiver, Sândalo, Âmbar, Sylkolide"
+    }
   },
   {
     "nome": "Versace Dylan Blue Masc. - EDT - 100ml",
@@ -77,7 +131,13 @@
     "precoOriginal": 519.0,
     "precoNovo": 571,
     "precoPix3x": 629,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_0e49e0ba-2275-4454-81a1-a85029f2351f.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_0e49e0ba-2275-4454-81a1-a85029f2351f.jpg?alt=media",
+    "descricao": "Fougère aromático forte e de caráter marcante. Traz o frescor das notas aquáticas combinadas com incenso e almíscar mineral.",
+    "notas_olfativas": {
+      "topo": "Notas Aquáticas, Bergamota da Calábria, Toranja, Folha de Figo",
+      "coracao": "Folha de Violeta, Papiro, Patchouli, Pimenta Preta, Ambroxan",
+      "fundo": "Almíscar Mineral, Incenso, Fava Tonka, Açafrão"
+    }
   },
   {
     "nome": "Versace Eros -  EDP - 100ml",
@@ -85,7 +145,13 @@
     "precoOriginal": 620.0,
     "precoNovo": 682,
     "precoPix3x": 751,
-    "imagem": "https://www.versace.com/dw/image/v2/BGWN_PRD/on/demandware.static/-/Library-Sites-ver-library/default/dw50fb5992/images/world-of-versace/versace-atelier-ss23-280223-look01.jpg"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2FC9267362-CBED-4F3A-ACFA-5E6759C7F44C.jpg?alt=media",
+    "descricao": "A versão Eau de Parfum intensifica a paixão e o poder de Eros com notas orientais mais profundas, baunilha rica e mentha vibrante.",
+    "notas_olfativas": {
+      "topo": "Hortelã, Maçã Candi, Limão da Itália, Mandarina da Itália",
+      "coracao": "Sálvia, Gerânio, Ambroxan",
+      "fundo": "Baunilha, Cedro da Virgínia, Cedro de Atlas, Vetiver, Patchouli, Couro"
+    }
   },
   {
     "nome": "Versace Eros  - EDT - 100ml",
@@ -93,7 +159,13 @@
     "precoOriginal": 570.0,
     "precoNovo": 627,
     "precoPix3x": 690,
-    "imagem": "https://www.versace.com/dw/image/v2/BGWN_PRD/on/demandware.static/-/Library-Sites-ver-library/default/dw50fb5992/images/world-of-versace/versace-atelier-ss23-280223-look01.jpg"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2F08ECBC64-888A-45C5-A9D4-156CC36773A5.jpg?alt=media",
+    "descricao": "Inspirado no deus do amor. Uma fragrância fresca, ardente e magnética, símbolo de masculinidade triunfante.",
+    "notas_olfativas": {
+      "topo": "Hortelã, Maçã Verde, Limão Siciliano",
+      "coracao": "Fava Tonka, Ambroxan, Gerânio",
+      "fundo": "Baunilha de Madagascar, Cedro da Virgínia, Cedro de Atlas, Vetiver, Musgo de Carvalho"
+    }
   },
   {
     "nome": "YSL Y - EDP - 100ml",
@@ -101,7 +173,13 @@
     "precoOriginal": 765.0,
     "precoNovo": 842,
     "precoPix3x": 927,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_70AF7302-2D08-4A1D-9A37-14AE97E3D740.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_70AF7302-2D08-4A1D-9A37-14AE97E3D740.jpg?alt=media",
+    "descricao": "Para o homem que ousa seguir os seus sonhos. Um amadeirado aromático intenso que equilibra a força do sálvia e do gengibre com o incenso profundo.",
+    "notas_olfativas": {
+      "topo": "Maçã, Gengibre, Bergamota",
+      "coracao": "Sálvia, Bagas de Zimbro, Gerânio",
+      "fundo": "Amberwood, Fava Tonka, Cedro, Vetiver, Líbano"
+    }
   },
   {
     "nome": "Jean Paul Classique - EDT - 100ml",
@@ -109,7 +187,13 @@
     "precoOriginal": 615.0,
     "precoNovo": 677,
     "precoPix3x": 745,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_D132E3BB-EB89-4E66-A9CF-8490F0804A26.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_D132E3BB-EB89-4E66-A9CF-8490F0804A26.jpg?alt=media",
+    "descricao": "O clássico atemporal que exala sedução em formato de espartilho. Um floral oriental adocicado e marcante.",
+    "notas_olfativas": {
+      "topo": "Flor de Laranjeira, Anis Estrelado, Rosa, Mandarina, Pêra, Bergamota",
+      "coracao": "Gengibre, Orquídea, Cravo-da-Índia, Ylang-Ylang, Íris, Tuberosa",
+      "fundo": "Baunilha, Âmbar, Almíscar, Canela, Sândalo"
+    }
   },
   {
     "nome": "TESTER - Light Blue - EDT - 100ml",
@@ -117,7 +201,13 @@
     "precoOriginal": 399.0,
     "precoNovo": 439,
     "precoPix3x": 483,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_396a2edc-a3c1-465d-87ec-edcda0d65c80.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_396a2edc-a3c1-465d-87ec-edcda0d65c80.jpg?alt=media",
+    "descricao": "Versão testador do clássico e refrescante Light Blue, mantendo a exata qualidade olfativa com foco no custo-benefício.",
+    "notas_olfativas": {
+      "topo": "Limão Siciliano, Maçã Verde, Cedro",
+      "coracao": "Bambu, Jasmim, Rosa Branca",
+      "fundo": "Cedro, Almíscar, Âmbar"
+    }
   },
   {
     "nome": "TESTER - Marina de Bourbon Royal - EDP - 100ml",
@@ -125,7 +215,13 @@
     "precoOriginal": 185.0,
     "precoNovo": 204,
     "precoPix3x": 225,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_81be2799-b080-4ce3-899f-9d016f907433.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_81be2799-b080-4ce3-899f-9d016f907433.jpg?alt=media",
+    "descricao": "Versão testador do elegante e frutado Royal de Marina de Bourbon.",
+    "notas_olfativas": {
+      "topo": "Morango, Limão, Maçã Verde",
+      "coracao": "Jasmim, Ylang-Ylang, Lírio-do-vale",
+      "fundo": "Musgo de Carvalho, Âmbar"
+    }
   },
   {
     "nome": "TESTER - SEM TAMPA - Marina de Bourbon Diamond - EDP - 100ml",
@@ -133,7 +229,13 @@
     "precoOriginal": 210.0,
     "precoNovo": 232,
     "precoPix3x": 256,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_ef07b8ae-729a-4240-87b9-cdd13c84cb28.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_ef07b8ae-729a-4240-87b9-cdd13c84cb28.jpg?alt=media",
+    "descricao": "Versão testador sem tampa do luxuoso Diamond de Marina de Bourbon.",
+    "notas_olfativas": {
+      "topo": "Açaí, Limão",
+      "coracao": "Fava Tonka, Jasmim, Íris",
+      "fundo": "Baunilha, Patchouli, Almíscar"
+    }
   },
   {
     "nome": "TESTER - Animale For Men - EDT - 100ml",
@@ -141,7 +243,13 @@
     "precoOriginal": 160.0,
     "precoNovo": 176,
     "precoPix3x": 194,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_3b00a0b1-80e0-41a7-b51c-4f51d3089019.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_3b00a0b1-80e0-41a7-b51c-4f51d3089019.jpg?alt=media",
+    "descricao": "Versão testador do clássico e marcante Animale For Men.",
+    "notas_olfativas": {
+      "topo": "Frutas, Limão, Abacaxi, Notas Verdes",
+      "coracao": "Mel, Lavanda, Cacau, Especiarias",
+      "fundo": "Patchouli, Sândalo, Almíscar, Tabaco"
+    }
   },
   {
     "nome": "TESTER - Ferrari Black - EDT - 100ml",
@@ -149,7 +257,13 @@
     "precoOriginal": 160.0,
     "precoNovo": 176,
     "precoPix3x": 194,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_f17e6be0-c39b-4fe9-b87c-5f12b4eacd00.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_f17e6be0-c39b-4fe9-b87c-5f12b4eacd00.jpg?alt=media",
+    "descricao": "Versão testador do versátil e popular Ferrari Black.",
+    "notas_olfativas": {
+      "topo": "Lima, Bergamota, Maçã Vermelha",
+      "coracao": "Canela, Jasmim, Cardamomo",
+      "fundo": "Âmbar, Baunilha, Almíscar, Cedro"
+    }
   },
   {
     "nome": "TESTER - Jean Paul Le Male - 125ml",
@@ -157,7 +271,13 @@
     "precoOriginal": 450.0,
     "precoNovo": 496,
     "precoPix3x": 546,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_58DF04C4-47EB-4582-9004-5C1D8881A0C0.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_58DF04C4-47EB-4582-9004-5C1D8881A0C0.jpg?alt=media",
+    "descricao": "Versão testador do icónico e inconfundível Le Male de Jean Paul Gaultier.",
+    "notas_olfativas": {
+      "topo": "Menta, Lavanda, Bergamota",
+      "coracao": "Canela, Flor de Laranjeira, Cominho",
+      "fundo": "Baunilha, Sândalo, Âmbar, Cedro"
+    }
   },
   {
     "nome": "Victoria's Secret - Body Splash - Amber Romance - 250ml",
@@ -165,7 +285,13 @@
     "precoOriginal": 140.0,
     "precoNovo": 154,
     "precoPix3x": 170,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_94875ebd-3d79-4a16-8d7d-78ac8505aa64.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_94875ebd-3d79-4a16-8d7d-78ac8505aa64.jpg?alt=media",
+    "descricao": "Uma fragrância corporal quente, profunda e aconchegante, combinando âmbar rico com notas adocicadas de creme anglaise.",
+    "notas_olfativas": {
+      "topo": "Cereja Preta",
+      "coracao": "Creme Anglaise, Âmbar",
+      "fundo": "Baunilha, Sândalo"
+    }
   },
   {
     "nome": "Victoria's Secret - Body Splash - Aqua Kiss - 250ml",
@@ -173,7 +299,13 @@
     "precoOriginal": 140.0,
     "precoNovo": 154,
     "precoPix3x": 170,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_3d734b51-6f83-4e44-aec3-97ebe5b8a995.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_3d734b51-6f83-4e44-aec3-97ebe5b8a995.jpg?alt=media",
+    "descricao": "Frescor aquático e floral super leve. Traz notas de margaridas frescas e águas cristalinas, perfeito para pós-banho revigorante.",
+    "notas_olfativas": {
+      "topo": "Notas Aquáticas, Frésia",
+      "coracao": "Margarida, Ameixa",
+      "fundo": "Almíscar Limpo"
+    }
   },
   {
     "nome": "Victoria's Secret - Body Splash - Bare Vanilla - 250ml",
@@ -181,7 +313,13 @@
     "precoOriginal": 150.0,
     "precoNovo": 165,
     "precoPix3x": 182,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_16b3dd21-5d71-4971-a8e8-d54c69a8ff27.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_16b3dd21-5d71-4971-a8e8-d54c69a8ff27.jpg?alt=media",
+    "descricao": "Um verdadeiro abraço de baunilha aconchegante e cachemira macia. Doce na medida certa, viciante e envolvente.",
+    "notas_olfativas": {
+      "topo": "Baunilha Chic",
+      "coracao": "Flor de Maçã, Orquídea",
+      "fundo": "Cashmeran, Baunilha Aveludada"
+    }
   },
   {
     "nome": "Victoria's Secret - Body Splash - Coconut Passion - 250ml",
@@ -189,7 +327,13 @@
     "precoOriginal": 140.0,
     "precoNovo": 154,
     "precoPix3x": 170,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_63df2fb4-8597-4512-9265-ddd7d5610ec4.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_63df2fb4-8597-4512-9265-ddd7d5610ec4.jpg?alt=media",
+    "descricao": "Uma viagem tropical irresistível. Mistura o coco cremoso com notas quentes de baunilha e lírio-do-vale.",
+    "notas_olfativas": {
+      "topo": "Coco Fresco",
+      "coracao": "Lírio-do-Vale, Notas Tropicais",
+      "fundo": "Baunilha Quente, Almíscar"
+    }
   },
   {
     "nome": "Victoria's Secret - Body Splash - Love Spell - 250ml",
@@ -197,7 +341,13 @@
     "precoOriginal": 140.0,
     "precoNovo": 154,
     "precoPix3x": 170,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_ef9a823e-e7dc-4edf-89da-3a9b35090849.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_ef9a823e-e7dc-4edf-89da-3a9b35090849.jpg?alt=media",
+    "descricao": "Um feitiço de amor frutado e floral, famoso mundialmente pela sua combinação viciante de flor de cerejeira e pêssego.",
+    "notas_olfativas": {
+      "topo": "Flor de Cerejeira, Pêssego",
+      "coracao": "Maçã Vermelha, Lírio",
+      "fundo": "Tamareira, Almíscar"
+    }
   },
   {
     "nome": "Victoria's Secret - Body Splash - Midnight Bloom 250ml",
@@ -205,7 +355,13 @@
     "precoOriginal": 140.0,
     "precoNovo": 154,
     "precoPix3x": 170,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_933D242E-6390-4667-9CF4-026B90069209.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_933D242E-6390-4667-9CF4-026B90069209.jpg?alt=media",
+    "descricao": "Exótico e noturno. Combina flores lunares com madeiras cremosas e âmbar quente para uma sensação misteriosa.",
+    "notas_olfativas": {
+      "topo": "Flor da Lua",
+      "coracao": "Madeiras Cremosas",
+      "fundo": "Âmbar Sensual"
+    }
   },
   {
     "nome": "Victoria's Secret - Body Splash - Pure Seduction - 250ml",
@@ -213,7 +369,13 @@
     "precoOriginal": 140.0,
     "precoNovo": 154,
     "precoPix3x": 170,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_f3bf1f53-e9cd-493e-816f-7186d5d4f104.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_f3bf1f53-e9cd-493e-816f-7186d5d4f104.jpg?alt=media",
+    "descricao": "Uma sedução frutada e vibrante, unindo a ameixa vermelha suculenta com a frésia floral doce.",
+    "notas_olfativas": {
+      "topo": "Ameixa Vermelha",
+      "coracao": "Frésia Sutil",
+      "fundo": "Almíscar Doce"
+    }
   },
   {
     "nome": "Victoria's Secret - Body Splash - Rush - 250ml",
@@ -221,7 +383,13 @@
     "precoOriginal": 140.0,
     "precoNovo": 154,
     "precoPix3x": 170,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_53d3b3b2-3247-4fb5-9f37-dabf042ea359.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_53d3b3b2-3247-4fb5-9f37-dabf042ea359.jpg?alt=media",
+    "descricao": "Sensual, quente e provocante, com notas marcantes de clementina suculenta e cristais de âmbar.",
+    "notas_olfativas": {
+      "topo": "Clementina",
+      "coracao": "Flor Branca",
+      "fundo": "Cristais de Âmbar"
+    }
   },
   {
     "nome": "Victoria's Secret - Body Splash - Temptation - 250ml",
@@ -229,7 +397,13 @@
     "precoOriginal": 140.0,
     "precoNovo": 154,
     "precoPix3x": 170,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_65a9f985-88ba-4152-b128-a73a6e4114c7.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_65a9f985-88ba-4152-b128-a73a6e4114c7.jpg?alt=media",
+    "descricao": "Frutado floral fresco e sedutor, com destaque para a maçã fresca e a flor de cacto.",
+    "notas_olfativas": {
+      "topo": "Maçã Fresca",
+      "coracao": "Flor de Cacto",
+      "fundo": "Notas Florais Suaves"
+    }
   },
   {
     "nome": "Victoria's Secret - Body Splash - Velvet Petals - 250ml",
@@ -237,7 +411,13 @@
     "precoOriginal": 140.0,
     "precoNovo": 154,
     "precoPix3x": 170,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_decdb40b-e08a-4dfb-b73d-32e638d6aaef.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_decdb40b-e08a-4dfb-b73d-32e638d6aaef.jpg?alt=media",
+    "descricao": "Floral aveludado e cremoso, unindo pétalas exuberantes com glacê de amêndoas.",
+    "notas_olfativas": {
+      "topo": "Pétalas Aveludadas",
+      "coracao": "Glacê de Amêndoas",
+      "fundo": "Sândalo Cremoso"
+    }
   },
   {
     "nome": "Victoria's Secret - Kit Amber Romance",
@@ -245,7 +425,13 @@
     "precoOriginal": 280.0,
     "precoNovo": 308,
     "precoPix3x": 339,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_ba9528ac-d531-4442-8248-61effd4934b2.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_ba9528ac-d531-4442-8248-61effd4934b2.jpg?alt=media",
+    "descricao": "Kit completo contendo body splash e loção hidratante com a fragrância quente e marcante de Amber Romance.",
+    "notas_olfativas": {
+      "topo": "Cereja Preta",
+      "coracao": "Creme Anglaise, Âmbar",
+      "fundo": "Baunilha, Sândalo"
+    }
   },
   {
     "nome": "Victoria's Secret - Kit Aqua Kiss",
@@ -253,7 +439,13 @@
     "precoOriginal": 280.0,
     "precoNovo": 308,
     "precoPix3x": 339,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_23e4d9ac-be35-485e-add1-7a8cf8fb3c0d.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_23e4d9ac-be35-485e-add1-7a8cf8fb3c0d.jpg?alt=media",
+    "descricao": "Kit completo com body splash e loção hidratante para prolongar a frescura aquática de Aqua Kiss.",
+    "notas_olfativas": {
+      "topo": "Notas Aquáticas, Frésia",
+      "coracao": "Margarida, Ameixa",
+      "fundo": "Almíscar Limpo"
+    }
   },
   {
     "nome": "Victoria's Secret - Kit Bare Vanilla",
@@ -261,7 +453,13 @@
     "precoOriginal": 300.0,
     "precoNovo": 330,
     "precoPix3x": 364,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_23fb8fd6-654a-4745-b3a7-feb33353a2e1.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_23fb8fd6-654a-4745-b3a7-feb33353a2e1.jpg?alt=media",
+    "descricao": "Kit hidratante e splash Bare Vanilla para uma rotina completa de perfumação adocicada.",
+    "notas_olfativas": {
+      "topo": "Baunilha Chic",
+      "coracao": "Flor de Maçã, Orquídea",
+      "fundo": "Cashmeran, Baunilha Aveludada"
+    }
   },
   {
     "nome": "Victoria's Secret - Kit Coconut Passion",
@@ -269,7 +467,13 @@
     "precoOriginal": 280.0,
     "precoNovo": 308,
     "precoPix3x": 339,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_c75d443f-1f09-4716-9ba8-e3b0ac77e00f.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_c75d443f-1f09-4716-9ba8-e3b0ac77e00f.jpg?alt=media",
+    "descricao": "Dupla perfeita de body splash e loção com o aroma tropical e cremoso de Coconut Passion.",
+    "notas_olfativas": {
+      "topo": "Coco Fresco",
+      "coracao": "Lírio-do-Vale",
+      "fundo": "Baunilha Quente"
+    }
   },
   {
     "nome": "Victoria's Secret - Kit Love Spell",
@@ -277,7 +481,13 @@
     "precoOriginal": 280.0,
     "precoNovo": 308,
     "precoPix3x": 339,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_82e233c1-9a32-4ed1-b2cf-d371f5b206fe.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_82e233c1-9a32-4ed1-b2cf-d371f5b206fe.jpg?alt=media",
+    "descricao": "O kit campeão de vendas com loção e splash do icônico Love Spell.",
+    "notas_olfativas": {
+      "topo": "Flor de Cerejeira, Pêssego",
+      "coracao": "Maçã Vermelha",
+      "fundo": "Almíscar"
+    }
   },
   {
     "nome": "Victoria's Secret - Kit Pure Seduction",
@@ -285,7 +495,13 @@
     "precoOriginal": 280.0,
     "precoNovo": 308,
     "precoPix3x": 339,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_ff52eac6-63eb-4707-b77e-9602e3ec56a3.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_ff52eac6-63eb-4707-b77e-9602e3ec56a3.jpg?alt=media",
+    "descricao": "Kit com splash e loção hidratante Pure Seduction para prolongar a fixação na pele.",
+    "notas_olfativas": {
+      "topo": "Ameixa Vermelha",
+      "coracao": "Frésia Sutil",
+      "fundo": "Almíscar Doce"
+    }
   },
   {
     "nome": "Victoria's Secret - Kit Rush",
@@ -293,7 +509,13 @@
     "precoOriginal": 280.0,
     "precoNovo": 308,
     "precoPix3x": 339,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_9310f111-8a35-453d-a81a-74308b4e2207.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_9310f111-8a35-453d-a81a-74308b4e2207.jpg?alt=media",
+    "descricao": "Kit sensual e envolvente com o aroma marcante de Rush.",
+    "notas_olfativas": {
+      "topo": "Clementina",
+      "coracao": "Flor Branca",
+      "fundo": "Cristais de Âmbar"
+    }
   },
   {
     "nome": "Victoria's Secret - Kit Temptation",
@@ -301,7 +523,13 @@
     "precoOriginal": 280.0,
     "precoNovo": 308,
     "precoPix3x": 339,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_02258796-a975-49f9-8a58-84988d40657b.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_02258796-a975-49f9-8a58-84988d40657b.jpg?alt=media",
+    "descricao": "Kit frutado fresco Temptation para uma hidratação perfumada de longa duração.",
+    "notas_olfativas": {
+      "topo": "Maçã Fresca",
+      "coracao": "Flor de Cacto",
+      "fundo": "Notas Florais"
+    }
   },
   {
     "nome": "Victoria's Secret - Kit Velvet Petals",
@@ -309,7 +537,13 @@
     "precoOriginal": 280.0,
     "precoNovo": 308,
     "precoPix3x": 339,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_2f9daa05-620b-4828-bf56-3702b4db296a.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_2f9daa05-620b-4828-bf56-3702b4db296a.jpg?alt=media",
+    "descricao": "Kit completo aveludado e doce com loção e body splash Velvet Petals.",
+    "notas_olfativas": {
+      "topo": "Pétalas Aveludadas",
+      "coracao": "Glacê de Amêndoas",
+      "fundo": "Sândalo Cremoso"
+    }
   },
   {
     "nome": "Victoria's Secret - Loção Hidratante - Amber Romance - 236ml",
@@ -317,7 +551,13 @@
     "precoOriginal": 140.0,
     "precoNovo": 154,
     "precoPix3x": 170,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_98c96367-0856-40cb-bf40-93e7d13e482b.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_98c96367-0856-40cb-bf40-93e7d13e482b.jpg?alt=media",
+    "descricao": "Loção de absorção rápida com agentes nutritivos de aloé vera e extrato de aveia, perfumando com Amber Romance.",
+    "notas_olfativas": {
+      "topo": "Cereja Preta",
+      "coracao": "Creme Anglaise, Âmbar",
+      "fundo": "Baunilha, Sândalo"
+    }
   },
   {
     "nome": "Victoria's Secret - Loção hidratante - Aqua Kiss - 236ml",
@@ -325,7 +565,13 @@
     "precoOriginal": 140.0,
     "precoNovo": 154,
     "precoPix3x": 170,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_2d340434-24df-4890-94c6-d266ae8c05d3.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_2d340434-24df-4890-94c6-d266ae8c05d3.jpg?alt=media",
+    "descricao": "Hidratante corporal perfumado com a leveza aquática e refrescante de Aqua Kiss.",
+    "notas_olfativas": {
+      "topo": "Notas Aquáticas, Frésia",
+      "coracao": "Margarida, Ameixa",
+      "fundo": "Almíscar Limpo"
+    }
   },
   {
     "nome": "Victoria's Secret - Loção Hidratante - Bare Vanilla - 236ml",
@@ -333,7 +579,13 @@
     "precoOriginal": 150.0,
     "precoNovo": 165,
     "precoPix3x": 182,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_a9472c8f-a8da-499a-bd9f-d3e44a90544c.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_a9472c8f-a8da-499a-bd9f-d3e44a90544c.jpg?alt=media",
+    "descricao": "Creme hidratante corporal com a icônica e irresistível doçura de Bare Vanilla.",
+    "notas_olfativas": {
+      "topo": "Baunilha Chic",
+      "coracao": "Flor de Maçã, Orquídea",
+      "fundo": "Cashmeran, Baunilha Aveludada"
+    }
   },
   {
     "nome": "Victoria's Secret - Loção Hidratante - Coconut Passion - 236ml",
@@ -341,7 +593,13 @@
     "precoOriginal": 140.0,
     "precoNovo": 154,
     "precoPix3x": 170,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_5ebfd51c-9dbf-4419-af6e-9c6328b46329.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_5ebfd51c-9dbf-4419-af6e-9c6328b46329.jpg?alt=media",
+    "descricao": "Loção cremosa hidratante nutritiva com o aroma tropical e aconchegante de coco e baunilha.",
+    "notas_olfativas": {
+      "topo": "Coco Fresco",
+      "coracao": "Lírio-do-Vale",
+      "fundo": "Baunilha Quente"
+    }
   },
   {
     "nome": "Victoria's Secret - Loção Hidratante - Love Spell - 236ml",
@@ -349,7 +607,13 @@
     "precoOriginal": 140.0,
     "precoNovo": 154,
     "precoPix3x": 170,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_8808960a-5e45-4f44-a0da-cf20537505e2.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_8808960a-5e45-4f44-a0da-cf20537505e2.jpg?alt=media",
+    "descricao": "Creme hidratante corporal enriquecido com extratos nutritivos e o cheiro inconfundível de Love Spell.",
+    "notas_olfativas": {
+      "topo": "Flor de Cerejeira, Pêssego",
+      "coracao": "Maçã Vermelha",
+      "fundo": "Almíscar"
+    }
   },
   {
     "nome": "Victoria's Secret - Loção hidratante - Midnight Bloom - 236ml",
@@ -357,7 +621,13 @@
     "precoOriginal": 140.0,
     "precoNovo": 154,
     "precoPix3x": 170,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_B56DA86D-8189-4B3C-B48E-6EAD07F1BD3F.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_B56DA86D-8189-4B3C-B48E-6EAD07F1BD3F.jpg?alt=media",
+    "descricao": "Loção corporal hidratante com a essência exótica e envolvente de Midnight Bloom.",
+    "notas_olfativas": {
+      "topo": "Flor da Lua",
+      "coracao": "Madeiras Cremosas",
+      "fundo": "Âmbar Sensual"
+    }
   },
   {
     "nome": "Victoria's Secret - Loção Hidratante - Pure Seduction - 236ml",
@@ -365,7 +635,13 @@
     "precoOriginal": 140.0,
     "precoNovo": 154,
     "precoPix3x": 170,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_853d0a6d-2a09-4616-bf27-2b04c3e452da.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_853d0a6d-2a09-4616-bf27-2b04c3e452da.jpg?alt=media",
+    "descricao": "Hidratante corporal nutritivo com toque aveludado e o aroma frutado de Pure Seduction.",
+    "notas_olfativas": {
+      "topo": "Ameixa Vermelha",
+      "coracao": "Frésia Sutil",
+      "fundo": "Almíscar Doce"
+    }
   },
   {
     "nome": "Victoria's Secret - Loção Hidratante - Rush - 236ml",
@@ -373,7 +649,13 @@
     "precoOriginal": 140.0,
     "precoNovo": 154,
     "precoPix3x": 170,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_fcfb7dc9-70d8-4a15-93b9-c53c1f21d8d8.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_fcfb7dc9-70d8-4a15-93b9-c53c1f21d8d8.jpg?alt=media",
+    "descricao": "Loção corporal hidratante com agentes calmantes e a fragrância quente e provocante de Rush.",
+    "notas_olfativas": {
+      "topo": "Clementina",
+      "coracao": "Flor Branca",
+      "fundo": "Cristais de Âmbar"
+    }
   },
   {
     "nome": "Victoria's Secret - Loção hidratante - Temptation - 236ml",
@@ -381,7 +663,13 @@
     "precoOriginal": 140.0,
     "precoNovo": 154,
     "precoPix3x": 170,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_691d80f4-7beb-4d75-a0ae-87780e9dabd8.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_691d80f4-7beb-4d75-a0ae-87780e9dabd8.jpg?alt=media",
+    "descricao": "Creme de corpo hidratante com a doçura fresca de Temptation.",
+    "notas_olfativas": {
+      "topo": "Maçã Fresca",
+      "coracao": "Flor de Cacto",
+      "fundo": "Notas Florais"
+    }
   },
   {
     "nome": "Victoria's Secret - Loção Hidratante - Velvet Petals - 236ml",
@@ -389,7 +677,13 @@
     "precoOriginal": 140.0,
     "precoNovo": 154,
     "precoPix3x": 170,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_95a32f1a-1b3f-4453-89f3-a8a45c014621.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_95a32f1a-1b3f-4453-89f3-a8a45c014621.jpg?alt=media",
+    "descricao": "Loção perfumada Velvet Petals para uma pele hidratada, macia e delicadamente perfumada.",
+    "notas_olfativas": {
+      "topo": "Pétalas Aveludadas",
+      "coracao": "Glacê de Amêndoas",
+      "fundo": "Sândalo Cremoso"
+    }
   },
   {
     "nome": "Burberry My Burberry Blush -EDP - 90ml",
@@ -397,6 +691,12 @@
     "precoOriginal": 618.0,
     "precoNovo": 680,
     "precoPix3x": 749,
-    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_E176C377-B11E-4264-9681-3D4FE7AACA03.jpg?alt=media"
+    "imagem": "https://firebasestorage.stagebeta.kyte.site/v0/b/kyte-7c484.appspot.com/o/DDEUsJCJv6fwL3zECcvvYdPlUe93%2Fthumb_280_E176C377-B11E-4264-9681-3D4FE7AACA03.jpg?alt=media",
+    "descricao": "Inspirado num jardim londrino ao amanhecer, este floral frutado é vibrante, cintilante e delicado, evocando uma energia contagiante e feminina.",
+    "notas_olfativas": {
+      "topo": "Romã, Limão Zest",
+      "coracao": "Pétalas de Rosa, Maçã Verde, Gerânio",
+      "fundo": "Jasmim, Wisteria"
+    }
   }
 ]
