@@ -866,6 +866,14 @@
         <p id="modal-details-composicao" style="white-space: pre-line; margin: 0;"></p>
       </div>
 
+      <!-- Tabela de Simulação de Parcelamento InfinitePay -->
+      <div style="margin-top: 1rem; border: 1px solid var(--border-color); border-radius: 8px; padding: 0.75rem; background: #fff;">
+        <strong style="font-size: 0.9rem; color: var(--primary-color); display: block; margin-bottom: 0.5rem;">
+          💳 Simulação de Parcelamento no Cartão (InfinitePay):
+        </strong>
+        <div id="modal-details-parcelamento" style="max-height: 160px; overflow-y: auto; font-size: 0.825rem;"></div>
+      </div>
+
       <button class="btn-modal-add" id="modal-btn-add-cart">Adicionar ao Carrinho</button>
     </div>
   </div>
@@ -933,7 +941,6 @@ Ainda está disponível?`;
       const card = document.createElement('div');
       card.className = 'card';
       
-      // Adicionamos a classe 'clickable-area' e o evento onclick na parte superior do card
       card.innerHTML = `
         ${badgeHtml}
         <div class="clickable-area" onclick="abrirModalDetalhes(${idx})" title="Ver Detalhes e Composição">
@@ -967,7 +974,7 @@ Ainda está disponível?`;
     });
   }
 
-  /* Lógica do Novo Modal de Detalhes */
+  /* Lógica do Modal de Detalhes */
   function abrirModalDetalhes(index) {
     const product = currentDisplayedProducts[index];
     const parcelValue = product.precoPix3x / 3;
@@ -980,17 +987,49 @@ Ainda está disponível?`;
     // Lógica para as notas/composição do perfume
     let textoComposicao = "";
 
-    // Verifica se existem notas olfativas no JSON e adiciona ao texto
     if (product.notas_olfativas) {
       textoComposicao += `Topo: ${product.notas_olfativas.topo || '-'}\n`;
       textoComposicao += `Coração: ${product.notas_olfativas.coracao || '-'}\n`;
       textoComposicao += `Fundo: ${product.notas_olfativas.fundo || '-'}\n\n`;
     }
 
-    // Adiciona a descrição ou composição geral abaixo das notas
     textoComposicao += product.descricao || product.composicao || "A composição detalhada desta fragrância não foi informada, mas garantimos uma experiência olfativa incrível!";
     
     document.getElementById('modal-details-composicao').innerText = textoComposicao;
+
+    // Tabela de Parcelamento Cartão (InfinitePay)
+    const taxasInfinitePay = {
+      1: 3.15,
+      2: 5.39,
+      3: 6.12,
+      4: 6.85,
+      5: 7.57,
+      6: 8.28,
+      7: 8.99,
+      8: 9.69,
+      9: 10.38,
+      10: 11.06,
+      11: 11.74,
+      12: 14.40
+    };
+
+    let htmlTabela = `<table style="width:100%; border-collapse:collapse; text-align:left;">`;
+    
+    for (let i = 1; i <= 12; i++) {
+      const taxa = taxasInfinitePay[i] || 0;
+      const valorTotalComJuros = product.precoNovo * (1 + taxa / 100);
+      const valorParcela = valorTotalComJuros / i;
+
+      htmlTabela += `
+        <tr style="border-bottom: 1px solid #f1f5f9; height: 26px;">
+          <td style="color: #475569;"><strong>${i}x</strong> de ${formatCurrency(valorParcela)}</td>
+          <td style="text-align: right; color: #64748b;">(Total: ${formatCurrency(valorTotalComJuros)})</td>
+        </tr>
+      `;
+    }
+    
+    htmlTabela += `</table>`;
+    document.getElementById('modal-details-parcelamento').innerHTML = htmlTabela;
 
     // Imagem
     const imgWrapper = document.getElementById('modal-details-img');
@@ -1022,7 +1061,6 @@ Ainda está disponível?`;
     if (event.target == detailsModal) {
       detailsModal.style.display = 'none';
     }
-    // Para o carrinho fechar clicando fora da gaveta
     if (event.target == cartModal) {
       toggleCart(false);
     }
@@ -1040,7 +1078,7 @@ Ainda está disponível?`;
     }
 
     updateCartUI();
-    toggleCart(true); // Abre a gaveta lateral do carrinho
+    toggleCart(true);
   }
 
   function updateCartQty(index, delta) {
