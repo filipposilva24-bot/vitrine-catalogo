@@ -723,7 +723,6 @@
       text-align: center;
       padding: 3rem 1rem;
       color: var(--text-muted);
-      font-size: 1.1rem;
     }
   </style>
 </head>
@@ -935,7 +934,24 @@ Ainda está disponível?`;
     counter.textContent = `A apresentar ${products.length} de ${allProducts.length} produtos`;
 
     if (products.length === 0) {
-      grid.innerHTML = '<div class="no-results">Nenhum produto encontrado.</div>';
+      const searchTerm = document.getElementById('search-input').value.trim();
+      const queryText = searchTerm ? `o item "${searchTerm}"` : "este produto";
+      const messageAvailability = `Olá! Estava a pesquisar no catálogo por ${queryText} e não encontrei. Gostaria de verificar a disponibilidade ou encomenda!`;
+      const waAvailabilityUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(messageAvailability)}`;
+
+      grid.innerHTML = `
+        <div class="no-results">
+          <p style="font-size: 1.25rem; font-weight: 700; color: var(--primary-color); margin-bottom: 0.4rem;">
+            Consultar disponibilidade
+          </p>
+          <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+            Não encontrou o perfume que procurava? Fale conosco para encomendá-lo!
+          </p>
+          <a href="${waAvailabilityUrl}" target="_blank" class="btn-checkout" style="display: inline-flex; width: auto; padding: 0.75rem 1.5rem; text-decoration: none; margin: 0 auto; font-size: 0.95rem;">
+            💬 Consultar no WhatsApp
+          </a>
+        </div>
+      `;
       return;
     }
 
