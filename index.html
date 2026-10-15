@@ -1145,15 +1145,28 @@ Ainda está disponível?`;
   document.getElementById('category-filter').addEventListener('change', filterAndSortProducts);
   document.getElementById('sort-order').addEventListener('change', filterAndSortProducts);
 
-  /* Carregamento Inicial */
-  fetch('catalogo_arredondado.json')
-    .then(res => res.json())
-    .then(data => {
-      allProducts = data;
+  /* Carregamento Inicial - Lendo os 5 arquivos divididos */
+  const arquivosJson = [
+    'produtos_parte_1.json',
+    'produtos_parte_2.json',
+    'produtos_parte_3.json',
+    'produtos_parte_4.json',
+    'produtos_parte_5.json'
+  ];
+
+  Promise.all(arquivosJson.map(url => fetch(url).then(res => {
+      if (!res.ok) throw new Error(`Falha ao carregar ${url}`);
+      return res.json();
+  })))
+    .then(resultados => {
+      allProducts = resultados.flat();
       populateCategories(allProducts);
       renderCatalog(allProducts);
     })
-    .catch(err => console.error("Erro ao carregar o catálogo:", err));
+    .catch(err => {
+      console.error("Erro ao carregar o catálogo:", err);
+      document.getElementById('results-count').textContent = "Erro ao carregar produtos. Verifique os arquivos JSON.";
+    });
   </script>
 </body>
 </html>
