@@ -319,16 +319,23 @@
       font-weight: 600;
     }
 
-    .price-pix3x {
-      margin-top: 0.3rem;
-      font-size: 0.85rem;
-      color: var(--text-muted);
+    .btn-view-installments {
+      background: none;
+      border: none;
+      padding: 0;
+      color: var(--accent-color);
+      font-size: 0.825rem;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      text-decoration: underline;
     }
 
-    .price-total-installment {
-      display: block;
-      font-size: 0.75rem;
-      color: var(--text-muted);
+    .btn-view-installments:hover {
+      color: var(--primary-color);
     }
 
     /* Botões de Ação no Card */
@@ -616,7 +623,7 @@
       font-size: 1.3rem;
       color: var(--primary-color);
       margin-bottom: 0.5rem;
-      padding-right: 2rem; /* espaço pro botão de fechar */
+      padding-right: 2rem;
     }
 
     .modal-price-area {
@@ -724,7 +731,7 @@
 
   <!-- Banner Promocional -->
   <div class="promo-banner">
-    ✨ Parcelamento facilitado em até <strong>3x no Pix</strong> | Envio Seguro para todo o Brasil
+    ✨ Pagamento Facilitado no <strong>Pix à vista</strong> ou <strong>Cartão em até 12x</strong> | Envio Seguro para todo o Brasil
   </div>
 
   <div class="container">
@@ -792,8 +799,8 @@
           <p>Sim! Todos os nossos produtos são 100% originais, lacrados e adquiridos diretamente com fornecedores oficiais.</p>
         </div>
         <div class="faq-item">
-          <h3>Como funciona o parcelamento no Pix?</h3>
-          <p>Facilitamos o seu pagamento em até 3x no Pix direto no atendimento sem complicações.</p>
+          <h3>Quais são as formas de pagamento?</h3>
+          <p>Aceitamos Pix à vista com desconto e parcelamento em até 12x no Cartão de Crédito.</p>
         </div>
         <div class="faq-item">
           <h3>Qual o prazo de envio?</h3>
@@ -825,19 +832,13 @@
       </div>
 
       <div class="cart-footer">
-        <div class="cart-total-row">
-          <span>À vista no Pix:</span>
-          <strong id="cart-total-pix">R$ 0,00</strong>
-        </div>
-        <div class="cart-total-row">
-          <span>Em 3x no Pix:</span>
-          <span id="cart-total-pix3x">R$ 0,00</span>
-        </div>
         <div class="cart-total-row grand-total">
-          <span>Total Geral:</span>
+          <span>Total à vista (Pix):</span>
           <span id="cart-total-display">R$ 0,00</span>
         </div>
-
+        <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.35rem; text-align: center;">
+          💳 Opção de parcelamento em até 12x no Cartão disponível.
+        </p>
         <button class="btn-checkout" onclick="checkoutWhatsAppCart()">
           Finalizar Pedido no WhatsApp
         </button>
@@ -858,7 +859,7 @@
       
       <div class="modal-price-area">
         <div class="modal-price-main" id="modal-details-preco">R$ 0,00</div>
-        <div class="price-pix3x" id="modal-details-parcela">ou 3x no Pix</div>
+        <div class="price-tag" style="font-size: 0.85rem;" id="modal-details-parcela">à vista no Pix</div>
       </div>
 
       <div class="composicao-box">
@@ -902,13 +903,12 @@
   }
 
   function generateSingleWhatsAppLink(product) {
-    const parcelValue = formatCurrency(product.precoPix3x / 3);
     const message = `Olá! Gostaria de encomendar o seguinte perfume:
 
 📌 *${product.nome}*
 🏷️ Categoria: ${product.categoria}
 💵 Preço à vista: ${formatCurrency(product.precoNovo)} no Pix
-💳 Ou 3x de ${parcelValue} no Pix (Total: ${formatCurrency(product.precoPix3x)})
+💳 Ou parcelado no cartão de crédito
 
 Ainda está disponível?`;
 
@@ -929,7 +929,6 @@ Ainda está disponível?`;
     }
 
     products.forEach((product, idx) => {
-      const parcelValue = product.precoPix3x / 3;
       const singleWaLink = generateSingleWhatsAppLink(product);
 
       const imgHtml = product.imagem 
@@ -954,10 +953,9 @@ Ainda está disponível?`;
           <div class="price-container">
             <div class="price-main">${formatCurrency(product.precoNovo)}</div>
             <div class="price-tag">à vista no Pix</div>
-            <div class="price-pix3x">
-              ou <strong>3x de ${formatCurrency(parcelValue)}</strong> no Pix
-            </div>
-            <span class="price-total-installment">(Total: ${formatCurrency(product.precoPix3x)})</span>
+            <button class="btn-view-installments" onclick="abrirModalDetalhes(${idx})" title="Ver tabela de parcelas">
+              💳 Ver simulação em até 12x no cartão
+            </button>
           </div>
 
           <div class="card-actions">
@@ -977,12 +975,11 @@ Ainda está disponível?`;
   /* Lógica do Modal de Detalhes */
   function abrirModalDetalhes(index) {
     const product = currentDisplayedProducts[index];
-    const parcelValue = product.precoPix3x / 3;
 
     // Preenchendo os dados do modal
     document.getElementById('modal-details-nome').innerText = product.nome;
     document.getElementById('modal-details-preco').innerText = formatCurrency(product.precoNovo);
-    document.getElementById('modal-details-parcela').innerHTML = `ou <strong>3x de ${formatCurrency(parcelValue)}</strong> no Pix`;
+    document.getElementById('modal-details-parcela').innerHTML = `à vista no Pix (ou parcelado no Cartão abaixo)`;
 
     // Lógica para as notas/composição do perfume
     let textoComposicao = "";
@@ -1000,18 +997,18 @@ Ainda está disponível?`;
     // Tabela de Parcelamento Cartão (InfinitePay)
     const taxasInfinitePay = {
       1: 3.15,
-      2: 5.39,
-      3: 6.12,
-      4: 6.85,
-      5: 7.57,
-      6: 8.28,
-      7: 8.99,
-      8: 9.69,
-      9: 10.38,
-      10: 11.06,
-      11: 11.74,
-      12: 14.40
-    };
+      2: 5.39,
+      3: 6.12,
+      4: 6.85,
+      5: 7.57,
+      6: 8.28,
+      7: 8.99,
+      8: 9.69,
+      9: 10.38,
+      10: 11.06,
+      11: 11.74,
+      12: 12.40
+    };
 
     let htmlTabela = `<table style="width:100%; border-collapse:collapse; text-align:left;">`;
     
@@ -1096,7 +1093,6 @@ Ainda está disponível?`;
 
     let totalCount = 0;
     let totalPix = 0;
-    let totalPix3x = 0;
 
     if (cart.length === 0) {
       container.innerHTML = '<p style="text-align:center; color:#64748b; margin-top:2rem;">O seu carrinho está vazio.</p>';
@@ -1104,7 +1100,6 @@ Ainda está disponível?`;
       cart.forEach((item, idx) => {
         totalCount += item.qty;
         totalPix += item.precoNovo * item.qty;
-        totalPix3x += item.precoPix3x * item.qty;
 
         const itemEl = document.createElement('div');
         itemEl.className = 'cart-item';
@@ -1125,8 +1120,6 @@ Ainda está disponível?`;
     }
 
     countBadge.textContent = totalCount;
-    document.getElementById('cart-total-pix').textContent = formatCurrency(totalPix);
-    document.getElementById('cart-total-pix3x').textContent = formatCurrency(totalPix3x);
     document.getElementById('cart-total-display').textContent = formatCurrency(totalPix);
   }
 
@@ -1149,19 +1142,15 @@ Ainda está disponível?`;
 
     let message = "Olá! Gostaria de finalizar o pedido dos seguintes itens:\n\n🛒 *ITENS DO PEDIDO:*\n";
     let totalPix = 0;
-    let totalPix3x = 0;
 
     cart.forEach(item => {
       const itemTotal = item.precoNovo * item.qty;
       totalPix += itemTotal;
-      totalPix3x += item.precoPix3x * item.qty;
       message += `• ${item.qty}x *${item.nome}* (${formatCurrency(itemTotal)})\n`;
     });
 
-    const parcelValue = formatCurrency(totalPix3x / 3);
-
-    message += `\n💵 *Total à vista no Pix:* ${formatCurrency(totalPix)}`;
-    message += `\n💳 *Ou em 3x no Pix:* 3x de ${parcelValue} (Total: ${formatCurrency(totalPix3x)})\n\nComo posso proceder com o pagamento e o envio?`;
+    message += `\n💵 *Total à vista (Pix):* ${formatCurrency(totalPix)}`;
+    message += `\n💳 *Para pagamento no Cartão:* Por favor, me envie o link de pagamento.\n\nComo posso proceder com o pagamento e o envio?`;
 
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
   }
