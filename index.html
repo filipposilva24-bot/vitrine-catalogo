@@ -1871,62 +1871,69 @@ Ainda está disponível?`;
       const countBadge = document.getElementById('cart-count');
       const installmentsBtn = document.getElementById('btn-cart-installments');
       const installmentsBox = document.getElementById('cart-installments-box');
+      const totalDisplay = document.getElementById('cart-total-display');
+      
       container.innerHTML = '';
 
       let totalCount = 0;
       let totalPix = 0;
 
+      // Se o carrinho estiver vazio, zera os contadores no ecrã e encerra
       if (cart.length === 0) {
         container.innerHTML = '<p style="text-align:center; color:#64748b; margin-top:2rem;">O seu carrinho está vazio.</p>';
+        if (countBadge) countBadge.textContent = '0';
+        if (totalDisplay) totalDisplay.textContent = formatCurrency(0);
         if (installmentsBtn) installmentsBtn.style.display = 'none';
         if (installmentsBox) installmentsBox.style.display = 'none';
-      } else {
-        if (installmentsBtn) installmentsBtn.style.display = 'flex';
-        cart.forEach((item, idx) => {
-          totalCount += item.qty;
-          totalPix += item.precoNovo * item.qty;
-
-          const itemEl = document.createElement('div');
-          itemEl.className = 'cart-item';
-          itemEl.innerHTML = `
-            <div>
-              <div class="cart-item-title">${item.nome}</div>
-              <div class="cart-item-price">${formatCurrency(item.precoNovo)} un.</div>
-              <div class="cart-item-qty">
-                <button class="qty-btn" onclick="window.updateCartQty(${idx}, -1)">-</button>
-                <span>${item.qty}</span>
-                <button class="qty-btn" onclick="window.updateCartQty(${idx}, 1)">+</button>
-              </div>
-            </div>
-            <strong>${formatCurrency(item.precoNovo * item.qty)}</strong>
-          `;
-          container.appendChild(itemEl);
-        });
-
-        const valorDesconto = totalPix * appliedDiscount;
-        const subtotalComDesconto = totalPix - valorDesconto;
-        const freteValor = selectedFreteInfo ? selectedFreteInfo.valor : 0;
-        const totalComFrete = subtotalComDesconto + freteValor;
-
-        let htmlTabela = `<table style="width:100%; border-collapse:collapse; text-align:left;">`;
-        for (let i = 1; i <= 12; i++) {
-          const taxa = taxasInfinitePay[i] || 0;
-          const valorTotalComJuros = totalComFrete / (1 - (taxa / 100));
-          const valorParcela = valorTotalComJuros / i;
-
-          htmlTabela += `
-            <tr style="border-bottom: 1px solid #f1f5f9; height: 26px;">
-              <td style="color: #475569;"><strong>${i}x</strong> de ${formatCurrency(valorParcela)}</td>
-              <td style="text-align: right; color: #64748b;">(Total: ${formatCurrency(valorTotalComJuros)})</td>
-            </tr>
-          `;
-        }
-        htmlTabela += `</table>`;
-        document.getElementById('cart-installments-table').innerHTML = htmlTabela;
-
-        countBadge.textContent = totalCount;
-        document.getElementById('cart-total-display').textContent = formatCurrency(totalComFrete);
+        return;
       }
+
+      if (installmentsBtn) installmentsBtn.style.display = 'flex';
+
+      cart.forEach((item, idx) => {
+        totalCount += item.qty;
+        totalPix += item.precoNovo * item.qty;
+
+        const itemEl = document.createElement('div');
+        itemEl.className = 'cart-item';
+        itemEl.innerHTML = `
+          <div>
+            <div class="cart-item-title">${item.nome}</div>
+            <div class="cart-item-price">${formatCurrency(item.precoNovo)} un.</div>
+            <div class="cart-item-qty">
+              <button class="qty-btn" onclick="window.updateCartQty(${idx}, -1)">-</button>
+              <span>${item.qty}</span>
+              <button class="qty-btn" onclick="window.updateCartQty(${idx}, 1)">+</button>
+            </div>
+          </div>
+          <strong>${formatCurrency(item.precoNovo * item.qty)}</strong>
+        `;
+        container.appendChild(itemEl);
+      });
+
+      const valorDesconto = totalPix * appliedDiscount;
+      const subtotalComDesconto = totalPix - valorDesconto;
+      const freteValor = selectedFreteInfo ? selectedFreteInfo.valor : 0;
+      const totalComFrete = subtotalComDesconto + freteValor;
+
+      let htmlTabela = `<table style="width:100%; border-collapse:collapse; text-align:left;">`;
+      for (let i = 1; i <= 12; i++) {
+        const taxa = taxasInfinitePay[i] || 0;
+        const valorTotalComJuros = totalComFrete / (1 - (taxa / 100));
+        const valorParcela = valorTotalComJuros / i;
+
+        htmlTabela += `
+          <tr style="border-bottom: 1px solid #f1f5f9; height: 26px;">
+            <td style="color: #475569;"><strong>${i}x</strong> de ${formatCurrency(valorParcela)}</td>
+            <td style="text-align: right; color: #64748b;">(Total: ${formatCurrency(valorTotalComJuros)})</td>
+          </tr>
+        `;
+      }
+      htmlTabela += `</table>`;
+      document.getElementById('cart-installments-table').innerHTML = htmlTabela;
+
+      if (countBadge) countBadge.textContent = totalCount;
+      if (totalDisplay) totalDisplay.textContent = formatCurrency(totalComFrete);
     };
 
     window.toggleCartInstallments = () => {
@@ -1950,115 +1957,115 @@ Ainda está disponível?`;
     };
 
     // CHECKOUT NO WHATSAPP INTEGRADO AO FIRESTORE E AO GESTOR DE COBRANÇAS
-window.checkoutWhatsAppCart = async () => {
-  if (cart.length === 0) {
-    alert("Adicione pelo menos um produto ao carrinho antes de finalizar!");
-    return;
-  }
+    window.checkoutWhatsAppCart = async () => {
+      if (cart.length === 0) {
+        alert("Adicione pelo menos um produto ao carrinho antes de finalizar!");
+        return;
+      }
 
-  if (!currentUser) {
-    alert("Por favor, faça login ou crie uma conta rápida para prosseguir!");
-    window.openAuthModal();
-    return;
-  }
+      if (!currentUser) {
+        alert("Por favor, faça login ou crie uma conta rápida para prosseguir!");
+        window.openAuthModal();
+        return;
+      }
 
-  let totalPix = 0;
-  cart.forEach(item => totalPix += item.precoNovo * item.qty);
+      let totalPix = 0;
+      cart.forEach(item => totalPix += item.precoNovo * item.qty);
 
-  let subtotalFinal = totalPix;
-  if (appliedDiscount > 0) {
-    subtotalFinal = totalPix - (totalPix * appliedDiscount);
-  }
-  if (selectedFreteInfo) {
-    subtotalFinal += selectedFreteInfo.valor;
-  }
+      let subtotalFinal = totalPix;
+      if (appliedDiscount > 0) {
+        subtotalFinal = totalPix - (totalPix * appliedDiscount);
+      }
+      if (selectedFreteInfo) {
+        subtotalFinal += selectedFreteInfo.valor;
+      }
 
-  const hoje = new Date().toISOString().split('T')[0];
-  const resumoItens = cart.map(i => `${i.qty}x ${i.nome}`).join(', ');
+      const hoje = new Date().toISOString().split('T')[0];
+      const resumoItens = cart.map(i => `${i.qty}x ${i.nome}`).join(', ');
 
-  try {
-    // 1. Regista o pedido no banco Firestore do catálogo (frota-pop110)
-    await addDoc(collection(db, "pedidos"), {
-      userId: currentUser.uid,
-      clienteNome: currentUser.displayName || 'Cliente',
-      clienteEmail: currentUser.email,
-      itens: cart,
-      total: subtotalFinal,
-      cupomUsado: appliedCouponCode,
-      status: 'Pendente',
-      createdAt: serverTimestamp()
-    });
+      try {
+        // 1. Regista o pedido no banco Firestore do catálogo (frota-pop110)
+        await addDoc(collection(db, "pedidos"), {
+          userId: currentUser.uid,
+          clienteNome: currentUser.displayName || 'Cliente',
+          clienteEmail: currentUser.email,
+          itens: cart,
+          total: subtotalFinal,
+          cupomUsado: appliedCouponCode,
+          status: 'Pendente',
+          createdAt: serverTimestamp()
+        });
 
-    // 2. Envia direto para o Gestor de Cobranças (meu-acessor-fbe0e)
-    await addDoc(collection(gestorDb, "vendas_agrupadas"), {
-      nome: currentUser.displayName || 'Cliente Site',
-      tag: 'NOVO',
-      telefone: '11982818590',
-      descricao: `[Site] ${resumoItens}`,
-      valorTotal: subtotalFinal,
-      custoTotal: 0,
-      parcelas: [{
-        numero: 1,
-        totalParcelas: 1,
-        valor: subtotalFinal,
-        custo: 0,
-        vencimento: hoje,
-        pago: false
-      }],
-      createdAt: serverTimestamp()
-    });
+        // 2. Envia direto para o Gestor de Cobranças (meu-acessor-fbe0e)
+        await addDoc(collection(gestorDb, "vendas_agrupadas"), {
+          nome: currentUser.displayName || 'Cliente Site',
+          tag: 'NOVO',
+          telefone: '11982818590',
+          descricao: `[Site] ${resumoItens}`,
+          valorTotal: subtotalFinal,
+          custoTotal: 0,
+          parcelas: [{
+            numero: 1,
+            totalParcelas: 1,
+            valor: subtotalFinal,
+            custo: 0,
+            vencimento: hoje,
+            pago: false
+          }],
+          createdAt: serverTimestamp()
+        });
 
-    // Bloqueia a reutilização do cupão PRIMEIRACOMPRA no Firestore
-    if (appliedCouponCode === 'PRIMEIRACOMPRA') {
-      await setDoc(doc(db, "usuarios", currentUser.uid), {
-        cuponsUsados: arrayUnion('PRIMEIRACOMPRA')
-      }, { merge: true });
-    }
+        // Bloqueia a reutilização do cupão PRIMEIRACOMPRA no Firestore
+        if (appliedCouponCode === 'PRIMEIRACOMPRA') {
+          await setDoc(doc(db, "usuarios", currentUser.uid), {
+            cuponsUsados: arrayUnion('PRIMEIRACOMPRA')
+          }, { merge: true });
+        }
 
-    // 3. Construção da mensagem limpa para o WhatsApp (sem emojis que viram '◆')
-    let message = `Olá! Gostaria de finalizar o meu pedido no site Sillage Perfumes:\n\n` +
-      `*Cliente:* ${currentUser.displayName} (${currentUser.email})\n\n` +
-      `*ITENS DO PEDIDO:*\n`;
+        // 3. Construção da mensagem limpa para o WhatsApp (sem emojis que viram '◆')
+        let message = `Olá! Gostaria de finalizar o meu pedido no site Sillage Perfumes:\n\n` +
+          `*Cliente:* ${currentUser.displayName} (${currentUser.email})\n\n` +
+          `*ITENS DO PEDIDO:*\n`;
 
-    cart.forEach(item => {
-      const itemTotal = item.precoNovo * item.qty;
-      message += `- ${item.qty}x *${item.nome}* (${formatCurrency(itemTotal)})\n`;
-    });
+        cart.forEach(item => {
+          const itemTotal = item.precoNovo * item.qty;
+          message += `- ${item.qty}x *${item.nome}* (${formatCurrency(itemTotal)})\n`;
+        });
 
-    if (appliedDiscount > 0) {
-      const valorDesconto = totalPix * appliedDiscount;
-      message += `\n*Cupom (${appliedCouponCode}):* -${formatCurrency(valorDesconto)}\n`;
-    }
+        if (appliedDiscount > 0) {
+          const valorDesconto = totalPix * appliedDiscount;
+          message += `\n*Cupom (${appliedCouponCode}):* -${formatCurrency(valorDesconto)}\n`;
+        }
 
-    if (selectedFreteInfo) {
-      message += `\n*Endereço de Entrega:* ${selectedFreteInfo.cidade} (CEP: ${selectedFreteInfo.cep})\n`;
-      message += `*Frete (${selectedFreteInfo.opcao}):* ${formatCurrency(selectedFreteInfo.valor)}\n`;
-    }
+        if (selectedFreteInfo) {
+          message += `\n*Endereço de Entrega:* ${selectedFreteInfo.cidade} (CEP: ${selectedFreteInfo.cep})\n`;
+          message += `*Frete (${selectedFreteInfo.opcao}):* ${formatCurrency(selectedFreteInfo.valor)}\n`;
+        }
 
-    message += `\n*Total Final:* ${formatCurrency(subtotalFinal)}\n`;
-    message += `*Para pagamento no Cartão:* Por favor, envie-me o link de pagamento.\n\n` +
-      `Como posso proceder com o pagamento e o envio?`;
+        message += `\n*Total Final:* ${formatCurrency(subtotalFinal)}\n`;
+        message += `*Para pagamento no Cartão:* Por favor, envie-me o link de pagamento.\n\n` +
+          `Como posso proceder com o pagamento e o envio?`;
 
-    // 4. Limpa o carrinho e repõe a interface
-    cart = [];
-    selectedFreteInfo = null;
-    appliedDiscount = 0;
-    appliedCouponCode = '';
+        // 4. Limpa o carrinho e repõe a interface
+        cart = [];
+        selectedFreteInfo = null;
+        appliedDiscount = 0;
+        appliedCouponCode = '';
 
-    if (document.getElementById('coupon-input')) document.getElementById('coupon-input').value = '';
-    if (document.getElementById('coupon-status')) document.getElementById('coupon-status').textContent = '';
-    if (document.getElementById('cep-input')) document.getElementById('cep-input').value = '';
-    if (document.getElementById('frete-results')) document.getElementById('frete-results').textContent = '';
+        if (document.getElementById('coupon-input')) document.getElementById('coupon-input').value = '';
+        if (document.getElementById('coupon-status')) document.getElementById('coupon-status').textContent = '';
+        if (document.getElementById('cep-input')) document.getElementById('cep-input').value = '';
+        if (document.getElementById('frete-results')) document.getElementById('frete-results').textContent = '';
 
-    window.updateCartUI();
-    window.toggleCart(false);
+        window.updateCartUI();
+        window.toggleCart(false);
 
-    // 5. Redireciona para o WhatsApp
-    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
-  } catch (err) {
-    alert("Erro ao registrar pedido: " + err.message);
-  }
-};
+        // 5. Redireciona para o WhatsApp
+        window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
+      } catch (err) {
+        alert("Erro ao registrar pedido: " + err.message);
+      }
+    };
 
     /* Filtragem e Ordenação */
     function filterAndSortProducts() {
