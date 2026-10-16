@@ -52,7 +52,7 @@
 
     /* Header Limpo com Logo Acima do Nome */
     header {
-      padding: 2.5rem 0 1.5rem;
+      padding: 2.5rem 0 1.25rem;
       text-align: center;
     }
 
@@ -114,6 +114,58 @@
       border-color: var(--whatsapp-color);
     }
 
+    /* Botão Provador Virtual */
+    .quiz-banner-btn {
+      background: linear-gradient(135deg, #b48a3c 0%, #d97706 100%);
+      color: #ffffff;
+      border: none;
+      width: 100%;
+      padding: 0.85rem;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      font-weight: 800;
+      cursor: pointer;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 4px 12px rgba(180, 138, 60, 0.25);
+      transition: transform 0.2s, opacity 0.2s;
+    }
+
+    .quiz-banner-btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.95;
+    }
+
+    /* Pílulas de Filtros Rápidos */
+    .header-pills {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.25rem;
+    }
+
+    .pill-btn {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 0.825rem;
+      cursor: pointer;
+      color: var(--primary-color);
+      transition: all 0.2s;
+    }
+
+    .pill-btn:hover {
+      border-color: var(--accent-color);
+    }
+
+    .pill-btn.active {
+      background: var(--accent-color);
+      color: #ffffff;
+      border-color: var(--accent-color);
+    }
+
     /* Barra de Confiança */
     .trust-bar {
       display: grid;
@@ -123,7 +175,7 @@
       border: 1px solid var(--border-color);
       border-radius: 12px;
       padding: 1rem;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
       text-align: center;
     }
 
@@ -230,6 +282,35 @@
     .card:hover {
       transform: translateY(-4px);
       box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Botão de Favoritos (Wishlist) */
+    .wishlist-btn {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 0.9rem;
+      z-index: 10;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+      transition: transform 0.2s, background-color 0.2s;
+    }
+
+    .wishlist-btn:hover {
+      transform: scale(1.1);
+    }
+
+    .wishlist-btn.active {
+      background: #fef2f2;
+      border-color: #fca5a5;
     }
 
     .card-badge {
@@ -344,7 +425,7 @@
     /* Botões de Ação no Card */
     .card-actions {
       display: flex;
-      gap: 0.5rem;
+      gap: 0.4rem;
     }
 
     .btn-add-cart {
@@ -362,6 +443,20 @@
 
     .btn-add-cart:hover {
       background-color: #1e293b;
+    }
+
+    .btn-compare {
+      background: #e2e8f0;
+      border: none;
+      padding: 0.7rem 0.75rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+    }
+
+    .btn-compare:hover {
+      background: #cbd5e1;
     }
 
     .btn-buy-direct {
@@ -426,7 +521,7 @@
       font-weight: 800;
     }
 
-    /* Modal do Carrinho & Modal de Detalhes */
+    /* Modal Generico Overlay */
     .modal-overlay {
       position: fixed;
       top: 0;
@@ -528,9 +623,58 @@
       cursor: pointer;
     }
 
+    /* CAIXA DE CUPOM DE DESCONTO */
+    .coupon-box {
+      margin: 0.75rem 1.25rem 0;
+      padding: 0.85rem;
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+    }
+
+    .coupon-box label {
+      font-size: 0.825rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+
+    .coupon-inputs {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .coupon-inputs input {
+      flex: 1;
+      padding: 0.5rem 0.75rem;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      font-size: 0.875rem;
+      outline: none;
+      text-transform: uppercase;
+    }
+
+    .btn-apply-coupon {
+      background: var(--primary-color);
+      color: #fff;
+      border: none;
+      padding: 0.5rem 0.85rem;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.8rem;
+      cursor: pointer;
+    }
+
+    .coupon-status {
+      margin-top: 0.4rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
     /* CAIXA DE CÁLCULO DE FRETE NO CARRINHO */
     .shipping-box {
-      margin: 0.75rem 0;
+      margin: 0.75rem 1.25rem 0;
       padding: 0.85rem;
       background: #f8fafc;
       border: 1px solid var(--border-color);
@@ -635,6 +779,20 @@
 
     .btn-checkout:hover {
       background-color: var(--whatsapp-hover);
+    }
+
+    /* Modais Centralizados (Quiz, Comparador, Detalhes) */
+    .modal-card-center {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 1.5rem;
+      width: 90%;
+      max-width: 500px;
+      max-height: 85vh;
+      overflow-y.auto;
+      margin: auto;
+      position: relative;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     }
 
     /* Modal de Detalhes do Produto */
@@ -797,7 +955,7 @@
 
   <!-- Banner Promocional -->
   <div class="promo-banner">
-    ✨ Pagamento Facilitado no <strong>Pix à vista</strong> ou <strong>Cartão em até 12x</strong> | Envio Seguro para todo o Brasil
+    ✨ Pagamento Facilitado no <strong>Pix à vista</strong> ou <strong>Cartão em até 12x</strong> | Cupom: <strong>SILLAGE10</strong>
   </div>
 
   <div class="container">
@@ -813,6 +971,19 @@
         <a href="https://wa.me/5511982818590" target="_blank" rel="noopener">💬 Atendimento via WhatsApp</a>
       </div>
     </header>
+
+    <!-- Botão Provador Virtual -->
+    <button class="quiz-banner-btn" onclick="openQuizModal()">🎯 Não sabe qual escolher? Faça o Provador Virtual!</button>
+
+    <!-- Pílulas de Filtros Rápidos -->
+    <div class="header-pills">
+      <button class="pill-btn active" onclick="filterByOcasion('todas', this)">✨ Todos</button>
+      <button class="pill-btn" onclick="filterByOcasion('dia', this)">☀️ Dia a Dia</button>
+      <button class="pill-btn" onclick="filterByOcasion('noite', this)">🌙 Encontros / Noite</button>
+      <button class="pill-btn" onclick="filterByOcasion('doce', this)">🍯 Doces / Baunilha</button>
+      <button class="pill-btn" onclick="filterByOcasion('amadeirado', this)">🪵 Amadeirados</button>
+      <button class="pill-btn" onclick="toggleWishlistFilter(this)" id="wishlist-filter-btn">❤️ Favoritos (0)</button>
+    </div>
 
     <!-- Barra de Confiança -->
     <div class="trust-bar">
@@ -895,21 +1066,29 @@
         <!-- Itens do carrinho inseridos via JS -->
       </div>
 
-      <!-- Caixa de Cálculo de Frete -->
-      <div style="padding: 0 1.25rem;">
-        <div class="shipping-box">
-          <label for="cep-input">🚚 Calcular Frete e Prazo (ViaCEP):</label>
-          <div class="shipping-inputs">
-            <input type="text" id="cep-input" placeholder="Digite seu CEP (ex: 01001-000)" maxlength="9">
-            <button class="btn-calc-frete" onclick="calcularFreteViaCEP()">Calcular</button>
-          </div>
-          <div class="frete-results" id="frete-results"></div>
+      <!-- Caixa de Cupom de Desconto -->
+      <div class="coupon-box">
+        <label for="coupon-input">🎟️ Cupom de Desconto:</label>
+        <div class="coupon-inputs">
+          <input type="text" id="coupon-input" placeholder="Ex: SILLAGE10">
+          <button class="btn-apply-coupon" onclick="applyCoupon()">Aplicar</button>
         </div>
+        <div class="coupon-status" id="coupon-status"></div>
+      </div>
+
+      <!-- Caixa de Cálculo de Frete -->
+      <div class="shipping-box">
+        <label for="cep-input">🚚 Calcular Frete e Prazo (ViaCEP):</label>
+        <div class="shipping-inputs">
+          <input type="text" id="cep-input" placeholder="Digite seu CEP (ex: 01001-000)" maxlength="9">
+          <button class="btn-calc-frete" onclick="calcularFreteViaCEP()">Calcular</button>
+        </div>
+        <div class="frete-results" id="frete-results"></div>
       </div>
 
       <div class="cart-footer">
         <div class="cart-total-row grand-total">
-          <span>Total à vista (Pix):</span>
+          <span>Total a Pagar:</span>
           <span id="cart-total-display">R$ 0,00</span>
         </div>
 
@@ -933,14 +1112,52 @@
     </div>
   </div>
 
+  <!-- Modal do Provador Virtual / Quiz -->
+  <div class="modal-overlay" id="quiz-modal">
+    <div class="modal-card-center">
+      <button class="close-btn-modal" style="position:absolute; right:15px; top:15px;" onclick="closeQuizModal()">&times;</button>
+      <h2 style="font-size: 1.25rem; color: var(--primary-color); margin-bottom: 0.5rem;">🎯 Provador Virtual Sillage</h2>
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.25rem;">Responda às perguntas abaixo para encontrarmos o seu perfume ideal:</p>
+
+      <div style="display:flex; flex-direction:column; gap:1rem;">
+        <div>
+          <label style="font-size:0.85rem; font-weight:700; display:block; margin-bottom:0.3rem;">1. Qual é a ocasião principal?</label>
+          <select id="quiz-ocasion" style="width:100%; padding:0.6rem; border-radius:6px; border:1px solid var(--border-color);">
+            <option value="dia">Dia a Dia / Trabalho / Frescor</option>
+            <option value="noite">Encontros / Eventos Especiais</option>
+            <option value="balada">Balada / Presença Marcante</option>
+          </select>
+        </div>
+
+        <div>
+          <label style="font-size:0.85rem; font-weight:700; display:block; margin-bottom:0.3rem;">2. Qual perfil olfativo prefere?</label>
+          <select id="quiz-style" style="padding:0.6rem; width:100%; border-radius:6px; border:1px solid var(--border-color);">
+            <option value="doce">Adocicado / Baunilha / Gourmand</option>
+            <option value="amadeirado">Amadeirado / Ambarado / Elegante</option>
+            <option value="fresco">Cítrico / Fresco / Aquático</option>
+          </select>
+        </div>
+
+        <button class="quiz-banner-btn" style="margin-top:0.5rem;" onclick="runQuizResult()">Recomendar Perfumes Ideais</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal do Comparador de Perfumes -->
+  <div class="modal-overlay" id="compare-modal">
+    <div class="modal-card-center" style="max-width: 650px;">
+      <button class="close-btn-modal" style="position:absolute; right:15px; top:15px;" onclick="closeCompareModal()">&times;</button>
+      <h2 style="font-size: 1.2rem; margin-bottom: 1rem; color: var(--primary-color);">⚖️ Comparador de Perfumes</h2>
+      <div id="compare-container" style="display:grid; grid-template-columns: 1fr 1fr; gap:1rem;"></div>
+    </div>
+  </div>
+
   <!-- Modal de Detalhes / Composição do Produto -->
   <div class="modal-overlay" id="details-modal">
     <div class="details-modal-content">
       <button class="close-btn-modal" onclick="fecharModalDetalhes()">&times;</button>
       
-      <div class="modal-img-wrapper" id="modal-details-img">
-        <!-- Imagem injetada via JS -->
-      </div>
+      <div class="modal-img-wrapper" id="modal-details-img"></div>
       
       <h3 id="modal-details-nome">Nome do Produto</h3>
       
@@ -954,7 +1171,6 @@
         <p id="modal-details-composicao" style="white-space: pre-line; margin: 0;"></p>
       </div>
 
-      <!-- Tabela de Simulação de Parcelamento InfinitePay -->
       <div style="margin-top: 1rem; border: 1px solid var(--border-color); border-radius: 8px; padding: 0.75rem; background: #fff;">
         <strong style="font-size: 0.9rem; color: var(--primary-color); display: block; margin-bottom: 0.5rem;">
           💳 Simulação de Parcelamento no Cartão (InfinitePay):
@@ -972,7 +1188,12 @@
   let allProducts = [];
   let currentDisplayedProducts = []; 
   let cart = [];
+  let wishlist = JSON.parse(localStorage.getItem('sillage_wishlist') || '[]');
+  let compareList = [];
   let selectedFreteInfo = null;
+  let appliedDiscount = 0;
+  let appliedCouponCode = '';
+  let showingOnlyWishlist = false;
 
   const formatCurrency = (val) => {
     return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(val);
@@ -1011,6 +1232,10 @@ Ainda está disponível?`;
 
     counter.textContent = `A apresentar ${products.length} de ${allProducts.length} produtos`;
 
+    // Atualizar contador de favoritos no botão
+    const favBtn = document.getElementById('wishlist-filter-btn');
+    if (favBtn) favBtn.textContent = `❤️ Favoritos (${wishlist.length})`;
+
     if (products.length === 0) {
       const searchTerm = document.getElementById('search-input').value.trim();
       const queryText = searchTerm ? `o item "${searchTerm}"` : "este produto";
@@ -1035,6 +1260,7 @@ Ainda está disponível?`;
 
     products.forEach((product, idx) => {
       const singleWaLink = generateSingleWhatsAppLink(product);
+      const isFav = wishlist.includes(product.nome);
 
       const imgHtml = product.imagem 
         ? `<img src="${product.imagem}" alt="${product.nome}" loading="lazy">` 
@@ -1046,6 +1272,9 @@ Ainda está disponível?`;
       card.className = 'card';
       
       card.innerHTML = `
+        <button class="wishlist-btn ${isFav ? 'active' : ''}" onclick="toggleWishlist('${product.nome}', event)" title="Salvar nos favoritos">
+          ${isFav ? '❤️' : '🤍'}
+        </button>
         ${badgeHtml}
         <div class="clickable-area" onclick="abrirModalDetalhes(${idx})" title="Ver Detalhes e Composição">
           <div class="product-img-container">
@@ -1065,7 +1294,8 @@ Ainda está disponível?`;
 
           <div class="card-actions">
             <button class="btn-add-cart" onclick="addToCart(${idx})">+ Carrinho</button>
-            <a href="${singleWaLink}" target="_blank" class="btn-buy-direct" title="Comprar Direto">
+            <button class="btn-compare" onclick="addToCompare('${product.nome}')" title="Comparar Lado a Lado">⚖️</button>
+            <a href="${singleWaLink}" target="_blank" class="btn-buy-direct" title="Comprar Direto no WhatsApp">
               <svg viewBox="0 0 24 24">
                 <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
               </svg>
@@ -1077,7 +1307,147 @@ Ainda está disponível?`;
     });
   }
 
-  /* Lógica do Modal de Detalhes */
+  /* FAVORITOS (WISHLIST) */
+  function toggleWishlist(productName, event) {
+    if (event) event.stopPropagation();
+
+    if (wishlist.includes(productName)) {
+      wishlist = wishlist.filter(name => name !== productName);
+    } else {
+      wishlist.push(productName);
+    }
+
+    localStorage.setItem('sillage_wishlist', JSON.stringify(wishlist));
+
+    if (showingOnlyWishlist) {
+      renderCatalog(allProducts.filter(p => wishlist.includes(p.nome)));
+    } else {
+      renderCatalog(currentDisplayedProducts);
+    }
+  }
+
+  function toggleWishlistFilter(btn) {
+    showingOnlyWishlist = !showingOnlyWishlist;
+    document.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('active'));
+
+    if (showingOnlyWishlist) {
+      btn.classList.add('active');
+      renderCatalog(allProducts.filter(p => wishlist.includes(p.nome)));
+    } else {
+      const firstBtn = document.querySelector('.header-pills .pill-btn');
+      if (firstBtn) firstBtn.classList.add('active');
+      renderCatalog(allProducts);
+    }
+  }
+
+  /* FILTRO POR OCASIÃO / PERFIL OLFATIVO */
+  function filterByOcasion(key, btn) {
+    showingOnlyWishlist = false;
+    document.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    if (key === 'todas') {
+      return renderCatalog(allProducts);
+    }
+
+    const filtered = allProducts.filter(p => {
+      const fullText = (p.nome + ' ' + p.categoria + ' ' + (p.descricao || '') + ' ' + (p.composicao || '')).toLowerCase();
+      return fullText.includes(key);
+    });
+
+    renderCatalog(filtered);
+  }
+
+  /* COMPARADOR DE PERFUMES */
+  function addToCompare(productName) {
+    const product = allProducts.find(p => p.nome === productName);
+    if (!product) return;
+
+    if (!compareList.find(c => c.nome === productName)) {
+      if (compareList.length >= 2) {
+        compareList.shift(); // remove o primeiro se já houver 2
+      }
+      compareList.push(product);
+    }
+
+    if (compareList.length === 2) {
+      openCompareModal();
+    } else {
+      alert(`Perfume "${product.nome}" adicionado ao comparador. Escolha mais 1 perfume para comparar lado a lado!`);
+    }
+  }
+
+  function openCompareModal() {
+    const container = document.getElementById('compare-container');
+    container.innerHTML = compareList.map(p => `
+      <div style="border:1px solid var(--border-color); padding:1rem; border-radius:10px; text-align:center; background:#fff;">
+        <img src="${p.imagem || ''}" style="width:100px; height:100px; object-fit:contain; margin-bottom:0.5rem;" alt="${p.nome}">
+        <h4 style="font-size:0.95rem; color:var(--primary-color); margin-bottom:0.4rem;">${p.nome}</h4>
+        <span class="category">${p.categoria}</span>
+        <div style="font-size:1.2rem; font-weight:800; color:var(--primary-color); margin:0.5rem 0;">${formatCurrency(p.precoNovo)}</div>
+        <div style="font-size:0.8rem; color:var(--text-muted); text-align:left; border-top:1px solid var(--border-color); padding-top:0.5rem; margin-top:0.5rem; line-height:1.4;">
+          ${p.descricao || 'Excelente fixação e projeção marcante.'}
+        </div>
+      </div>
+    `).join('');
+
+    document.getElementById('compare-modal').style.display = 'flex';
+  }
+
+  function closeCompareModal() {
+    document.getElementById('compare-modal').style.display = 'none';
+  }
+
+  /* PROVADOR VIRTUAL (QUIZ) */
+  function openQuizModal() {
+    document.getElementById('quiz-modal').style.display = 'flex';
+  }
+
+  function closeQuizModal() {
+    document.getElementById('quiz-modal').style.display = 'none';
+  }
+
+  function runQuizResult() {
+    const style = document.getElementById('quiz-style').value;
+    closeQuizModal();
+
+    const matches = allProducts.filter(p => {
+      const fullText = (p.nome + ' ' + (p.descricao || '') + ' ' + (p.categoria || '')).toLowerCase();
+      return fullText.includes(style);
+    });
+
+    const resultList = matches.length > 0 ? matches : allProducts.slice(0, 6);
+    renderCatalog(resultList);
+    alert(`Encontramos ${resultList.length} fragrâncias perfeitas para o seu perfil!`);
+  }
+
+  /* CUPOM DE DESCONTO */
+  function applyCoupon() {
+    const input = document.getElementById('coupon-input');
+    const status = document.getElementById('coupon-status');
+    const code = input.value.trim().toUpperCase();
+
+    if (code === 'SILLAGE10') {
+      appliedDiscount = 0.10;
+      appliedCouponCode = code;
+      status.style.color = 'var(--whatsapp-color)';
+      status.textContent = '✅ Cupom de 10% de desconto aplicado!';
+    } else if (code === 'PRIMEIRACOMPRA') {
+      appliedDiscount = 0.05;
+      appliedCouponCode = code;
+      status.style.color = 'var(--whatsapp-color)';
+      status.textContent = '✅ Cupom de 5% de desconto aplicado!';
+    } else {
+      appliedDiscount = 0;
+      appliedCouponCode = '';
+      status.style.color = '#dc2626';
+      status.textContent = '❌ Cupom inválido ou expirado.';
+    }
+
+    updateCartUI();
+  }
+
+  /* Modal de Detalhes */
   function abrirModalDetalhes(index) {
     const product = currentDisplayedProducts[index];
 
@@ -1140,12 +1510,13 @@ Ainda está disponível?`;
   window.onclick = function(event) {
     const detailsModal = document.getElementById('details-modal');
     const cartModal = document.getElementById('cart-modal');
-    if (event.target == detailsModal) {
-      detailsModal.style.display = 'none';
-    }
-    if (event.target == cartModal) {
-      toggleCart(false);
-    }
+    const quizModal = document.getElementById('quiz-modal');
+    const compareModal = document.getElementById('compare-modal');
+
+    if (event.target == detailsModal) detailsModal.style.display = 'none';
+    if (event.target == cartModal) toggleCart(false);
+    if (event.target == quizModal) quizModal.style.display = 'none';
+    if (event.target == compareModal) compareModal.style.display = 'none';
   }
 
   /* CÁLCULO DE FRETE VIA VIACEP */
@@ -1259,8 +1630,10 @@ Ainda está disponível?`;
         container.appendChild(itemEl);
       });
 
+      const valorDesconto = totalPix * appliedDiscount;
+      const subtotalComDesconto = totalPix - valorDesconto;
       const freteValor = selectedFreteInfo ? selectedFreteInfo.valor : 0;
-      const totalComFrete = totalPix + freteValor;
+      const totalComFrete = subtotalComDesconto + freteValor;
 
       const taxasInfinitePay = {
         1: 3.15, 2: 5.39, 3: 6.12, 4: 6.85, 5: 7.57, 6: 8.28,
@@ -1323,13 +1696,21 @@ Ainda está disponível?`;
       message += `• ${item.qty}x *${item.nome}* (${formatCurrency(itemTotal)})\n`;
     });
 
+    let subtotalFinal = totalPix;
+
+    if (appliedDiscount > 0) {
+      const valorDesconto = totalPix * appliedDiscount;
+      subtotalFinal = totalPix - valorDesconto;
+      message += `\n🎟️ *Cupom (${appliedCouponCode}):* -${formatCurrency(valorDesconto)}`;
+    }
+
     if (selectedFreteInfo) {
       message += `\n📍 *Endereço de Entrega:* ${selectedFreteInfo.cidade} (CEP: ${selectedFreteInfo.cep})\n`;
       message += `🚚 *Frete (${selectedFreteInfo.opcao}):* ${formatCurrency(selectedFreteInfo.valor)}\n`;
-      totalPix += selectedFreteInfo.valor;
+      subtotalFinal += selectedFreteInfo.valor;
     }
 
-    message += `\n💵 *Total Final:* ${formatCurrency(totalPix)}`;
+    message += `\n💵 *Total Final:* ${formatCurrency(subtotalFinal)}`;
     message += `\n💳 *Para pagamento no Cartão:* Por favor, me envie o link de pagamento.\n\nComo posso proceder com o pagamento e o envio?`;
 
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
