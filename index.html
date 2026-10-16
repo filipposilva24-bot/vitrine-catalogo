@@ -1337,19 +1337,26 @@
       const topBar = document.getElementById('user-top-bar');
 
       if (user) {
-        const userRef = doc(db, "usuarios", user.uid);
-        let userSnap = await getDoc(userRef);
+        // Fecha a janela de login imediatamente após autenticar
+        window.closeAuthModal();
 
-        if (!userSnap.exists()) {
-          await setDoc(userRef, {
-            nome: user.displayName || 'Cliente',
-            email: user.email,
-            cuponsUsados: [],
-            createdAt: serverTimestamp()
-          });
-          userSnap = await getDoc(userRef);
+        try {
+          const userRef = doc(db, "usuarios", user.uid);
+          let userSnap = await getDoc(userRef);
+
+          if (!userSnap.exists()) {
+            await setDoc(userRef, {
+              nome: user.displayName || 'Cliente',
+              email: user.email,
+              cuponsUsados: [],
+              createdAt: serverTimestamp()
+            });
+            userSnap = await getDoc(userRef);
+          }
+          userDocData = userSnap.data();
+        } catch (err) {
+          console.error("Erro ao carregar dados do usuário no Firestore:", err);
         }
-        userDocData = userSnap.data();
 
         topBar.innerHTML = `
           <span style="font-size:0.8rem;">👤 Olá, <strong>${user.displayName || 'Cliente'}</strong></span>
