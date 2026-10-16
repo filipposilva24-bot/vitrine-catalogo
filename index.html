@@ -1949,97 +1949,116 @@ Ainda está disponível?`;
       }
     };
 
-    // CHECKOUT NO WHATSAPP INTEGRADO AO FIRESTORE DO CATÁLOGO E DO GESTOR DE COBRANÇAS
-    window.checkoutWhatsAppCart = async () => {
-      if (cart.length === 0) {
-        alert("Adicione pelo menos um produto ao carrinho antes de finalizar!");
-        return;
-      }
+    // CHECKOUT NO WHATSAPP INTEGRADO AO FIRESTORE E AO GESTOR DE COBRANÇAS
+window.checkoutWhatsAppCart = async () => {
+  if (cart.length === 0) {
+    alert("Adicione pelo menos um produto ao carrinho antes de finalizar!");
+    return;
+  }
 
-      if (!currentUser) {
-        alert("Por favor, faça login ou crie uma conta rápida para prosseguir!");
-        window.openAuthModal();
-        return;
-      }
+  if (!currentUser) {
+    alert("Por favor, faça login ou crie uma conta rápida para prosseguir!");
+    window.openAuthModal();
+    return;
+  }
 
-      let totalPix = 0;
-      cart.forEach(item => totalPix += item.precoNovo * item.qty);
+  let totalPix = 0;
+  cart.forEach(item => totalPix += item.precoNovo * item.qty);
 
-      let subtotalFinal = totalPix;
-      if (appliedDiscount > 0) {
-        subtotalFinal = totalPix - (totalPix * appliedDiscount);
-      }
-      if (selectedFreteInfo) {
-        subtotalFinal += selectedFreteInfo.valor;
-      }
+  let subtotalFinal = totalPix;
+  if (appliedDiscount > 0) {
+    subtotalFinal = totalPix - (totalPix * appliedDiscount);
+  }
+  if (selectedFreteInfo) {
+    subtotalFinal += selectedFreteInfo.valor;
+  }
 
-      const hoje = new Date().toISOString().split('T')[0];
-      const resumoItens = cart.map(i => `${i.qty}x ${i.nome}`).join(', ');
+  const hoje = new Date().toISOString().split('T')[0];
+  const resumoItens = cart.map(i => `${i.qty}x ${i.nome}`).join(', ');
 
-      try {
-        // 1. Registra o pedido no banco Firestore do catálogo (frota-pop110)
-        await addDoc(collection(db, "pedidos"), {
-          userId: currentUser.uid,
-          clienteNome: currentUser.displayName || 'Cliente',
-          clienteEmail: currentUser.email,
-          itens: cart,
-          total: subtotalFinal,
-          cupomUsado: appliedCouponCode,
-          status: 'Pendente',
-          createdAt: serverTimestamp()
-        });
+  try {
+    // 1. Regista o pedido no banco Firestore do catálogo (frota-pop110)
+    await addDoc(collection(db, "pedidos"), {
+      userId: currentUser.uid,
+      clienteNome: currentUser.displayName || 'Cliente',
+      clienteEmail: currentUser.email,
+      itens: cart,
+      total: subtotalFinal,
+      cupomUsado: appliedCouponCode,
+      status: 'Pendente',
+      createdAt: serverTimestamp()
+    });
 
-        // 2. ENVIAR DIRETO PARA O SEU GESTOR DE COBRANÇAS (meu-acessor-fbe0e)
-        await addDoc(collection(gestorDb, "vendas_agrupadas"), {
-          nome: currentUser.displayName || 'Cliente Site',
-          tag: 'NOVO',
-          telefone: '11982818590',
-          descricao: `[Site] ${resumoItens}`,
-          valorTotal: subtotalFinal,
-          custoTotal: 0,
-          parcelas: [{
-            numero: 1,
-            totalParcelas: 1,
-            valor: subtotalFinal,
-            custo: 0,
-            vencimento: hoje,
-            pago: false
-          }],
-          createdAt: serverTimestamp()
-        });
+    // 2. Envia direto para o Gestor de Cobranças (meu-acessor-fbe0e)
+    await addDoc(collection(gestorDb, "vendas_agrupadas"), {
+      nome: currentUser.displayName || 'Cliente Site',
+      tag: 'NOVO',
+      telefone: '11982818590',
+      descricao: `[Site] ${resumoItens}`,
+      valorTotal: subtotalFinal,
+      custoTotal: 0,
+      parcelas: [{
+        numero: 1,
+        totalParcelas: 1,
+        valor: subtotalFinal,
+        custo: 0,
+        vencimento: hoje,
+        pago: false
+      }],
+      createdAt: serverTimestamp()
+    });
 
-        // Bloqueia reuso do cupom PRIMEIRACOMPRA no Firestore
-        if (appliedCouponCode === 'PRIMEIRACOMPRA') {
-          await setDoc(doc(db, "usuarios", currentUser.uid), {
-            cuponsUsados: arrayUnion('PRIMEIRACOMPRA')
-          }, { merge: true });
-        }
+    // Bloqueia a reutilização do cupão PRIMEIRACOMPRA no Firestore
+    if (appliedCouponCode === 'PRIMEIRACOMPRA') {
+      await setDoc(doc(db, "usuarios", currentUser.uid), {
+        cuponsUsados: arrayUnion('PRIMEIRACOMPRA')
+      }, { merge: true });
+    }
 
-        let message = `Olá! Gostaria de finalizar o pedido no site Sillage Perfumes:\n\n👤 *Cliente:* ${currentUser.displayName} (${currentUser.email})\n🛒 *ITENS DO PEDIDO:*\n`;
+    // 3. Construção da mensagem limpa para o WhatsApp (sem emojis que viram '◆')
+    let message = `Olá! Gostaria de finalizar o meu pedido no site Sillage Perfumes:\n\n` +
+      `*Cliente:* ${currentUser.displayName} (${currentUser.email})\n\n` +
+      `*ITENS DO PEDIDO:*\n`;
 
-        cart.forEach(item => {
-          const itemTotal = item.precoNovo * item.qty;
-          message += `• ${item.qty}x *${item.nome}* (${formatCurrency(itemTotal)})\n`;
-        });
+    cart.forEach(item => {
+      const itemTotal = item.precoNovo * item.qty;
+      message += `- ${item.qty}x *${item.nome}* (${formatCurrency(itemTotal)})\n`;
+    });
 
-        if (appliedDiscount > 0) {
-          const valorDesconto = totalPix * appliedDiscount;
-          message += `\n🎟️ *Cupom (${appliedCouponCode}):* -${formatCurrency(valorDesconto)}`;
-        }
+    if (appliedDiscount > 0) {
+      const valorDesconto = totalPix * appliedDiscount;
+      message += `\n*Cupom (${appliedCouponCode}):* -${formatCurrency(valorDesconto)}\n`;
+    }
 
-        if (selectedFreteInfo) {
-          message += `\n📍 *Endereço de Entrega:* ${selectedFreteInfo.cidade} (CEP: ${selectedFreteInfo.cep})\n`;
-          message += `🚚 *Frete (${selectedFreteInfo.opcao}):* ${formatCurrency(selectedFreteInfo.valor)}\n`;
-        }
+    if (selectedFreteInfo) {
+      message += `\n*Endereço de Entrega:* ${selectedFreteInfo.cidade} (CEP: ${selectedFreteInfo.cep})\n`;
+      message += `*Frete (${selectedFreteInfo.opcao}):* ${formatCurrency(selectedFreteInfo.valor)}\n`;
+    }
 
-        message += `\n💵 *Total Final:* ${formatCurrency(subtotalFinal)}`;
-        message += `\n💳 *Para pagamento no Cartão:* Por favor, me envie o link de pagamento.\n\nComo posso proceder com o pagamento e o envio?`;
+    message += `\n*Total Final:* ${formatCurrency(subtotalFinal)}\n`;
+    message += `*Para pagamento no Cartão:* Por favor, envie-me o link de pagamento.\n\n` +
+      `Como posso proceder com o pagamento e o envio?`;
 
-        window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
-      } catch (err) {
-        alert("Erro ao registrar pedido: " + err.message);
-      }
-    };
+    // 4. Limpa o carrinho e repõe a interface
+    cart = [];
+    selectedFreteInfo = null;
+    appliedDiscount = 0;
+    appliedCouponCode = '';
+
+    if (document.getElementById('coupon-input')) document.getElementById('coupon-input').value = '';
+    if (document.getElementById('coupon-status')) document.getElementById('coupon-status').textContent = '';
+    if (document.getElementById('cep-input')) document.getElementById('cep-input').value = '';
+    if (document.getElementById('frete-results')) document.getElementById('frete-results').textContent = '';
+
+    window.updateCartUI();
+    window.toggleCart(false);
+
+    // 5. Redireciona para o WhatsApp
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
+  } catch (err) {
+    alert("Erro ao registrar pedido: " + err.message);
+  }
+};
 
     /* Filtragem e Ordenação */
     function filterAndSortProducts() {
