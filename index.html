@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sillage Perfumes | Catálogo Oficial</title>
+  <title>Sillage Perfumes | Catálogo Oficial & Área do Cliente</title>
   <style>
     :root {
       --primary-color: #0f172a;
@@ -34,14 +34,42 @@
     .promo-banner {
       background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
       color: #ffffff;
-      text-align: center;
       padding: 0.6rem 1rem;
       font-size: 0.875rem;
       font-weight: 500;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
     }
 
     .promo-banner strong {
       color: #c5a059;
+    }
+
+    .user-top-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .btn-user-action {
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 0.35rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-user-action:hover {
+      background: #c5a059;
+      color: #0f172a;
+      border-color: #c5a059;
     }
 
     .container {
@@ -781,7 +809,7 @@
       background-color: var(--whatsapp-hover);
     }
 
-    /* Modais Centralizados (Quiz, Comparador, Detalhes) */
+    /* Modais Centralizados (Quiz, Comparador, Detalhes, Auth, Pedidos) */
     .modal-card-center {
       background: #ffffff;
       border-radius: 12px;
@@ -789,11 +817,26 @@
       width: 90%;
       max-width: 500px;
       max-height: 85vh;
-      overflow-y.auto;
+      overflow-y: auto;
       margin: auto;
       position: relative;
       box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     }
+
+    /* Modal de Autenticação / Login */
+    .auth-tab-buttons { display: flex; border-bottom: 1px solid var(--border-color); margin-bottom: 1.25rem; }
+    .auth-tab-btn { flex: 1; padding: 0.75rem; background: none; border: none; font-weight: 700; font-size: 0.9rem; color: var(--text-muted); cursor: pointer; }
+    .auth-tab-btn.active { color: var(--accent-color); border-bottom: 2px solid var(--accent-color); }
+    .auth-input-group { display: flex; flex-direction: column; gap: 0.3rem; margin-bottom: 0.9rem; }
+    .auth-input-group label { font-size: 0.8rem; font-weight: 600; color: var(--text-muted); }
+    .auth-input-group input { padding: 0.65rem; border: 1px solid var(--border-color); border-radius: 6px; outline: none; }
+    .btn-google-login { width: 100%; background: #ffffff; border: 1px solid var(--border-color); padding: 0.75rem; border-radius: 8px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.5rem; margin-top: 0.8rem; }
+
+    /* Modal de Meus Pedidos */
+    .order-card-item { background: #f8fafc; border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem; margin-bottom: 1rem; }
+    .order-status-badge { font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.5rem; border-radius: 4px; text-transform: uppercase; }
+    .order-status-badge.Pendente { background: #fef3c7; color: #92400e; }
+    .order-status-badge.Pago { background: #dcfce7; color: #166534; }
 
     /* Modal de Detalhes do Produto */
     #details-modal {
@@ -955,7 +998,10 @@
 
   <!-- Banner Promocional -->
   <div class="promo-banner">
-    ✨ Pagamento Facilitado no <strong>Pix à vista</strong> ou <strong>Cartão em até 12x</strong> | Cupom: <strong>SILLAGE10</strong>
+    <div>✨ Pagamento Facilitado no <strong>Pix à vista</strong> ou <strong>Cartão em até 12x</strong> | Cupom de 1ª Compra: <strong>PRIMEIRACOMPRA</strong></div>
+    <div class="user-top-bar" id="user-top-bar">
+      <button class="btn-user-action" onclick="openAuthModal()">🔑 Entrar / Cadastrar</button>
+    </div>
   </div>
 
   <div class="container">
@@ -1038,8 +1084,8 @@
           <p>Aceitamos Pix à vista com desconto e parcelamento em até 12x no Cartão de Crédito.</p>
         </div>
         <div class="faq-item">
-          <h3>Qual o prazo de envio?</h3>
-          <p>Enviamos o seu pedido o mais rápido possível após a confirmação do pagamento com código de rastreamento.</p>
+          <h3>Como acompanho o pedido?</h3>
+          <p>Fazendo login no site, você pode acompanhar o status de todas as suas compras na aba "Meus Pedidos".</p>
         </div>
       </div>
     </div>
@@ -1070,7 +1116,7 @@
       <div class="coupon-box">
         <label for="coupon-input">🎟️ Cupom de Desconto:</label>
         <div class="coupon-inputs">
-          <input type="text" id="coupon-input" placeholder="Ex: SILLAGE10">
+          <input type="text" id="coupon-input" placeholder="Ex: PRIMEIRACOMPRA">
           <button class="btn-apply-coupon" onclick="applyCoupon()">Aplicar</button>
         </div>
         <div class="coupon-status" id="coupon-status"></div>
@@ -1109,6 +1155,44 @@
           Finalizar Pedido no WhatsApp
         </button>
       </div>
+    </div>
+  </div>
+
+  <!-- MODAL DE AUTENTICAÇÃO (LOGIN / CADASTRO) -->
+  <div class="modal-overlay" id="auth-modal">
+    <div class="modal-card-center">
+      <button class="close-btn-modal" style="position:absolute; right:15px; top:15px;" onclick="closeAuthModal()">&times;</button>
+      <div class="auth-tab-buttons">
+        <button class="auth-tab-btn active" id="tab-login-btn" onclick="switchAuthTab('login')">Entrar</button>
+        <button class="auth-tab-btn" id="tab-register-btn" onclick="switchAuthTab('register')">Criar Conta</button>
+      </div>
+
+      <!-- FORM LOGIN -->
+      <form id="form-auth-login" onsubmit="handleEmailLogin(event)">
+        <div class="auth-input-group"><label>E-mail</label><input type="email" id="login-email" required></div>
+        <div class="auth-input-group"><label>Senha</label><input type="password" id="login-password" required></div>
+        <button type="submit" class="btn-modal-add" style="margin-top:0.5rem;">Entrar na Conta</button>
+      </form>
+
+      <!-- FORM REGISTRO -->
+      <form id="form-auth-register" style="display:none;" onsubmit="handleEmailRegister(event)">
+        <div class="auth-input-group"><label>Nome Completo</label><input type="text" id="reg-name" required></div>
+        <div class="auth-input-group"><label>E-mail</label><input type="email" id="reg-email" required></div>
+        <div class="auth-input-group"><label>Senha</label><input type="password" id="reg-password" required minlength="6"></div>
+        <button type="submit" class="btn-modal-add" style="margin-top:0.5rem;">Cadastrar e Continuar</button>
+      </form>
+
+      <div style="text-align:center; margin:1rem 0; font-size:0.8rem; color:var(--text-muted);">OU</div>
+      <button class="btn-google-login" onclick="handleGoogleLogin()">🌐 Entrar com Google</button>
+    </div>
+  </div>
+
+  <!-- MODAL MEUS PEDIDOS -->
+  <div class="modal-overlay" id="orders-modal">
+    <div class="modal-card-center">
+      <button class="close-btn-modal" style="position:absolute; right:15px; top:15px;" onclick="closeOrdersModal()">&times;</button>
+      <h2 style="font-size: 1.25rem; color: var(--primary-color); margin-bottom: 1rem;">📦 Meus Pedidos</h2>
+      <div id="user-orders-list">A carregar pedidos...</div>
     </div>
   </div>
 
@@ -1182,37 +1266,197 @@
     </div>
   </div>
 
-  <script>
-  const WHATSAPP_NUMBER = "5511982818590";
+  <!-- Firebase SDK e Lógica do App -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+    import { 
+      getAuth, 
+      signInWithPopup, 
+      GoogleAuthProvider, 
+      createUserWithEmailAndPassword, 
+      signInWithEmailAndPassword, 
+      signOut, 
+      onAuthStateChanged,
+      updateProfile 
+    } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+    import { 
+      getFirestore, 
+      doc, 
+      getDoc, 
+      setDoc, 
+      addDoc, 
+      collection, 
+      query, 
+      where, 
+      getDocs, 
+      serverTimestamp, 
+      arrayUnion 
+    } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
-  let allProducts = [];
-  let currentDisplayedProducts = []; 
-  let cart = [];
-  let wishlist = JSON.parse(localStorage.getItem('sillage_wishlist') || '[]');
-  let compareList = [];
-  let selectedFreteInfo = null;
-  let appliedDiscount = 0;
-  let appliedCouponCode = '';
-  let showingOnlyWishlist = false;
+    const firebaseConfig = {
+      apiKey: "AIzaSyCxnH2tcGB4gEYWOLpxxqs5yKqfC487RUk",
+      authDomain: "frota-pop110.firebaseapp.com",
+      projectId: "frota-pop110",
+      storageBucket: "frota-pop110.firebasestorage.app",
+      messagingSenderId: "133908928762",
+      appId: "1:133908928762:web:53fc9774b7f627f9511143",
+      measurementId: "G-VF0B8MKG6B"
+    };
 
-  const formatCurrency = (val) => {
-    return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(val);
-  };
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
 
-  function populateCategories(products) {
-    const categorySelect = document.getElementById('category-filter');
-    const categories = [...new Set(products.map(p => p.categoria))].filter(Boolean).sort();
-    
-    categories.forEach(cat => {
-      const option = document.createElement('option');
-      option.value = cat;
-      option.textContent = cat;
-      categorySelect.appendChild(option);
+    const WHATSAPP_NUMBER = "5511982818590";
+
+    let currentUser = null;
+    let userDocData = null;
+
+    let allProducts = [];
+    let currentDisplayedProducts = []; 
+    let cart = [];
+    let wishlist = JSON.parse(localStorage.getItem('sillage_wishlist') || '[]');
+    let compareList = [];
+    let selectedFreteInfo = null;
+    let appliedDiscount = 0;
+    let appliedCouponCode = '';
+    let showingOnlyWishlist = false;
+
+    const formatCurrency = (val) => {
+      return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(val);
+    };
+
+    const taxasInfinitePay = {
+      1: 3.15, 2: 5.39, 3: 6.12, 4: 6.85, 5: 7.57, 6: 8.28,
+      7: 8.99, 8: 9.69, 9: 10.38, 10: 11.06, 11: 11.74, 12: 12.40
+    };
+
+    // AUTENTICAÇÃO FIRESTORE & ESCUTA DE USUÁRIO
+    onAuthStateChanged(auth, async (user) => {
+      currentUser = user;
+      const topBar = document.getElementById('user-top-bar');
+
+      if (user) {
+        const userRef = doc(db, "usuarios", user.uid);
+        let userSnap = await getDoc(userRef);
+
+        if (!userSnap.exists()) {
+          await setDoc(userRef, {
+            nome: user.displayName || 'Cliente',
+            email: user.email,
+            cuponsUsados: [],
+            createdAt: serverTimestamp()
+          });
+          userSnap = await getDoc(userRef);
+        }
+        userDocData = userSnap.data();
+
+        topBar.innerHTML = `
+          <span style="font-size:0.8rem;">👤 Olá, <strong>${user.displayName || 'Cliente'}</strong></span>
+          <button class="btn-user-action" onclick="window.openOrdersModal()">📦 Meus Pedidos</button>
+          <button class="btn-user-action" onclick="window.handleLogout()">🚪 Sair</button>
+        `;
+      } else {
+        userDocData = null;
+        topBar.innerHTML = `<button class="btn-user-action" onclick="window.openAuthModal()">🔑 Entrar / Cadastrar</button>`;
+      }
     });
-  }
 
-  function generateSingleWhatsAppLink(product) {
-    const message = `Olá! Gostaria de encomendar o seguinte perfume:
+    window.openAuthModal = () => document.getElementById('auth-modal').style.display = 'flex';
+    window.closeAuthModal = () => document.getElementById('auth-modal').style.display = 'none';
+
+    window.switchAuthTab = (tab) => {
+      document.getElementById('tab-login-btn').classList.toggle('active', tab === 'login');
+      document.getElementById('tab-register-btn').classList.toggle('active', tab === 'register');
+      document.getElementById('form-auth-login').style.display = tab === 'login' ? 'block' : 'none';
+      document.getElementById('form-auth-register').style.display = tab === 'register' ? 'block' : 'none';
+    };
+
+    window.handleGoogleLogin = async () => {
+      try {
+        const provider = new GoogleAuthProvider();
+        await signInWithPopup(auth, provider);
+        window.closeAuthModal();
+      } catch (err) { alert("Erro ao fazer login com Google: " + err.message); }
+    };
+
+    window.handleEmailLogin = async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('login-email').value;
+      const pass = document.getElementById('login-password').value;
+      try {
+        await signInWithEmailAndPassword(auth, email, pass);
+        window.closeAuthModal();
+      } catch (err) { alert("Erro ao entrar: " + err.message); }
+    };
+
+    window.handleEmailRegister = async (e) => {
+      e.preventDefault();
+      const name = document.getElementById('reg-name').value;
+      const email = document.getElementById('reg-email').value;
+      const pass = document.getElementById('reg-password').value;
+      try {
+        const res = await createUserWithEmailAndPassword(auth, email, pass);
+        await updateProfile(res.user, { displayName: name });
+        window.closeAuthModal();
+      } catch (err) { alert("Erro ao criar conta: " + err.message); }
+    };
+
+    window.handleLogout = () => signOut(auth);
+
+    // MEUS PEDIDOS FIRESTORE
+    window.openOrdersModal = async () => {
+      if (!currentUser) return window.openAuthModal();
+      const container = document.getElementById('user-orders-list');
+      container.innerHTML = 'A carregar pedidos...';
+      document.getElementById('orders-modal').style.display = 'flex';
+
+      try {
+        const q = query(collection(db, "pedidos"), where("userId", "==", currentUser.uid));
+        const snap = await getDocs(q);
+
+        if (snap.empty) {
+          container.innerHTML = '<p style="text-align:center; color:var(--text-muted); padding:1.5rem 0;">Ainda não realizou nenhum pedido no site.</p>';
+          return;
+        }
+
+        container.innerHTML = '';
+        snap.forEach(docSnap => {
+          const p = docSnap.data();
+          const div = document.createElement('div');
+          div.className = 'order-card-item';
+          div.innerHTML = `
+            <div style="display:flex; justify-content:space-between; margin-bottom:0.5rem;">
+              <strong>Pedido #${docSnap.id.substring(0,6).toUpperCase()}</strong>
+              <span class="order-status-badge ${p.status}">${p.status}</span>
+            </div>
+            <div style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.5rem;">
+              Itens: ${(p.itens || []).map(i => `${i.qty}x${i.nome}`).join(', ')}
+            </div>
+            <div style="font-weight:800; color:var(--primary-color);">Total: ${formatCurrency(p.total)}</div>
+          `;
+          container.appendChild(div);
+        });
+      } catch (err) { container.innerHTML = 'Erro ao carregar pedidos: ' + err.message; }
+    };
+
+    window.closeOrdersModal = () => document.getElementById('orders-modal').style.display = 'none';
+
+    // RENDERIZAÇÃO DO CATÁLOGO
+    function populateCategories(products) {
+      const categorySelect = document.getElementById('category-filter');
+      const categories = [...new Set(products.map(p => p.categoria))].filter(Boolean).sort();
+      
+      categories.forEach(cat => {
+        const option = document.createElement('option');
+        option.value = cat;
+        option.textContent = cat;
+        categorySelect.appendChild(option);
+      });
+    }
+
+    function generateSingleWhatsAppLink(product) {
+      const message = `Olá! Gostaria de encomendar o seguinte perfume:
 
 📌 *${product.nome}*
 🏷️ Categoria: ${product.categoria}
@@ -1221,429 +1465,263 @@
 
 Ainda está disponível?`;
 
-    return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-  }
-
-  function renderCatalog(products) {
-    currentDisplayedProducts = products; 
-    const grid = document.getElementById('catalog-grid');
-    const counter = document.getElementById('results-count');
-    grid.innerHTML = '';
-
-    counter.textContent = `A apresentar ${products.length} de ${allProducts.length} produtos`;
-
-    // Atualizar contador de favoritos no botão
-    const favBtn = document.getElementById('wishlist-filter-btn');
-    if (favBtn) favBtn.textContent = `❤️ Favoritos (${wishlist.length})`;
-
-    if (products.length === 0) {
-      const searchTerm = document.getElementById('search-input').value.trim();
-      const queryText = searchTerm ? `o item "${searchTerm}"` : "este produto";
-      const messageAvailability = `Olá! Estava a pesquisar no catálogo da Sillage Perfumes por ${queryText} e não encontrei. Gostaria de verificar a disponibilidade ou encomenda!`;
-      const waAvailabilityUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(messageAvailability)}`;
-
-      grid.innerHTML = `
-        <div class="no-results">
-          <p style="font-size: 1.25rem; font-weight: 700; color: var(--primary-color); margin-bottom: 0.4rem;">
-            Consultar disponibilidade
-          </p>
-          <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.25rem;">
-            Não encontrou o perfume que procurava? Fale conosco para encomendá-lo!
-          </p>
-          <a href="${waAvailabilityUrl}" target="_blank" class="btn-checkout" style="display: inline-flex; width: auto; padding: 0.75rem 1.5rem; text-decoration: none; margin: 0 auto; font-size: 0.95rem;">
-            💬 Consultar no WhatsApp
-          </a>
-        </div>
-      `;
-      return;
+      return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
     }
 
-    products.forEach((product, idx) => {
-      const singleWaLink = generateSingleWhatsAppLink(product);
-      const isFav = wishlist.includes(product.nome);
+    function renderCatalog(products) {
+      currentDisplayedProducts = products; 
+      const grid = document.getElementById('catalog-grid');
+      const counter = document.getElementById('results-count');
+      grid.innerHTML = '';
 
-      const imgHtml = product.imagem 
-        ? `<img src="${product.imagem}" alt="${product.nome}" loading="lazy">` 
-        : `<div class="product-img-placeholder">🧴</div>`;
+      counter.textContent = `A apresentar ${products.length} de ${allProducts.length} produtos`;
 
-      const badgeHtml = (idx % 7 === 0) ? `<div class="card-badge">Destaque</div>` : '';
+      const favBtn = document.getElementById('wishlist-filter-btn');
+      if (favBtn) favBtn.textContent = `❤️ Favoritos (${wishlist.length})`;
 
-      const card = document.createElement('div');
-      card.className = 'card';
-      
-      card.innerHTML = `
-        <button class="wishlist-btn ${isFav ? 'active' : ''}" onclick="toggleWishlist('${product.nome}', event)" title="Salvar nos favoritos">
-          ${isFav ? '❤️' : '🤍'}
-        </button>
-        ${badgeHtml}
-        <div class="clickable-area" onclick="abrirModalDetalhes(${idx})" title="Ver Detalhes e Composição">
-          <div class="product-img-container">
-            ${imgHtml}
-          </div>
-          <span class="category">${product.categoria}</span>
-          <h2 class="title">${product.nome}</h2>
-        </div>
-        <div>
-          <div class="price-container">
-            <div class="price-main">${formatCurrency(product.precoNovo)}</div>
-            <div class="price-tag">à vista no Pix</div>
-            <button class="btn-view-installments" onclick="abrirModalDetalhes(${idx})" title="Ver tabela de parcelas">
-              💳 Ver simulação em até 12x no cartão
-            </button>
-          </div>
+      if (products.length === 0) {
+        const searchTerm = document.getElementById('search-input').value.trim();
+        const queryText = searchTerm ? `o item "${searchTerm}"` : "este produto";
+        const messageAvailability = `Olá! Estava a pesquisar no catálogo da Sillage Perfumes por ${queryText} e não encontrei. Gostaria de verificar a disponibilidade ou encomenda!`;
+        const waAvailabilityUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(messageAvailability)}`;
 
-          <div class="card-actions">
-            <button class="btn-add-cart" onclick="addToCart(${idx})">+ Carrinho</button>
-            <button class="btn-compare" onclick="addToCompare('${product.nome}')" title="Comparar Lado a Lado">⚖️</button>
-            <a href="${singleWaLink}" target="_blank" class="btn-buy-direct" title="Comprar Direto no WhatsApp">
-              <svg viewBox="0 0 24 24">
-                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-              </svg>
+        grid.innerHTML = `
+          <div class="no-results">
+            <p style="font-size: 1.25rem; font-weight: 700; color: var(--primary-color); margin-bottom: 0.4rem;">
+              Consultar disponibilidade
+            </p>
+            <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+              Não encontrou o perfume que procurava? Fale conosco para encomendá-lo!
+            </p>
+            <a href="${waAvailabilityUrl}" target="_blank" class="btn-checkout" style="display: inline-flex; width: auto; padding: 0.75rem 1.5rem; text-decoration: none; margin: 0 auto; font-size: 0.95rem;">
+              💬 Consultar no WhatsApp
             </a>
           </div>
-        </div>
-      `;
-      grid.appendChild(card);
-    });
-  }
-
-  /* FAVORITOS (WISHLIST) */
-  function toggleWishlist(productName, event) {
-    if (event) event.stopPropagation();
-
-    if (wishlist.includes(productName)) {
-      wishlist = wishlist.filter(name => name !== productName);
-    } else {
-      wishlist.push(productName);
-    }
-
-    localStorage.setItem('sillage_wishlist', JSON.stringify(wishlist));
-
-    if (showingOnlyWishlist) {
-      renderCatalog(allProducts.filter(p => wishlist.includes(p.nome)));
-    } else {
-      renderCatalog(currentDisplayedProducts);
-    }
-  }
-
-  function toggleWishlistFilter(btn) {
-    showingOnlyWishlist = !showingOnlyWishlist;
-    document.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('active'));
-
-    if (showingOnlyWishlist) {
-      btn.classList.add('active');
-      renderCatalog(allProducts.filter(p => wishlist.includes(p.nome)));
-    } else {
-      const firstBtn = document.querySelector('.header-pills .pill-btn');
-      if (firstBtn) firstBtn.classList.add('active');
-      renderCatalog(allProducts);
-    }
-  }
-
-  /* FILTRO POR OCASIÃO / PERFIL OLFATIVO */
-  function filterByOcasion(key, btn) {
-    showingOnlyWishlist = false;
-    document.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-
-    if (key === 'todas') {
-      return renderCatalog(allProducts);
-    }
-
-    const filtered = allProducts.filter(p => {
-      const fullText = (p.nome + ' ' + p.categoria + ' ' + (p.descricao || '') + ' ' + (p.composicao || '')).toLowerCase();
-      return fullText.includes(key);
-    });
-
-    renderCatalog(filtered);
-  }
-
-  /* COMPARADOR DE PERFUMES */
-  function addToCompare(productName) {
-    const product = allProducts.find(p => p.nome === productName);
-    if (!product) return;
-
-    if (!compareList.find(c => c.nome === productName)) {
-      if (compareList.length >= 2) {
-        compareList.shift(); // remove o primeiro se já houver 2
-      }
-      compareList.push(product);
-    }
-
-    if (compareList.length === 2) {
-      openCompareModal();
-    } else {
-      alert(`Perfume "${product.nome}" adicionado ao comparador. Escolha mais 1 perfume para comparar lado a lado!`);
-    }
-  }
-
-  function openCompareModal() {
-    const container = document.getElementById('compare-container');
-    container.innerHTML = compareList.map(p => `
-      <div style="border:1px solid var(--border-color); padding:1rem; border-radius:10px; text-align:center; background:#fff;">
-        <img src="${p.imagem || ''}" style="width:100px; height:100px; object-fit:contain; margin-bottom:0.5rem;" alt="${p.nome}">
-        <h4 style="font-size:0.95rem; color:var(--primary-color); margin-bottom:0.4rem;">${p.nome}</h4>
-        <span class="category">${p.categoria}</span>
-        <div style="font-size:1.2rem; font-weight:800; color:var(--primary-color); margin:0.5rem 0;">${formatCurrency(p.precoNovo)}</div>
-        <div style="font-size:0.8rem; color:var(--text-muted); text-align:left; border-top:1px solid var(--border-color); padding-top:0.5rem; margin-top:0.5rem; line-height:1.4;">
-          ${p.descricao || 'Excelente fixação e projeção marcante.'}
-        </div>
-      </div>
-    `).join('');
-
-    document.getElementById('compare-modal').style.display = 'flex';
-  }
-
-  function closeCompareModal() {
-    document.getElementById('compare-modal').style.display = 'none';
-  }
-
-  /* PROVADOR VIRTUAL (QUIZ) */
-  function openQuizModal() {
-    document.getElementById('quiz-modal').style.display = 'flex';
-  }
-
-  function closeQuizModal() {
-    document.getElementById('quiz-modal').style.display = 'none';
-  }
-
-  function runQuizResult() {
-    const style = document.getElementById('quiz-style').value;
-    closeQuizModal();
-
-    const matches = allProducts.filter(p => {
-      const fullText = (p.nome + ' ' + (p.descricao || '') + ' ' + (p.categoria || '')).toLowerCase();
-      return fullText.includes(style);
-    });
-
-    const resultList = matches.length > 0 ? matches : allProducts.slice(0, 6);
-    renderCatalog(resultList);
-    alert(`Encontramos ${resultList.length} fragrâncias perfeitas para o seu perfil!`);
-  }
-
-  /* CUPOM DE DESCONTO */
-  function applyCoupon() {
-    const input = document.getElementById('coupon-input');
-    const status = document.getElementById('coupon-status');
-    const code = input.value.trim().toUpperCase();
-
-    if (code === 'SILLAGE10') {
-      appliedDiscount = 0.10;
-      appliedCouponCode = code;
-      status.style.color = 'var(--whatsapp-color)';
-      status.textContent = '✅ Cupom de 10% de desconto aplicado!';
-    } else if (code === 'PRIMEIRACOMPRA') {
-      appliedDiscount = 0.05;
-      appliedCouponCode = code;
-      status.style.color = 'var(--whatsapp-color)';
-      status.textContent = '✅ Cupom de 5% de desconto aplicado!';
-    } else {
-      appliedDiscount = 0;
-      appliedCouponCode = '';
-      status.style.color = '#dc2626';
-      status.textContent = '❌ Cupom inválido ou expirado.';
-    }
-
-    updateCartUI();
-  }
-
-  /* Modal de Detalhes */
-  function abrirModalDetalhes(index) {
-    const product = currentDisplayedProducts[index];
-
-    document.getElementById('modal-details-nome').innerText = product.nome;
-    document.getElementById('modal-details-preco').innerText = formatCurrency(product.precoNovo);
-    document.getElementById('modal-details-parcela').innerHTML = `à vista no Pix (ou parcelado no Cartão abaixo)`;
-
-    let textoComposicao = "";
-    if (product.notas_olfativas) {
-      textoComposicao += `Topo: ${product.notas_olfativas.topo || '-'}\n`;
-      textoComposicao += `Coração: ${product.notas_olfativas.coracao || '-'}\n`;
-      textoComposicao += `Fundo: ${product.notas_olfativas.fundo || '-'}\n\n`;
-    }
-
-    textoComposicao += product.descricao || product.composicao || "A composição detalhada desta fragrância não foi informada, mas garantimos uma experiência olfativa incrível!";
-    
-    document.getElementById('modal-details-composicao').innerText = textoComposicao;
-
-    const taxasInfinitePay = {
-      1: 3.15, 2: 5.39, 3: 6.12, 4: 6.85, 5: 7.57, 6: 8.28,
-      7: 8.99, 8: 9.69, 9: 10.38, 10: 11.06, 11: 11.74, 12: 12.40
-    };
-
-    let htmlTabela = `<table style="width:100%; border-collapse:collapse; text-align:left;">`;
-    for (let i = 1; i <= 12; i++) {
-      const taxa = taxasInfinitePay[i] || 0;
-      const valorTotalComJuros = product.precoNovo / (1 - (taxa / 100));
-      const valorParcela = valorTotalComJuros / i;
-
-      htmlTabela += `
-        <tr style="border-bottom: 1px solid #f1f5f9; height: 26px;">
-          <td style="color: #475569;"><strong>${i}x</strong> de ${formatCurrency(valorParcela)}</td>
-          <td style="text-align: right; color: #64748b;">(Total: ${formatCurrency(valorTotalComJuros)})</td>
-        </tr>
-      `;
-    }
-    htmlTabela += `</table>`;
-    document.getElementById('modal-details-parcelamento').innerHTML = htmlTabela;
-
-    const imgWrapper = document.getElementById('modal-details-img');
-    if(product.imagem) {
-      imgWrapper.innerHTML = `<img src="${product.imagem}" alt="${product.nome}">`;
-    } else {
-      imgWrapper.innerHTML = `<div class="product-img-placeholder">🧴</div>`;
-    }
-
-    const btnAdd = document.getElementById('modal-btn-add-cart');
-    btnAdd.onclick = function() {
-      addToCart(index);
-      fecharModalDetalhes();
-    };
-
-    document.getElementById('details-modal').style.display = 'flex';
-  }
-
-  function fecharModalDetalhes() {
-    document.getElementById('details-modal').style.display = 'none';
-  }
-
-  window.onclick = function(event) {
-    const detailsModal = document.getElementById('details-modal');
-    const cartModal = document.getElementById('cart-modal');
-    const quizModal = document.getElementById('quiz-modal');
-    const compareModal = document.getElementById('compare-modal');
-
-    if (event.target == detailsModal) detailsModal.style.display = 'none';
-    if (event.target == cartModal) toggleCart(false);
-    if (event.target == quizModal) quizModal.style.display = 'none';
-    if (event.target == compareModal) compareModal.style.display = 'none';
-  }
-
-  /* CÁLCULO DE FRETE VIA VIACEP */
-  async function calcularFreteViaCEP() {
-    const cepInput = document.getElementById('cep-input').value.replace(/\D/g, '');
-    const resultsDiv = document.getElementById('frete-results');
-
-    if (cepInput.length !== 8) {
-      resultsDiv.innerHTML = '<span style="color:red;">Digite um CEP válido com 8 dígitos.</span>';
-      return;
-    }
-
-    resultsDiv.innerHTML = 'Consultando endereço...';
-
-    try {
-      const res = await fetch(`https://viacep.com.br/ws/${cepInput}/json/`);
-      const data = await res.json();
-
-      if (data.erro) {
-        resultsDiv.innerHTML = '<span style="color:red;">CEP não encontrado.</span>';
+        `;
         return;
       }
 
-      const isSP = data.uf === 'SP';
-      const valorPAC = isSP ? 18.90 : 28.90;
-      const valorSedex = isSP ? 24.90 : 38.90;
+      products.forEach((product, idx) => {
+        const singleWaLink = generateSingleWhatsAppLink(product);
+        const isFav = wishlist.includes(product.nome);
 
-      selectedFreteInfo = {
-        cep: cepInput,
-        cidade: `${data.localidade}/${data.uf}`,
-        bairro: data.bairro || '',
-        valor: valorPAC,
-        opcao: 'PAC'
-      };
+        const imgHtml = product.imagem 
+          ? `<img src="${product.imagem}" alt="${product.nome}" loading="lazy">` 
+          : `<div class="product-img-placeholder">GF</div>`;
 
-      resultsDiv.innerHTML = `
-        <div style="font-weight:bold; color:var(--primary-color); margin-top:0.3rem;">📍 ${data.localidade} - ${data.uf}</div>
-        <div class="frete-option">
-          <span>📦 PAC (${isSP ? '2 a 4' : '5 a 8'} dias úteis):</span>
-          <strong>${formatCurrency(valorPAC)}</strong>
-        </div>
-        <div class="frete-option">
-          <span>⚡ SEDEX (${isSP ? '1 a 2' : '2 a 4'} dias úteis):</span>
-          <strong>${formatCurrency(valorSedex)}</strong>
-        </div>
-      `;
+        const badgeHtml = (idx % 7 === 0) ? `<div class="card-badge">Destaque</div>` : '';
 
-      updateCartUI();
-    } catch (err) {
-      resultsDiv.innerHTML = '<span style="color:red;">Erro ao consultar CEP.</span>';
-    }
-  }
-
-  /* Lógica do Carrinho */
-  function addToCart(index) {
-    const product = currentDisplayedProducts[index];
-    const existingItem = cart.find(item => item.nome === product.nome);
-
-    if (existingItem) {
-      existingItem.qty += 1;
-    } else {
-      cart.push({ ...product, qty: 1 });
-    }
-
-    updateCartUI();
-    toggleCart(true);
-  }
-
-  function updateCartQty(index, delta) {
-    cart[index].qty += delta;
-    if (cart[index].qty <= 0) {
-      cart.splice(index, 1);
-    }
-    updateCartUI();
-  }
-
-  function updateCartUI() {
-    const container = document.getElementById('cart-items-container');
-    const countBadge = document.getElementById('cart-count');
-    const installmentsBtn = document.getElementById('btn-cart-installments');
-    const installmentsBox = document.getElementById('cart-installments-box');
-    container.innerHTML = '';
-
-    let totalCount = 0;
-    let totalPix = 0;
-
-    if (cart.length === 0) {
-      container.innerHTML = '<p style="text-align:center; color:#64748b; margin-top:2rem;">O seu carrinho está vazio.</p>';
-      if (installmentsBtn) installmentsBtn.style.display = 'none';
-      if (installmentsBox) installmentsBox.style.display = 'none';
-    } else {
-      if (installmentsBtn) installmentsBtn.style.display = 'flex';
-      cart.forEach((item, idx) => {
-        totalCount += item.qty;
-        totalPix += item.precoNovo * item.qty;
-
-        const itemEl = document.createElement('div');
-        itemEl.className = 'cart-item';
-        itemEl.innerHTML = `
+        const card = document.createElement('div');
+        card.className = 'card';
+        
+        card.innerHTML = `
+          <button class="wishlist-btn ${isFav ? 'active' : ''}" onclick="window.toggleWishlist('${product.nome}', event)" title="Salvar nos favoritos">
+            ${isFav ? '❤️' : '🤍'}
+          </button>
+          ${badgeHtml}
+          <div class="clickable-area" onclick="window.abrirModalDetalhes(${idx})" title="Ver Detalhes e Composição">
+            <div class="product-img-container">
+              ${imgHtml}
+            </div>
+            <span class="category">${product.categoria}</span>
+            <h2 class="title">${product.nome}</h2>
+          </div>
           <div>
-            <div class="cart-item-title">${item.nome}</div>
-            <div class="cart-item-price">${formatCurrency(item.precoNovo)} un.</div>
-            <div class="cart-item-qty">
-              <button class="qty-btn" onclick="updateCartQty(${idx}, -1)">-</button>
-              <span>${item.qty}</span>
-              <button class="qty-btn" onclick="updateCartQty(${idx}, 1)">+</button>
+            <div class="price-container">
+              <div class="price-main">${formatCurrency(product.precoNovo)}</div>
+              <div class="price-tag">à vista no Pix</div>
+              <button class="btn-view-installments" onclick="window.abrirModalDetalhes(${idx})" title="Ver tabela de parcelas">
+                💳 Ver simulação em até 12x no cartão
+              </button>
+            </div>
+
+            <div class="card-actions">
+              <button class="btn-add-cart" onclick="window.addToCart(${idx})">+ Carrinho</button>
+              <button class="btn-compare" onclick="window.addToCompare('${product.nome}')" title="Comparar Lado a Lado">⚖️</button>
+              <a href="${singleWaLink}" target="_blank" class="btn-buy-direct" title="Comprar Direto no WhatsApp">
+                <svg viewBox="0 0 24 24">
+                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                </svg>
+              </a>
             </div>
           </div>
-          <strong>${formatCurrency(item.precoNovo * item.qty)}</strong>
         `;
-        container.appendChild(itemEl);
+        grid.appendChild(card);
+      });
+    }
+
+    /* FAVORITOS (WISHLIST) */
+    window.toggleWishlist = (productName, event) => {
+      if (event) event.stopPropagation();
+
+      if (wishlist.includes(productName)) {
+        wishlist = wishlist.filter(name => name !== productName);
+      } else {
+        wishlist.push(productName);
+      }
+
+      localStorage.setItem('sillage_wishlist', JSON.stringify(wishlist));
+
+      if (showingOnlyWishlist) {
+        renderCatalog(allProducts.filter(p => wishlist.includes(p.nome)));
+      } else {
+        renderCatalog(currentDisplayedProducts);
+      }
+    };
+
+    window.toggleWishlistFilter = (btn) => {
+      showingOnlyWishlist = !showingOnlyWishlist;
+      document.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('active'));
+
+      if (showingOnlyWishlist) {
+        btn.classList.add('active');
+        renderCatalog(allProducts.filter(p => wishlist.includes(p.nome)));
+      } else {
+        const firstBtn = document.querySelector('.header-pills .pill-btn');
+        if (firstBtn) firstBtn.classList.add('active');
+        renderCatalog(allProducts);
+      }
+    };
+
+    /* FILTRO POR OCASIÃO / PERFIL OLFATIVO */
+    window.filterByOcasion = (key, btn) => {
+      showingOnlyWishlist = false;
+      document.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      if (key === 'todas') {
+        return renderCatalog(allProducts);
+      }
+
+      const filtered = allProducts.filter(p => {
+        const fullText = (p.nome + ' ' + p.categoria + ' ' + (p.descricao || '') + ' ' + (p.composicao || '')).toLowerCase();
+        return fullText.includes(key);
       });
 
-      const valorDesconto = totalPix * appliedDiscount;
-      const subtotalComDesconto = totalPix - valorDesconto;
-      const freteValor = selectedFreteInfo ? selectedFreteInfo.valor : 0;
-      const totalComFrete = subtotalComDesconto + freteValor;
+      renderCatalog(filtered);
+    };
 
-      const taxasInfinitePay = {
-        1: 3.15, 2: 5.39, 3: 6.12, 4: 6.85, 5: 7.57, 6: 8.28,
-        7: 8.99, 8: 9.69, 9: 10.38, 10: 11.06, 11: 11.74, 12: 12.40
-      };
+    /* COMPARADOR DE PERFUMES */
+    window.addToCompare = (productName) => {
+      const product = allProducts.find(p => p.nome === productName);
+      if (!product) return;
+
+      if (!compareList.find(c => c.nome === productName)) {
+        if (compareList.length >= 2) {
+          compareList.shift();
+        }
+        compareList.push(product);
+      }
+
+      if (compareList.length === 2) {
+        window.openCompareModal();
+      } else {
+        alert(`Perfume "${product.nome}" adicionado ao comparador. Escolha mais 1 perfume para comparar lado a lado!`);
+      }
+    };
+
+    window.openCompareModal = () => {
+      const container = document.getElementById('compare-container');
+      container.innerHTML = compareList.map(p => `
+        <div style="border:1px solid var(--border-color); padding:1rem; border-radius:10px; text-align:center; background:#fff;">
+          <img src="${p.imagem || ''}" style="width:100px; height:100px; object-fit:contain; margin-bottom:0.5rem;" alt="${p.nome}">
+          <h4 style="font-size:0.95rem; color:var(--primary-color); margin-bottom:0.4rem;">${p.nome}</h4>
+          <span class="category">${p.categoria}</span>
+          <div style="font-size:1.2rem; font-weight:800; color:var(--primary-color); margin:0.5rem 0;">${formatCurrency(p.precoNovo)}</div>
+          <div style="font-size:0.8rem; color:var(--text-muted); text-align:left; border-top:1px solid var(--border-color); padding-top:0.5rem; margin-top:0.5rem; line-height:1.4;">
+            ${p.descricao || 'Excelente fixação e projeção marcante.'}
+          </div>
+        </div>
+      `).join('');
+
+      document.getElementById('compare-modal').style.display = 'flex';
+    };
+
+    window.closeCompareModal = () => {
+      document.getElementById('compare-modal').style.display = 'none';
+    };
+
+    /* PROVADOR VIRTUAL (QUIZ) */
+    window.openQuizModal = () => {
+      document.getElementById('quiz-modal').style.display = 'flex';
+    };
+
+    window.closeQuizModal = () => {
+      document.getElementById('quiz-modal').style.display = 'none';
+    };
+
+    window.runQuizResult = () => {
+      const style = document.getElementById('quiz-style').value;
+      window.closeQuizModal();
+
+      const matches = allProducts.filter(p => {
+        const fullText = (p.nome + ' ' + (p.descricao || '') + ' ' + (p.categoria || '')).toLowerCase();
+        return fullText.includes(style);
+      });
+
+      const resultList = matches.length > 0 ? matches : allProducts.slice(0, 6);
+      renderCatalog(resultList);
+      alert(`Encontramos ${resultList.length} fragrâncias perfeitas para o seu perfil!`);
+    };
+
+    /* CUPOM DE DESCONTO UNIFICADO COM TRAVA NO FIRESTORE */
+    window.applyCoupon = async () => {
+      const status = document.getElementById('coupon-status');
+      const code = document.getElementById('coupon-input').value.trim().toUpperCase();
+
+      if (!currentUser) {
+        status.style.color = '#dc2626';
+        status.textContent = '⚠️ Faça login primeiro para aplicar cupons!';
+        window.openAuthModal();
+        return;
+      }
+
+      if (code === 'PRIMEIRACOMPRA') {
+        const cuponsUsados = userDocData?.cuponsUsados || [];
+        if (cuponsUsados.includes('PRIMEIRACOMPRA')) {
+          appliedDiscount = 0;
+          appliedCouponCode = '';
+          status.style.color = '#dc2626';
+          status.textContent = '❌ Este cupom de 1ª compra já foi utilizado pela sua conta!';
+        } else {
+          appliedDiscount = 0.05;
+          appliedCouponCode = code;
+          status.style.color = 'var(--whatsapp-color)';
+          status.textContent = '✅ Cupom de 5% OFF de Primeira Compra aplicado!';
+        }
+      } else {
+        appliedDiscount = 0;
+        appliedCouponCode = '';
+        status.style.color = '#dc2626';
+        status.textContent = '❌ Cupom inválido ou expirado.';
+      }
+
+      window.updateCartUI();
+    };
+
+    /* Modal de Detalhes */
+    window.abrirModalDetalhes = (index) => {
+      const product = currentDisplayedProducts[index];
+
+      document.getElementById('modal-details-nome').innerText = product.nome;
+      document.getElementById('modal-details-preco').innerText = formatCurrency(product.precoNovo);
+      document.getElementById('modal-details-parcela').innerHTML = `à vista no Pix (ou parcelado no Cartão abaixo)`;
+
+      let textoComposicao = "";
+      if (product.notas_olfativas) {
+        textoComposicao += `Topo: ${product.notas_olfativas.topo || '-'}\n`;
+        textoComposicao += `Coração: ${product.notas_olfativas.coracao || '-'}\n`;
+        textoComposicao += `Fundo: ${product.notas_olfativas.fundo || '-'}\n\n`;
+      }
+
+      textoComposicao += product.descricao || product.composicao || "A composição detalhada desta fragrância não foi informada, mas garantimos uma experiência olfativa incrível!";
+      
+      document.getElementById('modal-details-composicao').innerText = textoComposicao;
 
       let htmlTabela = `<table style="width:100%; border-collapse:collapse; text-align:left;">`;
       for (let i = 1; i <= 12; i++) {
         const taxa = taxasInfinitePay[i] || 0;
-        const valorTotalComJuros = totalComFrete / (1 - (taxa / 100));
+        const valorTotalComJuros = product.precoNovo / (1 - (taxa / 100));
         const valorParcela = valorTotalComJuros / i;
 
         htmlTabela += `
@@ -1654,117 +1732,320 @@ Ainda está disponível?`;
         `;
       }
       htmlTabela += `</table>`;
-      document.getElementById('cart-installments-table').innerHTML = htmlTabela;
+      document.getElementById('modal-details-parcelamento').innerHTML = htmlTabela;
 
-      countBadge.textContent = totalCount;
-      document.getElementById('cart-total-display').textContent = formatCurrency(totalComFrete);
+      const imgWrapper = document.getElementById('modal-details-img');
+      if(product.imagem) {
+        imgWrapper.innerHTML = `<img src="${product.imagem}" alt="${product.nome}">`;
+      } else {
+        imgWrapper.innerHTML = `<div class="product-img-placeholder">🧴</div>`;
+      }
+
+      const btnAdd = document.getElementById('modal-btn-add-cart');
+      btnAdd.onclick = function() {
+        window.addToCart(index);
+        window.fecharModalDetalhes();
+      };
+
+      document.getElementById('details-modal').style.display = 'flex';
+    };
+
+    window.fecharModalDetalhes = () => {
+      document.getElementById('details-modal').style.display = 'none';
+    };
+
+    window.onclick = function(event) {
+      const detailsModal = document.getElementById('details-modal');
+      const cartModal = document.getElementById('cart-modal');
+      const quizModal = document.getElementById('quiz-modal');
+      const compareModal = document.getElementById('compare-modal');
+      const authModal = document.getElementById('auth-modal');
+      const ordersModal = document.getElementById('orders-modal');
+
+      if (event.target == detailsModal) detailsModal.style.display = 'none';
+      if (event.target == cartModal) window.toggleCart(false);
+      if (event.target == quizModal) quizModal.style.display = 'none';
+      if (event.target == compareModal) compareModal.style.display = 'none';
+      if (event.target == authModal) authModal.style.display = 'none';
+      if (event.target == ordersModal) ordersModal.style.display = 'none';
+    };
+
+    /* CÁLCULO DE FRETE VIA VIACEP */
+    window.calcularFreteViaCEP = async () => {
+      const cepInput = document.getElementById('cep-input').value.replace(/\D/g, '');
+      const resultsDiv = document.getElementById('frete-results');
+
+      if (cepInput.length !== 8) {
+        resultsDiv.innerHTML = '<span style="color:red;">Digite um CEP válido com 8 dígitos.</span>';
+        return;
+      }
+
+      resultsDiv.innerHTML = 'Consultando endereço...';
+
+      try {
+        const res = await fetch(`https://viacep.com.br/ws/${cepInput}/json/`);
+        const data = await res.json();
+
+        if (data.erro) {
+          resultsDiv.innerHTML = '<span style="color:red;">CEP não encontrado.</span>';
+          return;
+        }
+
+        const isSP = data.uf === 'SP';
+        const valorPAC = isSP ? 18.90 : 28.90;
+        const valorSedex = isSP ? 24.90 : 38.90;
+
+        selectedFreteInfo = {
+          cep: cepInput,
+          cidade: `${data.localidade}/${data.uf}`,
+          bairro: data.bairro || '',
+          valor: valorPAC,
+          opcao: 'PAC'
+        };
+
+        resultsDiv.innerHTML = `
+          <div style="font-weight:bold; color:var(--primary-color); margin-top:0.3rem;">📍 ${data.localidade} - ${data.uf}</div>
+          <div class="frete-option">
+            <span>📦 PAC (${isSP ? '2 a 4' : '5 a 8'} dias úteis):</span>
+            <strong>${formatCurrency(valorPAC)}</strong>
+          </div>
+          <div class="frete-option">
+            <span>⚡ SEDEX (${isSP ? '1 a 2' : '2 a 4'} dias úteis):</span>
+            <strong>${formatCurrency(valorSedex)}</strong>
+          </div>
+        `;
+
+        window.updateCartUI();
+      } catch (err) {
+        resultsDiv.innerHTML = '<span style="color:red;">Erro ao consultar CEP.</span>';
+      }
+    };
+
+    /* Lógica do Carrinho */
+    window.addToCart = (index) => {
+      const product = currentDisplayedProducts[index];
+      const existingItem = cart.find(item => item.nome === product.nome);
+
+      if (existingItem) {
+        existingItem.qty += 1;
+      } else {
+        cart.push({ ...product, qty: 1 });
+      }
+
+      window.updateCartUI();
+      window.toggleCart(true);
+    };
+
+    window.updateCartQty = (index, delta) => {
+      cart[index].qty += delta;
+      if (cart[index].qty <= 0) {
+        cart.splice(index, 1);
+      }
+      window.updateCartUI();
+    };
+
+    window.updateCartUI = () => {
+      const container = document.getElementById('cart-items-container');
+      const countBadge = document.getElementById('cart-count');
+      const installmentsBtn = document.getElementById('btn-cart-installments');
+      const installmentsBox = document.getElementById('cart-installments-box');
+      container.innerHTML = '';
+
+      let totalCount = 0;
+      let totalPix = 0;
+
+      if (cart.length === 0) {
+        container.innerHTML = '<p style="text-align:center; color:#64748b; margin-top:2rem;">O seu carrinho está vazio.</p>';
+        if (installmentsBtn) installmentsBtn.style.display = 'none';
+        if (installmentsBox) installmentsBox.style.display = 'none';
+      } else {
+        if (installmentsBtn) installmentsBtn.style.display = 'flex';
+        cart.forEach((item, idx) => {
+          totalCount += item.qty;
+          totalPix += item.precoNovo * item.qty;
+
+          const itemEl = document.createElement('div');
+          itemEl.className = 'cart-item';
+          itemEl.innerHTML = `
+            <div>
+              <div class="cart-item-title">${item.nome}</div>
+              <div class="cart-item-price">${formatCurrency(item.precoNovo)} un.</div>
+              <div class="cart-item-qty">
+                <button class="qty-btn" onclick="window.updateCartQty(${idx}, -1)">-</button>
+                <span>${item.qty}</span>
+                <button class="qty-btn" onclick="window.updateCartQty(${idx}, 1)">+</button>
+              </div>
+            </div>
+            <strong>${formatCurrency(item.precoNovo * item.qty)}</strong>
+          `;
+          container.appendChild(itemEl);
+        });
+
+        const valorDesconto = totalPix * appliedDiscount;
+        const subtotalComDesconto = totalPix - valorDesconto;
+        const freteValor = selectedFreteInfo ? selectedFreteInfo.valor : 0;
+        const totalComFrete = subtotalComDesconto + freteValor;
+
+        let htmlTabela = `<table style="width:100%; border-collapse:collapse; text-align:left;">`;
+        for (let i = 1; i <= 12; i++) {
+          const taxa = taxasInfinitePay[i] || 0;
+          const valorTotalComJuros = totalComFrete / (1 - (taxa / 100));
+          const valorParcela = valorTotalComJuros / i;
+
+          htmlTabela += `
+            <tr style="border-bottom: 1px solid #f1f5f9; height: 26px;">
+              <td style="color: #475569;"><strong>${i}x</strong> de ${formatCurrency(valorParcela)}</td>
+              <td style="text-align: right; color: #64748b;">(Total: ${formatCurrency(valorTotalComJuros)})</td>
+            </tr>
+          `;
+        }
+        htmlTabela += `</table>`;
+        document.getElementById('cart-installments-table').innerHTML = htmlTabela;
+
+        countBadge.textContent = totalCount;
+        document.getElementById('cart-total-display').textContent = formatCurrency(totalComFrete);
+      }
+    };
+
+    window.toggleCartInstallments = () => {
+      const box = document.getElementById('cart-installments-box');
+      if (box.style.display === 'none' || box.style.display === '') {
+        box.style.display = 'block';
+      } else {
+        box.style.display = 'none';
+      }
+    };
+
+    window.toggleCart = (forceOpen = null) => {
+      const modal = document.getElementById('cart-modal');
+      if (forceOpen === true) {
+        modal.classList.add('active');
+      } else if (forceOpen === false) {
+        modal.classList.remove('active');
+      } else {
+        modal.classList.toggle('active');
+      }
+    };
+
+    // CHECKOUT NO WHATSAPP INTEGRADO AO FIRESTORE
+    window.checkoutWhatsAppCart = async () => {
+      if (cart.length === 0) {
+        alert("Adicione pelo menos um produto ao carrinho antes de finalizar!");
+        return;
+      }
+
+      if (!currentUser) {
+        alert("Por favor, faça login ou crie uma conta rápida para prosseguir!");
+        window.openAuthModal();
+        return;
+      }
+
+      let totalPix = 0;
+      cart.forEach(item => totalPix += item.precoNovo * item.qty);
+
+      let subtotalFinal = totalPix;
+      if (appliedDiscount > 0) {
+        subtotalFinal = totalPix - (totalPix * appliedDiscount);
+      }
+      if (selectedFreteInfo) {
+        subtotalFinal += selectedFreteInfo.valor;
+      }
+
+      try {
+        // Registra o pedido no banco Firestore do cliente
+        await addDoc(collection(db, "pedidos"), {
+          userId: currentUser.uid,
+          clienteNome: currentUser.displayName || 'Cliente',
+          clienteEmail: currentUser.email,
+          itens: cart,
+          total: subtotalFinal,
+          cupomUsado: appliedCouponCode,
+          status: 'Pendente',
+          createdAt: serverTimestamp()
+        });
+
+        // Bloqueia reuso do cupom PRIMEIRACOMPRA no Firestore
+        if (appliedCouponCode === 'PRIMEIRACOMPRA') {
+          await setDoc(doc(db, "usuarios", currentUser.uid), {
+            cuponsUsados: arrayUnion('PRIMEIRACOMPRA')
+          }, { merge: true });
+        }
+
+        let message = `Olá! Gostaria de finalizar o pedido no site Sillage Perfumes:\n\n👤 *Cliente:* ${currentUser.displayName} (${currentUser.email})\n🛒 *ITENS DO PEDIDO:*\n`;
+
+        cart.forEach(item => {
+          const itemTotal = item.precoNovo * item.qty;
+          message += `• ${item.qty}x *${item.nome}* (${formatCurrency(itemTotal)})\n`;
+        });
+
+        if (appliedDiscount > 0) {
+          const valorDesconto = totalPix * appliedDiscount;
+          message += `\n🎟️ *Cupom (${appliedCouponCode}):* -${formatCurrency(valorDesconto)}`;
+        }
+
+        if (selectedFreteInfo) {
+          message += `\n📍 *Endereço de Entrega:* ${selectedFreteInfo.cidade} (CEP: ${selectedFreteInfo.cep})\n`;
+          message += `🚚 *Frete (${selectedFreteInfo.opcao}):* ${formatCurrency(selectedFreteInfo.valor)}\n`;
+        }
+
+        message += `\n💵 *Total Final:* ${formatCurrency(subtotalFinal)}`;
+        message += `\n💳 *Para pagamento no Cartão:* Por favor, me envie o link de pagamento.\n\nComo posso proceder com o pagamento e o envio?`;
+
+        window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
+      } catch (err) {
+        alert("Erro ao registrar pedido: " + err.message);
+      }
+    };
+
+    /* Filtragem e Ordenação */
+    function filterAndSortProducts() {
+      const searchTerm = document.getElementById('search-input').value.toLowerCase().trim();
+      const selectedCategory = document.getElementById('category-filter').value;
+      const sortOrder = document.getElementById('sort-order').value;
+
+      let filtered = allProducts.filter(p => {
+        const matchesSearch = p.nome.toLowerCase().includes(searchTerm) || p.categoria.toLowerCase().includes(searchTerm);
+        const matchesCategory = selectedCategory === 'todas' || p.categoria === selectedCategory;
+        return matchesSearch && matchesCategory;
+      });
+
+      if (sortOrder === 'price-asc') {
+        filtered.sort((a, b) => a.precoNovo - b.precoNovo);
+      } else if (sortOrder === 'price-desc') {
+        filtered.sort((a, b) => b.precoNovo - a.precoNovo);
+      } else if (sortOrder === 'name-asc') {
+        filtered.sort((a, b) => a.nome.localeCompare(b.nome));
+      }
+
+      renderCatalog(filtered);
     }
-  }
 
-  function toggleCartInstallments() {
-    const box = document.getElementById('cart-installments-box');
-    if (box.style.display === 'none' || box.style.display === '') {
-      box.style.display = 'block';
-    } else {
-      box.style.display = 'none';
-    }
-  }
+    document.getElementById('search-input').addEventListener('input', filterAndSortProducts);
+    document.getElementById('category-filter').addEventListener('change', filterAndSortProducts);
+    document.getElementById('sort-order').addEventListener('change', filterAndSortProducts);
 
-  function toggleCart(forceOpen = null) {
-    const modal = document.getElementById('cart-modal');
-    if (forceOpen === true) {
-      modal.classList.add('active');
-    } else if (forceOpen === false) {
-      modal.classList.remove('active');
-    } else {
-      modal.classList.toggle('active');
-    }
-  }
+    /* Carregamento Inicial dos JSONs */
+    const arquivosJson = [
+      'produtos_parte_1.json',
+      'produtos_parte_2.json',
+      'produtos_parte_3.json',
+      'produtos_parte_4.json',
+      'produtos_parte_5.json'
+    ];
 
-  function checkoutWhatsAppCart() {
-    if (cart.length === 0) {
-      alert("Adicione pelo menos um produto ao carrinho antes de finalizar!");
-      return;
-    }
-
-    let message = "Olá! Gostaria de finalizar o pedido dos seguintes itens na Sillage Perfumes:\n\n🛒 *ITENS DO PEDIDO:*\n";
-    let totalPix = 0;
-
-    cart.forEach(item => {
-      const itemTotal = item.precoNovo * item.qty;
-      totalPix += itemTotal;
-      message += `• ${item.qty}x *${item.nome}* (${formatCurrency(itemTotal)})\n`;
-    });
-
-    let subtotalFinal = totalPix;
-
-    if (appliedDiscount > 0) {
-      const valorDesconto = totalPix * appliedDiscount;
-      subtotalFinal = totalPix - valorDesconto;
-      message += `\n🎟️ *Cupom (${appliedCouponCode}):* -${formatCurrency(valorDesconto)}`;
-    }
-
-    if (selectedFreteInfo) {
-      message += `\n📍 *Endereço de Entrega:* ${selectedFreteInfo.cidade} (CEP: ${selectedFreteInfo.cep})\n`;
-      message += `🚚 *Frete (${selectedFreteInfo.opcao}):* ${formatCurrency(selectedFreteInfo.valor)}\n`;
-      subtotalFinal += selectedFreteInfo.valor;
-    }
-
-    message += `\n💵 *Total Final:* ${formatCurrency(subtotalFinal)}`;
-    message += `\n💳 *Para pagamento no Cartão:* Por favor, me envie o link de pagamento.\n\nComo posso proceder com o pagamento e o envio?`;
-
-    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
-  }
-
-  /* Filtragem e Ordenação */
-  function filterAndSortProducts() {
-    const searchTerm = document.getElementById('search-input').value.toLowerCase().trim();
-    const selectedCategory = document.getElementById('category-filter').value;
-    const sortOrder = document.getElementById('sort-order').value;
-
-    let filtered = allProducts.filter(p => {
-      const matchesSearch = p.nome.toLowerCase().includes(searchTerm) || p.categoria.toLowerCase().includes(searchTerm);
-      const matchesCategory = selectedCategory === 'todas' || p.categoria === selectedCategory;
-      return matchesSearch && matchesCategory;
-    });
-
-    if (sortOrder === 'price-asc') {
-      filtered.sort((a, b) => a.precoNovo - b.precoNovo);
-    } else if (sortOrder === 'price-desc') {
-      filtered.sort((a, b) => b.precoNovo - a.precoNovo);
-    } else if (sortOrder === 'name-asc') {
-      filtered.sort((a, b) => a.nome.localeCompare(b.nome));
-    }
-
-    renderCatalog(filtered);
-  }
-
-  document.getElementById('search-input').addEventListener('input', filterAndSortProducts);
-  document.getElementById('category-filter').addEventListener('change', filterAndSortProducts);
-  document.getElementById('sort-order').addEventListener('change', filterAndSortProducts);
-
-  /* Carregamento Inicial */
-  const arquivosJson = [
-    'produtos_parte_1.json',
-    'produtos_parte_2.json',
-    'produtos_parte_3.json',
-    'produtos_parte_4.json',
-    'produtos_parte_5.json'
-  ];
-
-  Promise.all(arquivosJson.map(url => fetch(url).then(res => {
-      if (!res.ok) throw new Error(`Falha ao carregar ${url}`);
-      return res.json();
-  })))
-    .then(resultados => {
-      allProducts = resultados.flat();
-      populateCategories(allProducts);
-      renderCatalog(allProducts);
-    })
-    .catch(err => {
-      console.error("Erro ao carregar o catálogo:", err);
-      document.getElementById('results-count').textContent = "Erro ao carregar produtos. Verifique os arquivos JSON.";
-    });
+    Promise.all(arquivosJson.map(url => fetch(url).then(res => {
+        if (!res.ok) throw new Error(`Falha ao carregar ${url}`);
+        return res.json();
+    })))
+      .then(resultados => {
+        allProducts = resultados.flat();
+        populateCategories(allProducts);
+        renderCatalog(allProducts);
+      })
+      .catch(err => {
+        console.error("Erro ao carregar o catálogo:", err);
+        document.getElementById('results-count').textContent = "Erro ao carregar produtos. Verifique os arquivos JSON.";
+      });
   </script>
 </body>
 </html>
