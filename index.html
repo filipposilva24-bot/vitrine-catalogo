@@ -1293,6 +1293,7 @@
       arrayUnion 
     } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
+    // 1. Firebase Principal do Catálogo (frota-pop110)
     const firebaseConfig = {
       apiKey: "AIzaSyCxnH2tcGB4gEYWOLpxxqs5yKqfC487RUk",
       authDomain: "frota-pop110.firebaseapp.com",
@@ -1306,6 +1307,19 @@
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
     const db = getFirestore(app);
+
+    // 2. Firebase do Gestor de Cobranças (meu-acessor-fbe0e)
+    const gestorConfig = {
+      apiKey: "AIzaSyDZG0IhtQQP4nX4pcpPF86Nps6MmrY8QDI",
+      authDomain: "meu-acessor-fbe0e.firebaseapp.com",
+      projectId: "meu-acessor-fbe0e",
+      storageBucket: "meu-acessor-fbe0e.firebasestorage.app",
+      messagingSenderId: "1048058003870",
+      appId: "1:1048058003870:web:5d052fbf401146afd9968f"
+    };
+
+    const gestorApp = initializeApp(gestorConfig, "gestorApp");
+    const gestorDb = getFirestore(gestorApp);
 
     const WHATSAPP_NUMBER = "5511982818590";
 
@@ -1337,7 +1351,7 @@
       const topBar = document.getElementById('user-top-bar');
 
       if (user) {
-        // Fecha a janela de login imediatamente após autenticar
+        // Fecha o modal de login automaticamente
         window.closeAuthModal();
 
         try {
@@ -1369,6 +1383,7 @@
       }
     });
 
+    // BINDINGS GLOBAIS DE AUTENTICAÇÃO
     window.openAuthModal = () => document.getElementById('auth-modal').style.display = 'flex';
     window.closeAuthModal = () => document.getElementById('auth-modal').style.display = 'none';
 
@@ -1745,7 +1760,7 @@ Ainda está disponível?`;
       if(product.imagem) {
         imgWrapper.innerHTML = `<img src="${product.imagem}" alt="${product.nome}">`;
       } else {
-        imgWrapper.innerHTML = `<div class="product-img-placeholder">🧴</div>`;
+        imgWrapper.innerHTML = `<div class="product-img-placeholder">GF</div>`;
       }
 
       const btnAdd = document.getElementById('modal-btn-add-cart');
@@ -1934,7 +1949,7 @@ Ainda está disponível?`;
       }
     };
 
-    // CHECKOUT NO WHATSAPP INTEGRADO AO FIRESTORE
+    // CHECKOUT NO WHATSAPP INTEGRADO AO FIRESTORE DO CATÁLOGO E DO GESTOR DE COBRANÇAS
     window.checkoutWhatsAppCart = async () => {
       if (cart.length === 0) {
         alert("Adicione pelo menos um produto ao carrinho antes de finalizar!");
@@ -1958,8 +1973,11 @@ Ainda está disponível?`;
         subtotalFinal += selectedFreteInfo.valor;
       }
 
+      const hoje = new Date().toISOString().split('T')[0];
+      const resumoItens = cart.map(i => `${i.qty}x ${i.nome}`).join(', ');
+
       try {
-        // Registra o pedido no banco Firestore do cliente
+        // 1. Registra o pedido no banco Firestore do catálogo (frota-pop110)
         await addDoc(collection(db, "pedidos"), {
           userId: currentUser.uid,
           clienteNome: currentUser.displayName || 'Cliente',
@@ -1968,6 +1986,25 @@ Ainda está disponível?`;
           total: subtotalFinal,
           cupomUsado: appliedCouponCode,
           status: 'Pendente',
+          createdAt: serverTimestamp()
+        });
+
+        // 2. ENVIAR DIRETO PARA O SEU GESTOR DE COBRANÇAS (meu-acessor-fbe0e)
+        await addDoc(collection(gestorDb, "vendas_agrupadas"), {
+          nome: currentUser.displayName || 'Cliente Site',
+          tag: 'NOVO',
+          telefone: '11982818590',
+          descricao: `[Site] ${resumoItens}`,
+          valorTotal: subtotalFinal,
+          custoTotal: 0,
+          parcelas: [{
+            numero: 1,
+            totalParcelas: 1,
+            valor: subtotalFinal,
+            custo: 0,
+            vencimento: hoje,
+            pago: false
+          }],
           createdAt: serverTimestamp()
         });
 
