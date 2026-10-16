@@ -528,6 +528,71 @@
       cursor: pointer;
     }
 
+    /* CAIXA DE CÁLCULO DE FRETE NO CARRINHO */
+    .shipping-box {
+      margin: 0.75rem 0;
+      padding: 0.85rem;
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+    }
+
+    .shipping-box label {
+      font-size: 0.825rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+
+    .shipping-inputs {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .shipping-inputs input {
+      flex: 1;
+      padding: 0.5rem 0.75rem;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      font-size: 0.875rem;
+      outline: none;
+    }
+
+    .shipping-inputs input:focus {
+      border-color: var(--accent-color);
+    }
+
+    .btn-calc-frete {
+      background: var(--primary-color);
+      color: #fff;
+      border: none;
+      padding: 0.5rem 0.85rem;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .btn-calc-frete:hover {
+      background: #1e293b;
+    }
+
+    .frete-results {
+      margin-top: 0.6rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .frete-option {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 0.3rem;
+      padding: 0.4rem 0;
+      border-top: 1px dashed var(--border-color);
+    }
+
     .cart-footer {
       padding: 1.25rem;
       border-top: 1px solid var(--border-color);
@@ -827,7 +892,19 @@
       </div>
 
       <div class="cart-items" id="cart-items-container">
-        <!-- Itens do carrinho serão inseridos aqui -->
+        <!-- Itens do carrinho inseridos via JS -->
+      </div>
+
+      <!-- Caixa de Cálculo de Frete -->
+      <div style="padding: 0 1.25rem;">
+        <div class="shipping-box">
+          <label for="cep-input">🚚 Calcular Frete e Prazo (ViaCEP):</label>
+          <div class="shipping-inputs">
+            <input type="text" id="cep-input" placeholder="Digite seu CEP (ex: 01001-000)" maxlength="9">
+            <button class="btn-calc-frete" onclick="calcularFreteViaCEP()">Calcular</button>
+          </div>
+          <div class="frete-results" id="frete-results"></div>
+        </div>
       </div>
 
       <div class="cart-footer">
@@ -895,6 +972,7 @@
   let allProducts = [];
   let currentDisplayedProducts = []; 
   let cart = [];
+  let selectedFreteInfo = null;
 
   const formatCurrency = (val) => {
     return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(val);
@@ -1003,14 +1081,11 @@ Ainda está disponível?`;
   function abrirModalDetalhes(index) {
     const product = currentDisplayedProducts[index];
 
-    // Preenchendo os dados do modal
     document.getElementById('modal-details-nome').innerText = product.nome;
     document.getElementById('modal-details-preco').innerText = formatCurrency(product.precoNovo);
     document.getElementById('modal-details-parcela').innerHTML = `à vista no Pix (ou parcelado no Cartão abaixo)`;
 
-    // Lógica para as notas/composição do perfume
     let textoComposicao = "";
-
     if (product.notas_olfativas) {
       textoComposicao += `Topo: ${product.notas_olfativas.topo || '-'}\n`;
       textoComposicao += `Coração: ${product.notas_olfativas.coracao || '-'}\n`;
@@ -1021,28 +1096,14 @@ Ainda está disponível?`;
     
     document.getElementById('modal-details-composicao').innerText = textoComposicao;
 
-    // Taxas da InfinitePay
     const taxasInfinitePay = {
-      1: 3.15,
-      2: 5.39,
-      3: 6.12,
-      4: 6.85,
-      5: 7.57,
-      6: 8.28,
-      7: 8.99,
-      8: 9.69,
-      9: 10.38,
-      10: 11.06,
-      11: 11.74,
-      12: 12.40
+      1: 3.15, 2: 5.39, 3: 6.12, 4: 6.85, 5: 7.57, 6: 8.28,
+      7: 8.99, 8: 9.69, 9: 10.38, 10: 11.06, 11: 11.74, 12: 12.40
     };
 
     let htmlTabela = `<table style="width:100%; border-collapse:collapse; text-align:left;">`;
-    
     for (let i = 1; i <= 12; i++) {
       const taxa = taxasInfinitePay[i] || 0;
-      
-      // FÓRMULA OFICIAL DE REPASSE INFINITEPAY: Valor ÷ (1 - Taxa%)
       const valorTotalComJuros = product.precoNovo / (1 - (taxa / 100));
       const valorParcela = valorTotalComJuros / i;
 
@@ -1053,11 +1114,9 @@ Ainda está disponível?`;
         </tr>
       `;
     }
-    
     htmlTabela += `</table>`;
     document.getElementById('modal-details-parcelamento').innerHTML = htmlTabela;
 
-    // Imagem
     const imgWrapper = document.getElementById('modal-details-img');
     if(product.imagem) {
       imgWrapper.innerHTML = `<img src="${product.imagem}" alt="${product.nome}">`;
@@ -1065,14 +1124,12 @@ Ainda está disponível?`;
       imgWrapper.innerHTML = `<div class="product-img-placeholder">🧴</div>`;
     }
 
-    // Configura o botão "Adicionar ao Carrinho" do Modal
     const btnAdd = document.getElementById('modal-btn-add-cart');
     btnAdd.onclick = function() {
       addToCart(index);
       fecharModalDetalhes();
     };
 
-    // Abre a janela flutuante
     document.getElementById('details-modal').style.display = 'flex';
   }
 
@@ -1080,7 +1137,6 @@ Ainda está disponível?`;
     document.getElementById('details-modal').style.display = 'none';
   }
 
-  // Fechar os modais se clicar fora da caixa branca
   window.onclick = function(event) {
     const detailsModal = document.getElementById('details-modal');
     const cartModal = document.getElementById('cart-modal');
@@ -1089,6 +1145,57 @@ Ainda está disponível?`;
     }
     if (event.target == cartModal) {
       toggleCart(false);
+    }
+  }
+
+  /* CÁLCULO DE FRETE VIA VIACEP */
+  async function calcularFreteViaCEP() {
+    const cepInput = document.getElementById('cep-input').value.replace(/\D/g, '');
+    const resultsDiv = document.getElementById('frete-results');
+
+    if (cepInput.length !== 8) {
+      resultsDiv.innerHTML = '<span style="color:red;">Digite um CEP válido com 8 dígitos.</span>';
+      return;
+    }
+
+    resultsDiv.innerHTML = 'Consultando endereço...';
+
+    try {
+      const res = await fetch(`https://viacep.com.br/ws/${cepInput}/json/`);
+      const data = await res.json();
+
+      if (data.erro) {
+        resultsDiv.innerHTML = '<span style="color:red;">CEP não encontrado.</span>';
+        return;
+      }
+
+      const isSP = data.uf === 'SP';
+      const valorPAC = isSP ? 18.90 : 28.90;
+      const valorSedex = isSP ? 24.90 : 38.90;
+
+      selectedFreteInfo = {
+        cep: cepInput,
+        cidade: `${data.localidade}/${data.uf}`,
+        bairro: data.bairro || '',
+        valor: valorPAC,
+        opcao: 'PAC'
+      };
+
+      resultsDiv.innerHTML = `
+        <div style="font-weight:bold; color:var(--primary-color); margin-top:0.3rem;">📍 ${data.localidade} - ${data.uf}</div>
+        <div class="frete-option">
+          <span>📦 PAC (${isSP ? '2 a 4' : '5 a 8'} dias úteis):</span>
+          <strong>${formatCurrency(valorPAC)}</strong>
+        </div>
+        <div class="frete-option">
+          <span>⚡ SEDEX (${isSP ? '1 a 2' : '2 a 4'} dias úteis):</span>
+          <strong>${formatCurrency(valorSedex)}</strong>
+        </div>
+      `;
+
+      updateCartUI();
+    } catch (err) {
+      resultsDiv.innerHTML = '<span style="color:red;">Erro ao consultar CEP.</span>';
     }
   }
 
@@ -1152,26 +1259,18 @@ Ainda está disponível?`;
         container.appendChild(itemEl);
       });
 
-      // Calcula a simulação de parcelamento para o Total do Carrinho com as taxas atualizadas
+      const freteValor = selectedFreteInfo ? selectedFreteInfo.valor : 0;
+      const totalComFrete = totalPix + freteValor;
+
       const taxasInfinitePay = {
-        1: 3.15,
-        2: 5.39,
-        3: 6.12,
-        4: 6.85,
-        5: 7.57,
-        6: 8.28,
-        7: 8.99,
-        8: 9.69,
-        9: 10.38,
-        10: 11.06,
-        11: 11.74,
-        12: 12.40
+        1: 3.15, 2: 5.39, 3: 6.12, 4: 6.85, 5: 7.57, 6: 8.28,
+        7: 8.99, 8: 9.69, 9: 10.38, 10: 11.06, 11: 11.74, 12: 12.40
       };
 
       let htmlTabela = `<table style="width:100%; border-collapse:collapse; text-align:left;">`;
       for (let i = 1; i <= 12; i++) {
         const taxa = taxasInfinitePay[i] || 0;
-        const valorTotalComJuros = totalPix / (1 - (taxa / 100));
+        const valorTotalComJuros = totalComFrete / (1 - (taxa / 100));
         const valorParcela = valorTotalComJuros / i;
 
         htmlTabela += `
@@ -1183,10 +1282,10 @@ Ainda está disponível?`;
       }
       htmlTabela += `</table>`;
       document.getElementById('cart-installments-table').innerHTML = htmlTabela;
-    }
 
-    countBadge.textContent = totalCount;
-    document.getElementById('cart-total-display').textContent = formatCurrency(totalPix);
+      countBadge.textContent = totalCount;
+      document.getElementById('cart-total-display').textContent = formatCurrency(totalComFrete);
+    }
   }
 
   function toggleCartInstallments() {
@@ -1224,7 +1323,13 @@ Ainda está disponível?`;
       message += `• ${item.qty}x *${item.nome}* (${formatCurrency(itemTotal)})\n`;
     });
 
-    message += `\n💵 *Total à vista (Pix):* ${formatCurrency(totalPix)}`;
+    if (selectedFreteInfo) {
+      message += `\n📍 *Endereço de Entrega:* ${selectedFreteInfo.cidade} (CEP: ${selectedFreteInfo.cep})\n`;
+      message += `🚚 *Frete (${selectedFreteInfo.opcao}):* ${formatCurrency(selectedFreteInfo.valor)}\n`;
+      totalPix += selectedFreteInfo.valor;
+    }
+
+    message += `\n💵 *Total Final:* ${formatCurrency(totalPix)}`;
     message += `\n💳 *Para pagamento no Cartão:* Por favor, me envie o link de pagamento.\n\nComo posso proceder com o pagamento e o envio?`;
 
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
@@ -1257,7 +1362,7 @@ Ainda está disponível?`;
   document.getElementById('category-filter').addEventListener('change', filterAndSortProducts);
   document.getElementById('sort-order').addEventListener('change', filterAndSortProducts);
 
-  /* Carregamento Inicial - Lendo os 5 arquivos divididos */
+  /* Carregamento Inicial */
   const arquivosJson = [
     'produtos_parte_1.json',
     'produtos_parte_2.json',
