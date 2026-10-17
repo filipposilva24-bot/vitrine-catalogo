@@ -1952,11 +1952,41 @@ Ainda está disponível?`;
       if (event.target == ordersModal) ordersModal.style.display = 'none';
     };
 
-    /* CÁLCULO DE FRETE VIA VIACEP E SELEÇÃO DE MODALIDADE */
+    /* TABELA AUXILIAR DE FRETE POR REGIÃO DO BRASIL */
+    function getTabelaFretePorUF(uf) {
+      const ufUpper = (uf || '').toUpperCase();
+
+      // São Paulo
+      if (ufUpper === 'SP') {
+        return { pac: 18.90, sedex: 24.90, prazoPac: '5 a 8 dias úteis (inclui preparação + Correios)', prazoSedex: '4 a 6 dias úteis (inclui preparação + Correios)' };
+      }
+      // Sudeste e Sul (RJ, MG, ES, PR, SC, RS)
+      if (['RJ', 'MG', 'ES', 'PR', 'SC', 'RS'].includes(ufUpper)) {
+        return { pac: 24.90, sedex: 38.90, prazoPac: '7 a 10 dias úteis (inclui preparação + Correios)', prazoSedex: '5 a 7 dias úteis (inclui preparação + Correios)' };
+      }
+      // Centro-Oeste (DF, GO, MT, MS)
+      if (['DF', 'GO', 'MT', 'MS'].includes(ufUpper)) {
+        return { pac: 29.90, sedex: 48.90, prazoPac: '8 a 11 dias úteis (inclui preparação + Correios)', prazoSedex: '5 a 8 dias úteis (inclui preparação + Correios)' };
+      }
+      // Nordeste (BA, PE, CE, MA, PB, RN, AL, SE, PI)
+      if (['BA', 'PE', 'CE', 'MA', 'PB', 'RN', 'AL', 'SE', 'PI'].includes(ufUpper)) {
+        return { pac: 38.90, sedex: 68.90, prazoPac: '9 a 13 dias úteis (inclui preparação + Correios)', prazoSedex: '6 a 9 dias úteis (inclui preparação + Correios)' };
+      }
+      // Norte (AC, AM, AP, PA, RO, RR, TO)
+      if (['AC', 'AM', 'AP', 'PA', 'RO', 'RR', 'TO'].includes(ufUpper)) {
+        return { pac: 48.90, sedex: 88.90, prazoPac: '10 a 15 dias úteis (inclui preparação + Correios)', prazoSedex: '6 a 10 dias úteis (inclui preparação + Correios)' };
+      }
+
+      // Valor Padrão para casos manuais/desconhecidos
+      return { pac: 32.90, sedex: 58.90, prazoPac: '8 a 12 dias úteis (inclui preparação + Correios)', prazoSedex: '5 a 8 dias úteis (inclui preparação + Correios)' };
+    }
+
+    /* CÁLCULO DE FRETE REGIONALIZADO VIA VIACEP */
     window.calcularFreteViaCEP = async () => {
       const cepInput = document.getElementById('cep-input').value.replace(/\D/g, '');
       const resultsDiv = document.getElementById('frete-results');
       const addressBox = document.getElementById('address-fields');
+      const cityInput = document.getElementById('address-city');
 
       if (cepInput.length !== 8) {
         resultsDiv.innerHTML = '<span style="color:red;">Digite um CEP válido com 8 dígitos.</span>';
@@ -1970,38 +2000,56 @@ Ainda está disponível?`;
         const res = await fetch(`https://viacep.com.br/ws/${cepInput}/json/`);
         const data = await res.json();
 
+        // CASO O VIACEP NÃO ENCONTRE O CEP (MODO MANUAL / FALLBACK)
         if (data.erro) {
-          resultsDiv.innerHTML = '<span style="color:red;">CEP não encontrado.</span>';
-          if (addressBox) addressBox.style.display = 'none';
+          resultsDiv.innerHTML = '<span style="color:#d97706; font-size:0.8rem; font-weight:600;">⚠️ CEP não localizado automaticamente. Preencha o endereço abaixo:</span>';
+          
+          if (addressBox) {
+            addressBox.style.display = 'flex';
+            document.getElementById('address-street').value = '';
+            if (cityInput) {
+              cityInput.value = '';
+              cityInput.readOnly = false;
+              cityInput.style.background = '#ffffff';
+              cityInput.placeholder = 'Bairro, Cidade - UF (ex: Centro, Rio Branco - AC)';
+            }
+            document.getElementById('address-street').focus();
+          }
+
+          const tabelaPadrao = getTabelaFretePorUF('');
+          window.freteOptions = {
+            PAC: { opcao: 'PAC', valor: tabelaPadrao.pac, prazo: tabelaPadrao.prazoPac, cidade: 'Manual', cep: cepInput },
+            SEDEX: { opcao: 'SEDEX', valor: tabelaPadrao.sedex, prazo: tabelaPadrao.prazoSedex, cidade: 'Manual', cep: cepInput }
+          };
+
+          window.selectFreteOption('PAC');
           return;
         }
 
-        // Auto-preenche os campos de endereço
+        // CASO ENCONTRE O CEP COM SUCESSO
         if (addressBox) {
           addressBox.style.display = 'flex';
           document.getElementById('address-street').value = data.logradouro || '';
-          document.getElementById('address-city').value = `${data.bairro ? data.bairro + ', ' : ''}${data.localidade} - ${data.uf}`;
+          if (cityInput) {
+            cityInput.value = `${data.bairro ? data.bairro + ', ' : ''}${data.localidade} - ${data.uf}`;
+            cityInput.readOnly = true;
+            cityInput.style.background = '#f1f5f9';
+          }
           document.getElementById('address-number').focus();
         }
 
-        const isSP = data.uf === 'SP';
-        const valorPAC = isSP ? 18.90 : 28.90;
-        const valorSedex = isSP ? 24.90 : 38.90;
-
-        // Prazos somando +3 a 4 dias úteis de fornecedor/preparação
-        const prazoPACStr = isSP ? '5 a 8 dias úteis (inclui preparação + Correios)' : '8 a 12 dias úteis (inclui preparação + Correios)';
-        const prazoSedexStr = isSP ? '4 a 6 dias úteis (inclui preparação + Correios)' : '5 a 8 dias úteis (inclui preparação + Correios)';
+        // Busca tabela de frete referente à UF do cliente
+        const tabela = getTabelaFretePorUF(data.uf);
 
         window.freteOptions = {
-          PAC: { opcao: 'PAC', valor: valorPAC, prazo: prazoPACStr, cidade: `${data.localidade}/${data.uf}`, cep: cepInput },
-          SEDEX: { opcao: 'SEDEX', valor: valorSedex, prazo: prazoSedexStr, cidade: `${data.localidade}/${data.uf}`, cep: cepInput }
+          PAC: { opcao: 'PAC', valor: tabela.pac, prazo: tabela.prazoPac, cidade: `${data.localidade}/${data.uf}`, cep: cepInput },
+          SEDEX: { opcao: 'SEDEX', valor: tabela.sedex, prazo: tabela.prazoSedex, cidade: `${data.localidade}/${data.uf}`, cep: cepInput }
         };
 
-        // Seleciona o PAC como opção inicial por padrão
         window.selectFreteOption('PAC');
 
       } catch (err) {
-        resultsDiv.innerHTML = '<span style="color:red;">Erro ao consultar CEP.</span>';
+        resultsDiv.innerHTML = '<span style="color:red;">Erro ao consultar CEP. Tente novamente.</span>';
       }
     };
 
