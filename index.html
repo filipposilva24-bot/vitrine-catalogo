@@ -1524,11 +1524,11 @@
 
     window.handleLogout = () => signOut(auth);
 
-    // MEUS PEDIDOS FIRESTORE
+    // MEUS PEDIDOS FIRESTORE (DETALHADO E COMPLETO)
     window.openOrdersModal = async () => {
       if (!currentUser) return window.openAuthModal();
       const container = document.getElementById('user-orders-list');
-      container.innerHTML = 'A carregar pedidos...';
+      container.innerHTML = '<p style="text-align:center; color:var(--text-muted); padding:1.5rem 0;">A carregar os seus pedidos...</p>';
       document.getElementById('orders-modal').style.display = 'flex';
 
       try {
@@ -1540,20 +1540,69 @@
           return;
         }
 
+        // Ordena os pedidos do mais recente para o mais antigo
+        const docs = [];
+        snap.forEach(d => docs.push({ id: d.id, ...d.data() }));
+        docs.sort((a, b) => (b.createdAt?.seconds || 0) - (a.createdAt?.seconds || 0));
+
         container.innerHTML = '';
-        snap.forEach(docSnap => {
-          const p = docSnap.data();
+        docs.forEach(p => {
+          const idCurto = p.id.substring(0, 6).toUpperCase();
+          const dataStr = p.createdAt ? new Date(p.createdAt.seconds * 1000).toLocaleDateString('pt-BR', {
+            day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit'
+          }) : 'Recente';
+
+          let itensHtml = (p.itens || []).map(i => `
+            <div style="display:flex; justify-content:space-between; font-size:0.825rem; color:#334155; margin-bottom:0.3rem;">
+              <span>• ${i.qty}x ${i.nome}</span>
+              <strong>${formatCurrency(i.precoNovo * i.qty)}</strong>
+            </div>
+          `).join('');
+
+          let freteHtml = p.freteInfo ? `
+            <div style="font-size:0.78rem; color:var(--text-muted); margin-top:0.5rem; padding-top:0.4rem; border-top:1px dashed #e2e8f0;">
+              🚚 <strong>Envio:</strong> ${p.freteInfo.opcao || 'PAC'} (${formatCurrency(p.freteInfo.valor || 0)}) — ${p.freteInfo.cidade || ''} (CEP: ${p.freteInfo.cep || '-'})
+            </div>
+          ` : '';
+
+          let cupomHtml = p.cupomUsado ? `
+            <div style="font-size:0.78rem; color:var(--whatsapp-color); font-weight:700; margin-top:0.25rem;">
+              🎟️ Cupom utilizado: ${p.cupomUsado}
+            </div>
+          ` : '';
+
+          const msgWa = encodeURIComponent(`Olá! Gostaria de consultar informações sobre o meu Pedido #${idCurto} realizado no site.`);
+          const waLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${msgWa}`;
+
           const div = document.createElement('div');
-          div.className = 'order-card-item';
+          div.style.cssText = "background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:1.1rem; margin-bottom:1rem; box-shadow:0 2px 8px rgba(0,0,0,0.04); text-align:left;";
+          
           div.innerHTML = `
-            <div style="display:flex; justify-content:space-between; margin-bottom:0.5rem;">
-              <strong>Pedido #${docSnap.id.substring(0,6).toUpperCase()}</strong>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem; border-bottom:1px solid #f1f5f9; padding-bottom:0.6rem;">
+              <div>
+                <strong style="font-size:0.95rem; color:var(--primary-color);">Pedido #${idCurto}</strong>
+                <div style="font-size:0.75rem; color:var(--text-muted); margin-top:0.1rem;">📅 ${dataStr}</div>
+              </div>
               <span class="order-status-badge ${p.status}">${p.status}</span>
             </div>
-            <div style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.5rem;">
-              Itens: ${(p.itens || []).map(i => `${i.qty}x${i.nome}`).join(', ')}
+
+            <div style="margin-bottom:0.5rem;">
+              <strong style="font-size:0.75rem; color:var(--text-muted); display:block; margin-bottom:0.4rem; text-transform:uppercase;">Itens Comprados:</strong>
+              ${itensHtml}
             </div>
-            <div style="font-weight:800; color:var(--primary-color);">Total: ${formatCurrency(p.total)}</div>
+
+            ${freteHtml}
+            ${cupomHtml}
+
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:0.8rem; padding-top:0.6rem; border-top:1px solid #e2e8f0;">
+              <div>
+                <span style="font-size:0.75rem; color:var(--text-muted); display:block;">Total Pago / Final:</span>
+                <strong style="font-size:1.1rem; color:var(--primary-color);">${formatCurrency(p.total)}</strong>
+              </div>
+              <a href="${waLink}" target="_blank" style="background:var(--whatsapp-color); color:#fff; padding:0.45rem 0.85rem; border-radius:8px; font-size:0.78rem; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:0.3rem;">
+                💬 Ajuda no Whats
+              </a>
+            </div>
           `;
           container.appendChild(div);
         });
@@ -2054,7 +2103,7 @@ Ainda está disponível?`;
       }
     };
 
-    // CHECKOUT NO WHATSAPP INTEGRADO AO FIRESTORE E AO GESTOR DE COBRANÇAS
+    // CHECKOUT NO WHATSAPP COM SALVAMENTO COMPLETO DE DADOS
     window.checkoutWhatsAppCart = async () => {
       if (cart.length === 0) {
         alert("Adicione pelo menos um produto ao carrinho antes de finalizar!");
@@ -2082,19 +2131,20 @@ Ainda está disponível?`;
       const resumoItens = cart.map(i => `${i.qty}x ${i.nome}`).join(', ');
 
       try {
-        // 1. Regista o pedido no banco Firestore do catálogo (frota-pop110)
+        // 1. Regista o pedido com todos os detalhes no Firestore do catálogo (frota-pop110)
         await addDoc(collection(db, "pedidos"), {
           userId: currentUser.uid,
           clienteNome: currentUser.displayName || 'Cliente',
           clienteEmail: currentUser.email,
           itens: cart,
           total: subtotalFinal,
-          cupomUsado: appliedCouponCode,
+          cupomUsado: appliedCouponCode || null,
+          freteInfo: selectedFreteInfo || null,
           status: 'Pendente',
           createdAt: serverTimestamp()
         });
 
-        // 2. Envia direto para o Gestor de Cobranças (meu-acessor-fbe0e)
+        // 2. Envia para o Gestor de Cobranças (meu-acessor-fbe0e)
         await addDoc(collection(gestorDb, "vendas_agrupadas"), {
           nome: currentUser.displayName || 'Cliente Site',
           tag: 'NOVO',
@@ -2113,14 +2163,14 @@ Ainda está disponível?`;
           createdAt: serverTimestamp()
         });
 
-        // Bloqueia a reutilização do cupão PRIMEIRACOMPRA no Firestore
+        // Bloqueia reutilização do cupão PRIMEIRACOMPRA
         if (appliedCouponCode === 'PRIMEIRACOMPRA') {
           await setDoc(doc(db, "usuarios", currentUser.uid), {
             cuponsUsados: arrayUnion('PRIMEIRACOMPRA')
           }, { merge: true });
         }
 
-        // 3. Construção da mensagem limpa para o WhatsApp (sem emojis que viram '◆')
+        // 3. Construção da mensagem limpa para o WhatsApp
         let message = `Olá! Gostaria de finalizar o meu pedido no site Sillage Perfumes:\n\n` +
           `*Cliente:* ${currentUser.displayName} (${currentUser.email})\n\n` +
           `*ITENS DO PEDIDO:*\n`;
@@ -2144,7 +2194,7 @@ Ainda está disponível?`;
         message += `*Para pagamento no Cartão:* Por favor, envie-me o link de pagamento.\n\n` +
           `Como posso proceder com o pagamento e o envio?`;
 
-        // 4. Limpa o carrinho e repõe a interface
+        // 4. Limpa as variáveis do carrinho e reseta os inputs
         cart = [];
         selectedFreteInfo = null;
         appliedDiscount = 0;
@@ -2158,7 +2208,7 @@ Ainda está disponível?`;
         window.updateCartUI();
         window.toggleCart(false);
 
-        // 5. Redireciona para o WhatsApp
+        // 5. Abre o WhatsApp
         window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
       } catch (err) {
         alert("Erro ao registrar pedido: " + err.message);
