@@ -2263,12 +2263,26 @@ Ainda está disponível?`;
           createdAt: serverTimestamp()
         });
 
-        // 2. Envia para o Gestor de Cobranças (meu-acessor-fbe0e)
+        // 2. Envia para o Gestor de Cobranças (meu-acessor-fbe0e) com Endereço e Frete completos
+        let detalheEnvioStr = '';
+        if (selectedFreteInfo) {
+          detalheEnvioStr += `\n🚚 Frete: ${selectedFreteInfo.opcao} (${formatCurrency(selectedFreteInfo.valor)})`;
+          if (enderecoCompletoStr) {
+            detalheEnvioStr += `\n📍 Endereço: ${enderecoCompletoStr}`;
+          }
+        }
+        if (appliedCouponCode) {
+          detalheEnvioStr += `\n🎟️ Cupom: ${appliedCouponCode}`;
+        }
+
         await addDoc(collection(gestorDb, "vendas_agrupadas"), {
           nome: currentUser.displayName || 'Cliente Site',
           tag: 'NOVO',
           telefone: '11982818590',
-          descricao: `[Site] ${resumoItens}`,
+          email: currentUser.email,
+          descricao: `[Site] ${resumoItens}${detalheEnvioStr}`,
+          enderecoEntrega: enderecoCompletoStr || null,
+          freteInfo: selectedFreteInfo || null,
           valorTotal: subtotalFinal,
           custoTotal: 0,
           parcelas: [{
