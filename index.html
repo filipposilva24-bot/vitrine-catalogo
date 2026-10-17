@@ -1215,13 +1215,24 @@
         <div class="coupon-status" id="coupon-status"></div>
       </div>
 
-      <!-- Caixa de Cálculo de Frete -->
+      <!-- Caixa de Cálculo de Frete e Endereço -->
       <div class="shipping-box">
-        <label for="cep-input">🚚 Calcular Frete e Prazo (ViaCEP):</label>
+        <label for="cep-input">🚚 Calcular Frete e Endereço de Entrega:</label>
         <div class="shipping-inputs">
           <input type="text" id="cep-input" placeholder="Digite seu CEP (ex: 01001-000)" maxlength="9">
-          <button class="btn-calc-frete" onclick="calcularFreteViaCEP()">Calcular</button>
+          <button class="btn-calc-frete" onclick="calcularFreteViaCEP()">Buscar CEP</button>
         </div>
+
+        <!-- Campos de Endereço Completo -->
+        <div id="address-fields" style="display: none; margin-top: 0.75rem; flex-direction: column; gap: 0.5rem;">
+          <input type="text" id="address-street" placeholder="Rua / Avenida" style="width:100%; padding:0.55rem; border:1px solid var(--border-color); border-radius:6px; font-size:0.85rem;">
+          <div style="display:flex; gap:0.5rem;">
+            <input type="text" id="address-number" placeholder="Número *" style="flex:1; padding:0.55rem; border:1px solid var(--border-color); border-radius:6px; font-size:0.85rem;" required>
+            <input type="text" id="address-comp" placeholder="Complemento (Apt, Bloco)" style="flex:1.5; padding:0.55rem; border:1px solid var(--border-color); border-radius:6px; font-size:0.85rem;">
+          </div>
+          <input type="text" id="address-city" placeholder="Bairro, Cidade - UF" style="width:100%; padding:0.55rem; border:1px solid var(--border-color); border-radius:6px; font-size:0.85rem; background:#f1f5f9;" readonly>
+        </div>
+
         <div class="frete-results" id="frete-results"></div>
       </div>
 
@@ -1939,13 +1950,15 @@ Ainda está disponível?`;
       if (event.target == ordersModal) ordersModal.style.display = 'none';
     };
 
-    /* CÁLCULO DE FRETE VIA VIACEP */
+    /* CÁLCULO DE FRETE VIA VIACEP E SELEÇÃO DE MODALIDADE */
     window.calcularFreteViaCEP = async () => {
       const cepInput = document.getElementById('cep-input').value.replace(/\D/g, '');
       const resultsDiv = document.getElementById('frete-results');
+      const addressBox = document.getElementById('address-fields');
 
       if (cepInput.length !== 8) {
         resultsDiv.innerHTML = '<span style="color:red;">Digite um CEP válido com 8 dígitos.</span>';
+        if (addressBox) addressBox.style.display = 'none';
         return;
       }
 
@@ -1957,37 +1970,76 @@ Ainda está disponível?`;
 
         if (data.erro) {
           resultsDiv.innerHTML = '<span style="color:red;">CEP não encontrado.</span>';
+          if (addressBox) addressBox.style.display = 'none';
           return;
+        }
+
+        // Auto-preenche os campos de endereço
+        if (addressBox) {
+          addressBox.style.display = 'flex';
+          document.getElementById('address-street').value = data.logradouro || '';
+          document.getElementById('address-city').value = `${data.bairro ? data.bairro + ', ' : ''}${data.localidade} - ${data.uf}`;
+          document.getElementById('address-number').focus();
         }
 
         const isSP = data.uf === 'SP';
         const valorPAC = isSP ? 18.90 : 28.90;
         const valorSedex = isSP ? 24.90 : 38.90;
 
-        selectedFreteInfo = {
-          cep: cepInput,
-          cidade: `${data.localidade}/${data.uf}`,
-          bairro: data.bairro || '',
-          valor: valorPAC,
-          opcao: 'PAC'
+        // Prazos somando +3 a 4 dias úteis de fornecedor/preparação
+        const prazoPACStr = isSP ? '5 a 8 dias úteis (inclui preparação + Correios)' : '8 a 12 dias úteis (inclui preparação + Correios)';
+        const prazoSedexStr = isSP ? '4 a 6 dias úteis (inclui preparação + Correios)' : '5 a 8 dias úteis (inclui preparação + Correios)';
+
+        window.freteOptions = {
+          PAC: { opcao: 'PAC', valor: valorPAC, prazo: prazoPACStr, cidade: `${data.localidade}/${data.uf}`, cep: cepInput },
+          SEDEX: { opcao: 'SEDEX', valor: valorSedex, prazo: prazoSedexStr, cidade: `${data.localidade}/${data.uf}`, cep: cepInput }
         };
 
-        resultsDiv.innerHTML = `
-          <div style="font-weight:bold; color:var(--primary-color); margin-top:0.3rem;">📍 ${data.localidade} - ${data.uf}</div>
-          <div class="frete-option">
-            <span>📦 PAC (${isSP ? '2 a 4' : '5 a 8'} dias úteis):</span>
-            <strong>${formatCurrency(valorPAC)}</strong>
-          </div>
-          <div class="frete-option">
-            <span>⚡ SEDEX (${isSP ? '1 a 2' : '2 a 4'} dias úteis):</span>
-            <strong>${formatCurrency(valorSedex)}</strong>
-          </div>
-        `;
+        // Seleciona o PAC como opção inicial por padrão
+        window.selectFreteOption('PAC');
 
-        window.updateCartUI();
       } catch (err) {
         resultsDiv.innerHTML = '<span style="color:red;">Erro ao consultar CEP.</span>';
       }
+    };
+
+    window.selectFreteOption = (tipo) => {
+      if (!window.freteOptions || !window.freteOptions[tipo]) return;
+
+      selectedFreteInfo = window.freteOptions[tipo];
+      const isPAC = tipo === 'PAC';
+      const pac = window.freteOptions.PAC;
+      const sedex = window.freteOptions.SEDEX;
+
+      const resultsDiv = document.getElementById('frete-results');
+      resultsDiv.innerHTML = `
+        <div style="font-weight:bold; color:var(--primary-color); margin-top:0.6rem; margin-bottom:0.4rem; font-size:0.85rem;">
+          📍 Selecione a Opção de Envio:
+        </div>
+        <div style="display:flex; flex-direction:column; gap:0.4rem;">
+          <label style="display:flex; justify-content:space-between; align-items:center; padding:0.6rem 0.75rem; border:1px solid ${isPAC ? 'var(--accent-color)' : 'var(--border-color)'}; border-radius:8px; background:${isPAC ? 'var(--accent-light)' : '#fff'}; cursor:pointer;">
+            <div style="display:flex; align-items:center; gap:0.5rem;">
+              <input type="radio" name="frete_option" value="PAC" ${isPAC ? 'checked' : ''} onchange="window.selectFreteOption('PAC')">
+              <div>
+                <strong style="font-size:0.825rem; display:block;">📦 PAC (${pac.prazo})</strong>
+              </div>
+            </div>
+            <strong style="font-size:0.875rem; color:var(--primary-color);">${formatCurrency(pac.valor)}</strong>
+          </label>
+
+          <label style="display:flex; justify-content:space-between; align-items:center; padding:0.6rem 0.75rem; border:1px solid ${!isPAC ? 'var(--accent-color)' : 'var(--border-color)'}; border-radius:8px; background:${!isPAC ? 'var(--accent-light)' : '#fff'}; cursor:pointer;">
+            <div style="display:flex; align-items:center; gap:0.5rem;">
+              <input type="radio" name="frete_option" value="SEDEX" ${!isPAC ? 'checked' : ''} onchange="window.selectFreteOption('SEDEX')">
+              <div>
+                <strong style="font-size:0.825rem; display:block;">⚡ SEDEX (${sedex.prazo})</strong>
+              </div>
+            </div>
+            <strong style="font-size:0.875rem; color:var(--primary-color);">${formatCurrency(sedex.valor)}</strong>
+          </label>
+        </div>
+      `;
+
+      window.updateCartUI();
     };
 
     /* Lógica do Carrinho */
@@ -2025,7 +2077,6 @@ Ainda está disponível?`;
       let totalCount = 0;
       let totalPix = 0;
 
-      // Se o carrinho estiver vazio, zera os contadores no ecrã e encerra
       if (cart.length === 0) {
         container.innerHTML = '<p style="text-align:center; color:#64748b; margin-top:2rem;">O seu carrinho está vazio.</p>';
         if (countBadge) countBadge.textContent = '0';
@@ -2103,7 +2154,7 @@ Ainda está disponível?`;
       }
     };
 
-    // CHECKOUT NO WHATSAPP COM SALVAMENTO COMPLETO DE DADOS
+    // CHECKOUT NO WHATSAPP COM ENDEREÇO COMPLETO E FRETE SELECIONADO
     window.checkoutWhatsAppCart = async () => {
       if (cart.length === 0) {
         alert("Adicione pelo menos um produto ao carrinho antes de finalizar!");
@@ -2113,6 +2164,16 @@ Ainda está disponível?`;
       if (!currentUser) {
         alert("Por favor, faça login ou crie uma conta rápida para prosseguir!");
         window.openAuthModal();
+        return;
+      }
+
+      const street = document.getElementById('address-street')?.value.trim() || '';
+      const number = document.getElementById('address-number')?.value.trim() || '';
+      const comp = document.getElementById('address-comp')?.value.trim() || '';
+      const cityState = document.getElementById('address-city')?.value.trim() || '';
+
+      if (selectedFreteInfo && (!street || !number)) {
+        alert("Por favor, preencha a Rua e o Número do endereço de entrega!");
         return;
       }
 
@@ -2127,6 +2188,11 @@ Ainda está disponível?`;
         subtotalFinal += selectedFreteInfo.valor;
       }
 
+      let enderecoCompletoStr = '';
+      if (street && number) {
+        enderecoCompletoStr = `${street}, nº ${number}${comp ? ' (' + comp + ')' : ''} - ${cityState} (CEP: ${selectedFreteInfo.cep})`;
+      }
+
       const hoje = new Date().toISOString().split('T')[0];
       const resumoItens = cart.map(i => `${i.qty}x ${i.nome}`).join(', ');
 
@@ -2139,7 +2205,10 @@ Ainda está disponível?`;
           itens: cart,
           total: subtotalFinal,
           cupomUsado: appliedCouponCode || null,
-          freteInfo: selectedFreteInfo || null,
+          freteInfo: {
+            ...selectedFreteInfo,
+            enderecoCompleto: enderecoCompletoStr
+          },
           status: 'Pendente',
           createdAt: serverTimestamp()
         });
@@ -2186,8 +2255,10 @@ Ainda está disponível?`;
         }
 
         if (selectedFreteInfo) {
-          message += `\n*Endereço de Entrega:* ${selectedFreteInfo.cidade} (CEP: ${selectedFreteInfo.cep})\n`;
-          message += `*Frete (${selectedFreteInfo.opcao}):* ${formatCurrency(selectedFreteInfo.valor)}\n`;
+          message += `\n*Frete (${selectedFreteInfo.opcao}):* ${formatCurrency(selectedFreteInfo.valor)} (${selectedFreteInfo.prazo})\n`;
+          if (enderecoCompletoStr) {
+            message += `*Endereço de Entrega:* ${enderecoCompletoStr}\n`;
+          }
         }
 
         message += `\n*Total Final:* ${formatCurrency(subtotalFinal)}\n`;
@@ -2204,6 +2275,7 @@ Ainda está disponível?`;
         if (document.getElementById('coupon-status')) document.getElementById('coupon-status').textContent = '';
         if (document.getElementById('cep-input')) document.getElementById('cep-input').value = '';
         if (document.getElementById('frete-results')) document.getElementById('frete-results').textContent = '';
+        if (document.getElementById('address-fields')) document.getElementById('address-fields').style.display = 'none';
 
         window.updateCartUI();
         window.toggleCart(false);
