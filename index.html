@@ -992,6 +992,73 @@
       padding: 3rem 1rem;
       color: var(--text-muted);
     }
+
+    /* OTIMIZAÇÃO EXCLUSIVA PARA MÓVEL (Ecrãs até 600px) */
+    @media (max-width: 600px) {
+      /* Reduz o topo e o logótipo para economizar espaço vertical */
+      header {
+        padding: 1rem 0 0.5rem !important;
+      }
+
+      .logo-img {
+        width: 85px !important;
+        height: 85px !important;
+      }
+
+      h1 {
+        font-size: 1.5rem !important;
+      }
+
+      .subtitle {
+        font-size: 0.8rem !important;
+        margin-bottom: 0.75rem !important;
+      }
+
+      .quiz-banner-btn {
+        padding: 0.65rem !important;
+        font-size: 0.85rem !important;
+      }
+
+      /* 1. Pílulas de Filtro em Linha Única com Scroll Horizontal */
+      .header-pills {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        justify-content: flex-start !important;
+        gap: 0.5rem !important;
+        padding-bottom: 0.5rem !important;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .header-pills::-webkit-scrollbar {
+        display: none; /* Esconde a barra de rolagem */
+      }
+
+      .pill-btn {
+        white-space: nowrap !important;
+        flex-shrink: 0 !important;
+        padding: 0.4rem 0.8rem !important;
+        font-size: 0.78rem !important;
+      }
+
+      /* 2. Barra de Confiança em 3 Colunas Lado a Lado */
+      .trust-bar {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 0.25rem !important;
+        padding: 0.6rem 0.25rem !important;
+      }
+
+      .trust-item {
+        font-size: 0.7rem !important;
+        flex-direction: column !important;
+        gap: 0.2rem !important;
+      }
+
+      .trust-item span {
+        font-size: 1rem !important;
+      }
+    }
   </style>
 </head>
 <body>
