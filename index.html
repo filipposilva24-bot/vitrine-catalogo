@@ -1226,10 +1226,12 @@
         <!-- Campos de Endereço Completo -->
         <div id="address-fields" style="display: none; margin-top: 0.75rem; flex-direction: column; gap: 0.5rem;">
           <input type="text" id="address-street" placeholder="Rua / Avenida" style="width:100%; padding:0.55rem; border:1px solid var(--border-color); border-radius:6px; font-size:0.85rem;">
-          <div style="display:flex; gap:0.5rem;">
-            <input type="text" id="address-number" placeholder="Número *" style="flex:1; padding:0.55rem; border:1px solid var(--border-color); border-radius:6px; font-size:0.85rem;" required>
-            <input type="text" id="address-comp" placeholder="Complemento (Apt, Bloco)" style="flex:1.5; padding:0.55rem; border:1px solid var(--border-color); border-radius:6px; font-size:0.85rem;">
+          
+          <div style="display:flex; gap:0.5rem; width:100%;">
+            <input type="text" id="address-number" placeholder="Número *" style="flex:1; min-width:0; padding:0.55rem; border:1px solid var(--border-color); border-radius:6px; font-size:0.85rem;" required>
+            <input type="text" id="address-comp" placeholder="Complemento (Apt, Bloco)" style="flex:1; min-width:0; padding:0.55rem; border:1px solid var(--border-color); border-radius:6px; font-size:0.85rem;">
           </div>
+          
           <input type="text" id="address-city" placeholder="Bairro, Cidade - UF" style="width:100%; padding:0.55rem; border:1px solid var(--border-color); border-radius:6px; font-size:0.85rem; background:#f1f5f9;" readonly>
         </div>
 
