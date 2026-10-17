@@ -995,6 +995,32 @@
 
     /* OTIMIZAÇÃO EXCLUSIVA PARA MÓVEL (Ecrãs até 600px) */
     @media (max-width: 600px) {
+      /* Ajuste Fino da Barra Superior no Telemóvel */
+      .promo-banner {
+        padding: 0.5rem 0.75rem !important;
+        font-size: 0.75rem !important;
+        flex-direction: column !important;
+        gap: 0.4rem !important;
+        text-align: center !important;
+      }
+
+      .user-top-bar {
+        width: 100% !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding-top: 0.35rem !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+        margin-top: 0.2rem !important;
+      }
+
+      .btn-user-action {
+        padding: 0.25rem 0.65rem !important;
+        font-size: 0.72rem !important;
+        border-radius: 12px !important;
+        background: rgba(255, 255, 255, 0.08) !important;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+      }
+
       /* Reduz o topo e o logótipo para economizar espaço vertical */
       header {
         padding: 1rem 0 0.5rem !important;
@@ -1031,7 +1057,7 @@
       }
 
       .header-pills::-webkit-scrollbar {
-        display: none; /* Esconde a barra de rolagem */
+        display: none;
       }
 
       .pill-btn {
@@ -1439,10 +1465,15 @@
           console.error("Erro ao carregar dados do usuário no Firestore:", err);
         }
 
+        // Pega apenas o primeiro nome do utilizador para caber perfeitamente no telemóvel
+        const primeiroNome = (user.displayName || 'Cliente').split(' ')[0];
+
         topBar.innerHTML = `
-          <span style="font-size:0.8rem;">👤 Olá, <strong>${user.displayName || 'Cliente'}</strong></span>
-          <button class="btn-user-action" onclick="window.openOrdersModal()">📦 Meus Pedidos</button>
-          <button class="btn-user-action" onclick="window.handleLogout()">🚪 Sair</button>
+          <span style="font-size:0.78rem;">👤 Olá, <strong style="color:#c5a059;">${primeiroNome}</strong></span>
+          <div style="display:flex; gap:0.4rem;">
+            <button class="btn-user-action" onclick="window.openOrdersModal()">📦 Pedidos</button>
+            <button class="btn-user-action" onclick="window.handleLogout()">🚪 Sair</button>
+          </div>
         `;
       } else {
         userDocData = null;
